@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.slq.mapper.production.ProductionProcessMapper">
+
+	<update id="updateReal">
+		UPDATE `production_process` SET
+		`real_labour_hour_amount`=real_labour_hour_amount+${real_labour_hour_amount},
+		`real_subtotal`=`real_subtotal`+${real_subtotal},
+		`real_module_subtotal`=`real_module_subtotal`+${real_module_subtotal},
+		`process_finish_tag`=#{process_finish_tag}
+		WHERE id=#{id}
+	</update>
+	<select id="getProductionProcessCourseByProcessIdAndmanufactureId" resultType="ProductionProcess">
+		SELECT pp.*,
+		ppc.`labour_hour_amount` as 'productionProcessCourse.labour_hour_amount',
+		ppc.`procedure_describe` as 'productionProcessCourse.procedure_describe',
+		ppc.responsible_person as 'productionProcessCourse.responsible_person',
+		ppc.id as 'productionProcessCourse.id' FROM `production_process` pp
+		INNER JOIN `production_process_course` ppc
+		ON pp.process_id=ppc.process_id
+		WHERE pp.parent_id=#{manufacture_id} and pp.process_id=#{process_id} and ppc.process_id=#{process_id}
+	</select>
+	
+	<insert id="batchInsert" useGeneratedKeys="true"
+		keyProperty="list.id">
+		INSERT INTO
+		production_process(id,parent_id,details_number,process_id,process_name,labour_hour_amount,
+		real_labour_hour_amount,subtotal,real_subtotal,module_subtotal,real_module_subtotal,cost_price,
+		demand_amount,real_amount,process_finish_tag,process_transfer_tag,time_unit)
+		VALUES
+		<foreach collection="list" separator=","
+			item="productionProcess">
+			(default,#{manufacture_id},#{productionProcess.details_number},#{productionProcess.process_id},#{productionProcess.process_name},#{productionProcess.labour_hour_amount},
+			default,#{productionProcess.subtotal},default,#{productionProcess.module_subtotal},default,#{productionProcess.cost_price},
+			#{productionProcess.demand_amount},default,#{productionProcess.process_finish_tag},
+			#{productionProcess.process_transfer_tag},#{productionProcess.time_unit}
+			)
+		</foreach>
+	</insert>
+	<resultMap id="productionProcessResult"
+		type="ProductionProcess" autoMapping="true">
+		<id column="id" property="id" />
+	</resultMap>
+	<!-- //通过 根据产品编号 通过processDes //查询这个工序总表下的工序详细 :processDetail //然后转换为生产工序 
+		还没有使用的 
+		SELECT pp.*,ppm.* FROM production_process pp
+		INNER JOIN `production_process_material` ppm
+		ON pp.`id`=ppm.parent_id
+		WHERE pp.parent_id=11
+		-->
+	<select id="getProcessDetailTransitionProductionProcess"
+		resultMap="productionProcessResult">
+		SELECT * FROM production_process pp
+		WHERE pp.parent_id=#{manufacture_id}
+	</select>
+</mapper>
+	

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.production.ProductionPlanMapper">
+	
+	<resultMap id="productionPlanResult" type="ProductionPlan"  autoMapping="true">
+		<id column="id" property="id"/>
+		<collection property="productionPlanDetails" ofType="ProductionPlanDetail" 
+		select="com.slq.mapper.production.ProductionPlanDetailMapper.getProductionPlanDetailByParentId"
+		column="id" />
+	</resultMap>
+	<select id="getProductionPlanAndDetailById" resultMap="productionPlanResult">
+		SELECT * FROM production_plan where id=#{id}
+	</select>
+	<select id="searchProductionPlan" resultType="ProductionPlan">
+	
+		SELECT * FROM production_plan
+		<where>
+			register_time between
+			<foreach collection="dateTimeRange" item="date" separator="and">
+				  #{date}
+			</foreach>
+			<if test="keyWord!=null and keyWord!=''">
+				and (
+					process_id like concat('%',#{keyWord},'%')
+				)
+			</if>
+		</where>
+		order by
+		<choose>
+			<when
+				test="orderingRule!=null and orderingRule.prop!=null and orderingRule.prop!='' and orderingRule.order!=null and orderingRule.order!=''">
+				${orderingRule.prop} ${orderingRule.order}
+			</when>
+			<otherwise>
+				process_id desc
+			</otherwise>
+		</choose>
+	</select>
+</mapper>
+

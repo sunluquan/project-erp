@@ -1,0 +1,33 @@
+[{
+	"amount": 2000,
+	"cost_price": 200.0,
+	"id": 19,
+	"parent_id": 34,
+	"product_id": "YCL20200511000001",
+	"product_name": "cpu",
+	"productionProcessMaterialCourse": {
+		"id": 9,
+		"use_amount": 100
+	},
+	"real_amount": 0,
+	"real_subtotal": 0.0,
+	"renew_amount": 0,
+	"subtotal": 400000.0,
+	"use_amount": 0
+}, {
+	"amount": 1000,
+	"cost_price": 200.0,
+	"id": 20,
+	"parent_id": 34,
+	"product_id": "YCL20200511000002",
+	"product_name": "内存条",
+	"productionProcessMaterialCourse": {
+		"id": 10,
+		"use_amount": 50
+	},
+	"real_amount": 0,
+	"real_subtotal": 0.0,
+	"renew_amount": 0,
+	"subtotal": 200000.0,
+	"use_amount": 0
+}]

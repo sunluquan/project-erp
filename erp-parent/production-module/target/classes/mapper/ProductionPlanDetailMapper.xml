@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.slq.mapper.production.ProductionPlanDetailMapper">
+		<!-- // 获取可以制定派工单的生产计划单以及详细 -->
+	<select id="getProductionPlanDetailMeetDespatching" resultType="ProductionPlanDetail">
+		SELECT ppd.*,pp.,p. FROM production_plan_detail ppd
+		INNER JOIN production_plan pp
+		ON ppd.parent_id =pp.id
+		LEFT JOIN product p
+		ON ppd.`product_id`=p.`product_id`
+		LEFT JOIN product_use pu ON
+		pu.id=p.use_type
+		WHERE manufacture_tag=0 and pp.check_tag=1
+		
+	</select>
+	<!-- 生产派工单的时候使用 -->
+	<update id="batchUpdateManufacture">
+		<foreach collection="productionPlanDetails" separator=";" item="productionPlanDetail">
+			update production_plan_detail set 
+			manufacture_id=#{id},manufacture_tag=#{manufacture_tag}
+			where id=#{productionPlanDetail.id}
+		</foreach>
+	</update>
+	<!-- 根据产品编号获取  集合 生产详细和生产总表的集合  -->
+	<select id="getProductionPlanDetailAndProductionPlanByProductId" resultType="ProductionPlanDetail">
+		select ppd.*,
+		pp.production_id as 'productionPlan.production_id'
+		from production_plan_detail ppd
+		inner join production_plan pp
+		on ppd.parent_id =pp.id
+		where pp.check_tag=1 and ppd.manufacture_tag=0 and ppd.product_id = #{product_id}
+	</select>
+	<insert id="batchInsert">
+		INSERT INTO `project`.`production_plan_detail` (
+		`id`,`parent_id`,`product_id`,`amount`,
+		`manufacture_tag`,`manufacture_id`)
+		VALUES
+		<foreach collection="productionPlanDetails" separator=","
+			item="productionPlanDetail">
+			(default,#{id},#{productionPlanDetail.product_id},#{productionPlanDetail.amount},
+			default,default)
+		</foreach>
+	</insert>
+	<select id="getProductionPlanDetailByParentId"
+		resultType="ProductionPlanDetail">
+		SELECT ppd.*,pu.useName,p.product_name,p.cost_price,p.real_cost_price,p.product_unit
+		 FROM production_plan_detail ppd
+		LEFT JOIN product p
+		ON ppd.`product_id`=p.`product_id`
+		left join product_use pu on
+		pu.id=p.use_type
+		WHERE ppd.`parent_id`=#{parent_id}
+	</select>
+</mapper>
+	
+
+

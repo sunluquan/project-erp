@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.slq.mapper.production.ProcessMaterialDetailMapper">
+	<!-- 新增派工单的新增生产工序物料的时候用到 -->
+	<select id="getProcessMaterialDesignByParentId1" resultType="ProcessMaterialDetail">
+		SELECT
+		pmd.*,mdd.`amount` as 'amount',
+		p.`product_name` as 'product_name',
+		p.`product_id` as 'product_id',
+		p.`product_unit` as 'product_unit',
+		p.`cost_price` as 'cost_price',
+		u.useName as 'useName'
+		FROM `process_material_detail` pmd
+		INNER JOIN `material_design_detail` mdd
+		ON pmd.`material_id`=mdd.id
+		INNER JOIN `product` p
+		ON mdd.`product_id`=p.`product_id`
+		inner join product_use u
+		on p.use_type=u.id
+		WHERE pmd.parent_id=#{parentId}
+	</select>
+	<select id="getProcessMaterialByParentId" resultType="ProcessMaterialDetail">
+		SELECT
+		pmd.*,mdd.`amount` as 'materialDesignDetail.amount',
+		mdd.`residual_amount` as 'materialDesignDetail.residual_amount',
+		p.`product_name` as 'materialDesignDetail.product_name',
+		p.`product_id` as 'materialDesignDetail.product_id',
+		p.`product_unit` as 'materialDesignDetail.product_unit'
+		FROM `process_material_detail` pmd
+		INNER JOIN `material_design_detail` mdd
+		ON pmd.`material_id`=mdd.id
+		INNER JOIN `product` p
+		ON pmd.parent_id=#{id}
+	</select>
+	<!-- 有问题 -->
+	<select id="getProcessMaterialDesignByParentId"
+		resultType="ProcessMaterialDetail">
+		SELECT
+		pmd.*,mdd.`amount` as 'amount',
+		mdd.`residual_amount`+mdd.`amount` as 'residual_amount',
+		p.`product_name` as 'product_name',
+		p.`product_id` as 'product_id',
+		p.`product_unit` as 'product_unit',
+		p.`cost_price` as 'cost_price',
+		u.useName as 'useName'
+		FROM `process_material_detail` pmd
+		INNER JOIN `material_design_detail` mdd
+		ON pmd.`material_id`=mdd.id
+		INNER JOIN `product` p
+		ON mdd.`product_id`=p.`product_id`
+		inner join product_use u
+		on p.use_type=u.id
+		WHERE pmd.parent_id=#{parentId}
+	</select>
+	<!-- material_id 表示的是物料总表的物料详细表下面的id
+	processMaterialDetail.id 因为他从前端映射过来之后  是映射到这个id字段中去的 
+	 所以这里不能processMaterialDetail.material_id
+	 但是后来我又在前端加入了 这段代码就OK了
+	 material['material_id']=material.id
+	 -->
+	<insert id="batchInsert">
+		INSERT INTO `project`.`process_material_detail` (`id`,`parent_id`,`details_number`,`material_id`,`useAmount`) VALUES
+         <foreach collection="processMaterialDetails" separator="," item="processMaterialDetail">
+         	(default,#{id},default,#{processMaterialDetail.material_id},#{processMaterialDetail.useAmount})
+         </foreach>
+	</insert>
+</mapper>

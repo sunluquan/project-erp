@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.production.ProductKindMapper">
+	
+	<resultMap type="ProductKind" id="productKindResult" autoMapping="true">
+		<id column="id" property="id"/>
+		<collection property="children" ofType="ProductKind" select="getKindChildren" autoMapping="true" column="id"></collection>
+	</resultMap>
+	<select id="getProductKindAll" resultMap="productKindResult">
+		select id,kindName from product_kind
+		where parentId is null or parentId =''
+	</select>
+	<select id="getKindChildren" resultMap="productKindResult">
+		select id,kindName from product_kind
+		where parentId =#{id}
+	</select>
+</mapper>

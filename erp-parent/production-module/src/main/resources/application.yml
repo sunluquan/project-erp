@@ -16,7 +16,11 @@ spring:
         min-idle: 0  
         timeout: 0 
   datasource:
+<<<<<<< HEAD
     url: jdbc:mysql://127.0.0.1:3306/project1?serverTimezone = GMT&allowMultiQueries=true
+=======
+    url: jdbc:mysql://127.0.0.1:3306/project?serverTimezone = GMT&allowMultiQueries=true
+>>>>>>> warehouse
     username: root
     password: 
     minIdle: 3
@@ -25,7 +29,11 @@ spring:
 mybatis-plus:
   configLocation: #mybatis配置文件的路径
   mapperLocations: classpath*:mapper/**/*.xml #mybatis的资源.xml文件路径
+<<<<<<< HEAD
   typeAliasesPackage: com.slq.pojo,com.slq.pojo.production，com.slq.pojo.stock #配置包下的别名
+=======
+  typeAliasesPackage: com.slq.pojo,com.slq.pojo.production #配置包下的别名
+>>>>>>> warehouse
   global-config:
     db-config:
       idType: AUTO #主键策略 

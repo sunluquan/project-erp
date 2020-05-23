@@ -4,7 +4,10 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+<<<<<<< HEAD
 import com.slq.pojo.production.ProductProfitLossDetail;
+=======
+>>>>>>> warehouse
 import com.slq.pojo.production.ProductionProcess;
 import com.slq.pojo.production.ProductionProcessMaterial;
 
@@ -25,7 +28,12 @@ public interface IProductionProcessMaterialService {
 			Integer production_process_id,
 			Integer production_process_course_id);
 
+<<<<<<< HEAD
 	int batchUpdateRenewAmount(Integer production_process_id, List<ProductProfitLossDetail> productProfitLossDetails);
 	//获取生产领取物料的集合
 	List<ProductionProcessMaterial> getProductionProcessMaterialByManufactureId(Integer id);
+=======
+	
+
+>>>>>>> warehouse
 }

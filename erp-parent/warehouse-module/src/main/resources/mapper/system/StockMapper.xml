@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.slq.mapper.StockMapper">
@@ -20,4 +21,32 @@
 	</insert>
 	
 	
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.warehouse.StockMapper">
+
+	<select id="getStocks" resultType="Stock">
+	select s.productId,s.amount,t.storeName,d.productName,d.realCostPrice,d.paidAmount,y.minamount,y.maxCapacityAmount,u.useName
+from stock s,s_gather_details d,storehouse t,safetystock y,product_use u
+where s.productId=d.productId and s.sid=t.sid and d.sid=y.sid and d.productId=y.productId and t.use_type=u.id and s.checkTag='已审核'
+
+	</select>
+	
+	<select id="getStockById" resultType="Stock">
+		SELECT * FROM stock WHERE stockId=#{stockId}
+	</select>
+	
+	<insert id="addStock">
+		INSERT INTO stock(id,stockId,productId,sid,amount,registMan,registTime,checkMan,checkTime,checkTag) 
+		VALUES(NULL,substr(md5(rand()),1,10),#{productId},#{sid},0,#{registMan},NOW(),DEFAULT,DEFAULT,'未审核')
+	</insert>
+	<insert id="updateStock">	
+     <foreach collection="list" item="herDetailst" separator=";">
+       update stock set amount=amount+#{herDetailst.paidAmount},checkMan='孙陆泉',checkTime=now(),checkTag='已审核' 
+       where productId=#{herDetailst.productId} and sid=#{herDetailst.sid}
+     </foreach>
+    </insert>
+	
+>>>>>>> warehouse
 </mapper>

@@ -8,6 +8,7 @@
 		ppm.`amount`,ppm.`renew_amount`,(ppm.`real_amount`-ppmc.use_amount) as real_amount,
 		ppm.`subtotal`,ppm.`real_subtotal`
 	 -->
+<<<<<<< HEAD
 	 <!-- 获取生产领取物料的集合 -->
 	 <select id="getProductionProcessMaterialByManufactureId" resultType="ProductionProcessMaterial">
 	 	select parent_id,product_id,product_name,cost_price,amount,single_material_design_amount  from production_process_material
@@ -25,6 +26,8 @@
 			parent_id=#{production_process_id} and product_id=#{productProfitLossDetails.product_id}
 	 	</foreach>
 	 </update>
+=======
+>>>>>>> warehouse
 	<select id="getProductionProcessMaterialAndUseAmount"
 		resultType="ProductionProcessMaterial">
 		select ppm.* ,
@@ -63,11 +66,18 @@
 			id=#{productionProcessMaterial.id}
 		</foreach>
 	</update>
+<<<<<<< HEAD
 	<!-- 有变动 single_material_design_amount-->
 	<insert id="batchInsert">
 		INSERT INTO production_process_material
 		(`id`,`parent_id`,`process_number`,`product_id`,`product_name`,`cost_price`
 		,`amount`,`renew_amount`,`real_amount`,`subtotal`,`real_subtotal`,`single_material_design_amount`)
+=======
+	<insert id="batchInsert">
+		INSERT INTO production_process_material
+		(`id`,`parent_id`,`process_number`,`product_id`,`product_name`,`cost_price`
+		,`amount`,`renew_amount`,`real_amount`,`subtotal`,`real_subtotal`)
+>>>>>>> warehouse
 		values
 		<foreach collection="list" item="productionProcess"
 			separator=",">
@@ -76,7 +86,11 @@
 				item="productionProcessMaterial" separator=",">
 				(default,#{productionProcess.id},default,#{productionProcessMaterial.product_id},
 				#{productionProcessMaterial.product_name},#{productionProcessMaterial.cost_price},
+<<<<<<< HEAD
 				#{productionProcessMaterial.amount},#{productionProcessMaterial.renew_amount},default,#{productionProcessMaterial.subtotal},default,#{productionProcessMaterial.single_material_design_amount})
+=======
+				#{productionProcessMaterial.amount},default,default,#{productionProcessMaterial.subtotal},default)
+>>>>>>> warehouse
 			</foreach>
 		</foreach>
 

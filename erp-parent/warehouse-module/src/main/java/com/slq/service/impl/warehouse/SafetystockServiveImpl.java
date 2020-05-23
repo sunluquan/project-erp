@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.github.pagehelper.PageInfo;
@@ -16,6 +17,15 @@ import com.slq.mapper.warehouse.SafetystockMapper;
 import com.slq.pojo.production.Product;
 import com.slq.pojo.warehouse.GatherDetails;
 import com.slq.pojo.warehouse.Safetystock;
+=======
+
+import com.slq.mapper.warehouse.SafetystockMapper;
+import com.slq.mapper.warehouse.StockMapper;
+import com.slq.mapper.warehouse.WarehousingMapper;
+import com.slq.pojo.warehouse.GatherDetails;
+import com.slq.pojo.warehouse.Safetystock;
+import com.slq.pojo.warehouse.Stock;
+>>>>>>> warehouse
 import com.slq.service.warehouse.ISafetystockServive;
 import com.slq.pojo.User;
 import com.slq.util.ActiveUser;
@@ -27,8 +37,13 @@ public class SafetystockServiveImpl implements ISafetystockServive {
 
 	@Autowired
 	SafetystockMapper safetystockMapper;
+<<<<<<< HEAD
 	@Autowired GatherMapper mapper;
 	
+=======
+	@Autowired WarehousingMapper mapper;
+	@Autowired StockMapper stockmapper;
+>>>>>>> warehouse
 	
 	@Override
 	public List<Safetystock> getAllsafety() {
@@ -49,11 +64,22 @@ public class SafetystockServiveImpl implements ISafetystockServive {
 	@Override
 	public int updateSefeStatus(Safetystock safetystock) {		
 		User user=((ActiveUser)SecurityUtils.getSubject().getPrincipal()).getUser();
+<<<<<<< HEAD
+=======
+		Stock stock=new Stock();
+>>>>>>> warehouse
 		safetystock.setChecker(user.getUname());	
 		GatherDetails gatherDetails=new GatherDetails();
 		gatherDetails.setSid(safetystock.getSid());
 		gatherDetails.setProductId(safetystock.getProductId());
 		mapper.updGatherDetailsSid(gatherDetails);
+<<<<<<< HEAD
+=======
+		stock.setProductId(safetystock.getProductId());
+		stock.setSid(safetystock.getSid());
+		stock.setRegistMan(user.getUname());
+		stockmapper.addStock(stock);
+>>>>>>> warehouse
 		return safetystockMapper.updateSefeStatus(safetystock);
 	}
 

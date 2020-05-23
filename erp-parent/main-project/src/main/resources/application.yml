@@ -16,9 +16,15 @@ spring:
         min-idle: 0  
         timeout: 0 
   datasource:
+<<<<<<< HEAD
     url: jdbc:mysql://127.0.0.1:3306/project1?serverTimezone = GMT&allowMultiQueries=true
     username: root
     password: 
+=======
+    url: jdbc:mysql://127.0.0.1:3306/project1?serverTimezone = GMT&allowMultiQueries=true&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+>>>>>>> warehouse
     minIdle: 3
     maxActive: 30
     maxWait: 15000

@@ -6,6 +6,7 @@
 	<sql id="permission_up_state">
 		permissionStatus=1
 	</sql>
+<<<<<<< HEAD
 	<resultMap type="com.slq.common.CascadeChoice" id="productKindResult" autoMapping="true">
 		<id column="id" property="value"/>
 		<result column="kindName" property="title"/>
@@ -22,6 +23,8 @@
 		select id,kindName from product_kind
 		where parentId =#{id} and state=1
 	</select>
+=======
+>>>>>>> warehouse
 	<!-- permission -->
 	<resultMap type="com.slq.common.CascadeChoice"  id="permissionResult">
 		<id column="pId" property="value"/>

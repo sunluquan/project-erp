@@ -3,15 +3,21 @@ package com.slq.service.production.impl;
 import java.util.List;
 
 import org.springframework.cache.annotation.CacheConfig;
+<<<<<<< HEAD
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+=======
+>>>>>>> warehouse
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+<<<<<<< HEAD
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.slq.common.Params;
+=======
+>>>>>>> warehouse
 import com.slq.mapper.production.ProductKindMapper;
 import com.slq.pojo.production.ProductKind;
 import com.slq.service.production.IProductKindService;
@@ -28,6 +34,7 @@ public class ProductKindServiceImpl extends ServiceImpl<ProductKindMapper, Produ
 		return productKinds;
 	}
 
+<<<<<<< HEAD
 	@Cacheable(keyGenerator = "keyGenerator")
 	@Override
 	public PageInfo<ProductKind> searchProductKind(Params params) {
@@ -41,4 +48,6 @@ public class ProductKindServiceImpl extends ServiceImpl<ProductKindMapper, Produ
 		return i;
 	}
 
+=======
+>>>>>>> warehouse
 }

@@ -9,7 +9,12 @@ public class Stock {
 	private Integer id;			//序号
 	private String stockId;		//库存编号
 	private String productId;	//产品编号
+<<<<<<< HEAD
 	private Integer amount;		//当前存储量
+=======
+	private Integer amount;	
+	private Integer sid;//当前存储量
+>>>>>>> warehouse
 	private String registMan;	//登记人
 	private String registTime;	//登记时间
 	private String checkMan;	//复核人
@@ -24,4 +29,9 @@ public class Stock {
 	private Integer minamount;
 	private Integer maxamount;
 	private Integer maxCapacityAmount;
+<<<<<<< HEAD
+=======
+	private double realCostPrice;
+	private Integer paidAmount; 	
+>>>>>>> warehouse
 }

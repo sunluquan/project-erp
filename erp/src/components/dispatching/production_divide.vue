@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 	<div id="production_divide">
 		<div id="columns">
 			<el-form label-position="left" class="demo-table-expand">
@@ -68,15 +69,25 @@
 			</el-table-column>
 		</el-table>
 	</div>
+=======
+	
+>>>>>>> warehouse
 </template>
 
 <script>
 	export default{
+<<<<<<< HEAD
 		name:'production_divide',//按生产产品计划编号划分 来制定派工单
 		data(){
 			return{
 				productions:[],
 				activeProductions:[]
+=======
+		name:'production_divide',//按生产产品计划编号划分
+		data(){
+			return{
+				productions:[]
+>>>>>>> warehouse
 			}
 		},methods:{
 			getMeetDispatchingProductions(){//获取满足可以派工生产的生产单
@@ -84,6 +95,7 @@
 					.then(response=>{
 						this.productions=response.data
 					})
+<<<<<<< HEAD
 			},insertDsipatching(){
 				let activeProductions=this.activeProductions;
 				if(activeProductions.length==0){
@@ -142,6 +154,9 @@
 			this.getMeetDispatchingProductions()
 		},computed:{
 			
+=======
+			}
+>>>>>>> warehouse
 		}
 	}
 </script>

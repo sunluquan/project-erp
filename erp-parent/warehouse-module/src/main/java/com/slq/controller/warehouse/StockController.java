@@ -31,6 +31,7 @@ public class StockController {
 		Stock stock=stockService.getStockById(stockId);
 		return DefaultResponseData.successResponseData(stock);
 	}
+<<<<<<< HEAD
 	
 	@RequestMapping("/addStock")
 	public ResponseData addStock(Stock stock) {
@@ -41,4 +42,6 @@ public class StockController {
 			return DefaultResponseData.ADD_ERROR;
 		}
 	}
+=======
+>>>>>>> warehouse
 }

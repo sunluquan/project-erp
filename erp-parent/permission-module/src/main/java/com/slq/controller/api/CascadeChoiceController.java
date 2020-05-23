@@ -33,11 +33,14 @@ public class CascadeChoiceController {
 		List<CascadeChoice> cascadechoices = cascadeChoiceService.getCascadePermission();
 		return DefaultResponseData.successResponseData(cascadechoices);
 	}
+<<<<<<< HEAD
 	@RequestMapping("/productKind")
 	public ResponseData getCascadeProductKind() {
 		List<CascadeChoice> cascadechoices = cascadeChoiceService.getCascadeProductKind();
 		return DefaultResponseData.successResponseData(cascadechoices);
 	}
+=======
+>>>>>>> warehouse
 	/***
 	 * 获取所有的在templates下的文件名
 	 * @return
@@ -47,5 +50,8 @@ public class CascadeChoiceController {
 		List<Template> templates = cascadeChoiceService.getCascadeTemplates();
 		return DefaultResponseData.successResponseData(templates);
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> warehouse
 }

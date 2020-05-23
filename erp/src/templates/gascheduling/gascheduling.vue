@@ -29,15 +29,26 @@
 				  <template slot-scope="scope">
 				  	{{scope.row.registerTime}}
 				  </template>
+<<<<<<< HEAD
 		      </el-table-column>`
 			  <el-table-column prop="amount" label="总件数" :sortable="custom">
 				  <template slot-scope="scope">
 				  	{{scope.row.amount}}
+=======
+		      </el-table-column>
+			  <el-table-column prop="mustAmount" label="总件数" :sortable="custom">
+				  <template slot-scope="scope">
+				  	{{scope.row.sumnum}}
+>>>>>>> warehouse
 				  </template>
 			  </el-table-column>
 			  <el-table-column prop="moneys" label="总金额" :sortable="custom">
 				  <template slot-scope="scope">
+<<<<<<< HEAD
 				  	{{scope.row.moneys}}
+=======
+				  	{{scope.row.summoneys}}
+>>>>>>> warehouse
 				  </template>
 			  </el-table-column>
 			  <el-table-column label="入库调度" width="120px">

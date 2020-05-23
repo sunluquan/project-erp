@@ -11,8 +11,11 @@ public interface CascadeChoiceMapper {
 	List<CascadeChoice> getCascadePermission();
 
 	List<CascadeChoice> getCascadePermissionChild(Integer parentId);
+<<<<<<< HEAD
 
 	List<CascadeChoice> getCascadeProductKind();
 	
 	List<CascadeChoice> getKindChildren(Integer id);
+=======
+>>>>>>> warehouse
 }

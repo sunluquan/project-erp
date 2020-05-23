@@ -19,12 +19,21 @@
 		
 		   <el-table :data="selectPage" border style="width: 100%" :border="true" :highlight-current-row="true">
 			   
+<<<<<<< HEAD
 			  <el-table-column prop="safetystockId" width="350px" label="配置单编号" :sortable="custom">
 				  <template slot-scope="scope">
 					  <el-link @click="selectdetails(scope.row.productId)"><span>{{ scope.row.safetystockId }}</span></el-link> 	
 				  </template>
 			  </el-table-column>
 		      <el-table-column prop="productid" width="270px" label="产品编号" :sortable="custom">
+=======
+			  <el-table-column prop="safetystockId" width="270px" label="配置单编号" :sortable="custom">
+				  <template slot-scope="scope">
+					  <el-link @click="selectdetails(scope.row.safetystockId)"><span>{{ scope.row.safetystockId }}</span></el-link> 	
+				  </template>
+			  </el-table-column>
+		      <el-table-column prop="productid" width="210px" label="产品编号" :sortable="custom">
+>>>>>>> warehouse
 				  <template slot-scope="scope">
 				  	<span>{{ scope.row.product_id }}</span>
 					
@@ -36,14 +45,27 @@
 				  		{{ scope.row.product_name }}</span>
 				  </template>
 		      </el-table-column>
+<<<<<<< HEAD
 		     
 			  <el-table-column prop="configStatus"   label="配置单状态">
+=======
+		     <el-table-column prop="registertime" label="登记时间" :sortable="custom" width="220px">
+		     		<template slot-scope="scope">
+		     		     <span>{{ scope.row.registertime }}</span>
+		     		</template>
+		     </el-table-column>
+			  <el-table-column prop="configStatus"   label="配置单状态" :sortable="custom">
+>>>>>>> warehouse
 				  <template slot-scope="scope">
 				  	<span style="color: #409EFF;">
 				  		{{ scope.row.configStatus }}</span>
 				  </template>
 			  </el-table-column>
+<<<<<<< HEAD
 			  <el-table-column prop="checktag"  label="复核状态" >
+=======
+			  <el-table-column prop="checktag"  label="复核状态" :sortable="custom">
+>>>>>>> warehouse
 				  <template slot-scope="scope">
 				  	<span style="color: #409EFF;">
 				  		{{ scope.row.checktag }}</span>
@@ -92,8 +114,13 @@
 			     			alert('请求失败')
 			          })
 					},
+<<<<<<< HEAD
 					selectdetails(productId){
 				           this.$router.push({path:'/index/selectstock.html/selectstockdetails/'+productId})
+=======
+					selectdetails(safetystockId){
+				           this.$router.push({path:'/index/selectstock.html/selectstockdetails/'+safetystockId})
+>>>>>>> warehouse
 					},
 					search(){
 						if(this.productName!=''){

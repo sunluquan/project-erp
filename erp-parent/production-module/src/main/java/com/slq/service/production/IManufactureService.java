@@ -5,7 +5,10 @@ import java.util.List;
 import com.github.pagehelper.PageInfo;
 import com.slq.common.Params;
 import com.slq.pojo.production.ManufactureSum;
+<<<<<<< HEAD
 import com.slq.util.ManufactureChart;
+=======
+>>>>>>> warehouse
 import com.slq.util.TimeLine;
 
 public interface IManufactureService {
@@ -38,8 +41,11 @@ public interface IManufactureService {
 
 	List<TimeLine> getProductionProgressByManufactureId(Integer id);
 
+<<<<<<< HEAD
 	List<ManufactureChart> getProductProductionFinishChartResult();
 
 	List<ManufactureSum> getMeetProfitAndLossManufactures();
 
+=======
+>>>>>>> warehouse
 }

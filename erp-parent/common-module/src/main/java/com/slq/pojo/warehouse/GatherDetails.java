@@ -2,6 +2,10 @@ package com.slq.pojo.warehouse;
 
 import java.io.Serializable;
 
+<<<<<<< HEAD
+=======
+import com.baomidou.mybatisplus.annotation.TableField;
+>>>>>>> warehouse
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
@@ -29,7 +33,11 @@ public class GatherDetails implements Serializable{
 	}
 		@TableId
 		private Integer id;				//序号
+<<<<<<< HEAD
 		private Integer parentId;       //制定入库单父级
+=======
+		private String parentId;       //制定入库单父级
+>>>>>>> warehouse
 		private Integer sid;	//仓库编号
 		private String productId;		//产品编号
 		private String productName;		//产品名称
@@ -43,4 +51,15 @@ public class GatherDetails implements Serializable{
 		private Integer stockamount;//入库标志1:已登记2:已调度
 		private String storeName;
 		private String storeAddress;
+<<<<<<< HEAD
+=======
+	    private	Storehouse storehouse;
+		@TableField(exist = false)
+		private int qwe;
+		@TableField(exist = false)
+		private int qwes;
+		@TableField(exist = false)
+		private String pid;
+		private Integer maxamount;
+>>>>>>> warehouse
 }

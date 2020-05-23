@@ -25,12 +25,16 @@ public class ProductionPlanController {
 
 	@Autowired
 	private IProductionPlanService productionPlanService;
+<<<<<<< HEAD
 	//获取满足制定派工单的生产计划
 	@GetMapping("/meetDespatching")
 	public ResponseData getMeetDespatchingProductionPlan() {
 		List<ProductionPlan> productionPlans=productionPlanService.getMeetDespatchingProductionPlans();
 		return DefaultResponseData.successResponseData(productionPlans);
 	}
+=======
+	
+>>>>>>> warehouse
 	@PostMapping("/insert")
 	public ResponseData insert(@RequestBody ProductionPlan productionPlan) {
 		System.out.println(JSON.toJSONString(productionPlan));

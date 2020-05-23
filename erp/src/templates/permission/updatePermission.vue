@@ -12,7 +12,11 @@
 				:props="propsParams" 
 				>
 				  <template slot-scope="{ node, data }">
+<<<<<<< HEAD
 				    <span>{{ data.title }}</span>
+=======
+				    <span>{{ data.title }}--{{data.value}}</span>
+>>>>>>> warehouse
 				    <span v-if="!node.isLeaf"> ({{ data.children.length }}) </span>
 				  </template>
 				</el-cascader>
@@ -45,7 +49,11 @@
 					<el-input placeholder="菜单url" v-model="permission.url"></el-input>
 				</el-form-item>
 				<el-form-item label="菜单组件路径:" >
+<<<<<<< HEAD
 					<el-cascader clearable v-model="permission.componentName" :options="templates" placeholder="请选择"
+=======
+					<el-cascader v-model="permission.componentName" :options="templates" placeholder="请选择"
+>>>>>>> warehouse
 					:props="templatePropsParams">
 					  <template slot-scope="{ node, data }" >
 							<span >{{ data.name }}</span>

@@ -30,9 +30,20 @@ public class Safetystock implements Serializable{
   private String product_name;
   private String product_rank;
   private String product_unit;
+<<<<<<< HEAD
   private double REAL_COST_PRICE;
   private String kindName;
   private String useName;
   private String storeName;
 
+=======
+  private double realCostPrice;
+  private String kindName;
+  private String useName;
+  private String storeName;
+  private String storeAddress;
+  private Integer amount;
+  private Integer qwe;
+  private Integer qwes;
+>>>>>>> warehouse
 }

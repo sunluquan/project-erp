@@ -3,15 +3,24 @@
   
 	<div id="box">
 		<el-form :inline="true" :model="safetystock" class="demo-form-inline" :label-position="labelPosition" label-width="130px">
+<<<<<<< HEAD
 		  <el-form-item  label="产品编号:" style="padding-right0: 90px;" prop="productid">
 		    <el-input class="input" v-model="safetystock.product_id"></el-input>
 		  </el-form-item>
 		  <el-form-item  label="产品名称:" prop="productName">
 		     <el-input  class="MyClass" v-model="safetystock.product_name"></el-input>
+=======
+		  <el-form-item  label="产品编号:" style="padding-right: 160px;margin-top: 25px;" prop="productid">
+		    <el-input class="input" v-model="safetystock[0].productId"></el-input>
+		  </el-form-item>
+		  <el-form-item  label="产品名称:" prop="productName" style="margin-top: 25px;">
+		     <el-input  class="MyClass" v-model="safetystock[0].product_name"></el-input>
+>>>>>>> warehouse
 		  </el-form-item>				  		 
 		</el-form>	
 		
 		<el-form :inline="true" :model="safetystock" class="demo-form-inline" :label-position="labelPosition" label-width="130px">
+<<<<<<< HEAD
 			<el-form-item label="库存报警下限数:" style="padding-right: 90px;" prop="minamount">
 			  <el-input class="MyClass" v-model="safetystock.minamount"></el-input>
 			</el-form-item>
@@ -54,6 +63,53 @@
 				
 				   <el-form-item label="登记时间:" prop="registertime">		  	     						 
 					<el-input  class="MyClass" v-model="safetystock.registertime"></el-input>		 
+=======
+			<el-form-item label="库存报警下限数:" style="padding-right: 160px;" prop="minamount">
+			  <el-input class="MyClass" v-model="safetystock[0].minamount"></el-input>
+			</el-form-item>
+			<el-form-item label="库存报警上限数:" prop="maxamount">
+			   <el-input  class="MyClass" v-model="safetystock[0].maxamount"></el-input>
+			</el-form-item>
+			<el-form-item label="设置B/N或S/N:" style="padding-right: 160px;">
+			   <el-input  class="MyClass"></el-input>
+			</el-form-item>
+			<el-form-item label="设计人" prop="register"> 
+			   <el-input  class="MyClass" v-model="safetystock[0].register"></el-input>
+			</el-form-item>
+			
+			<el-table :data="safetystock" size="medium" :header-cell-style="{background:'whitesmoke'}"  border style="width: 93%;margin-left: 40px;">
+				
+			    <el-table-column prop="id" label="序号" >
+			    </el-table-column>	
+			    <el-table-column prop="sid" label="仓库"  >
+			    	<template slot-scope="scope">
+			    		<span>{{scope.row.storeName}}</span>
+			    	</template>					
+			    </el-table-column>
+			    <el-table-column prop="storeAddress" label="库存地址" width="240px;">		
+			    			<template slot-scope="scope">
+			    			{{scope.row.storeAddress}}
+			    			</template>
+			    </el-table-column>
+			    <el-table-column prop="maxCapacityAmount" label="最大存储量"  >
+			    	<template slot-scope="scope">
+			    		{{scope.row.maxCapacityAmount}}
+			    	</template>										
+			    </el-table-column>
+			    <el-table-column prop="address" label="存储单位" >
+			    	<template slot-scope="scope">
+			    		{{scope.row.storeUnit}}
+			    	</template>
+			    </el-table-column>				
+			  </el-table>	
+			  <br />
+				<el-form-item label="审核人:" style="padding-right: 160px;" prop="register">
+				   <el-input  class="MyClass" v-model="safetystock[0].checker"></el-input>
+				</el-form-item>
+				
+				   <el-form-item label="登记时间:" prop="registertime">		  	     						 
+					<el-input  class="MyClass" v-model="safetystock[0].registertime"></el-input>		 
+>>>>>>> warehouse
 				   </el-form-item>
 				   <el-form-item label="配置要求:" style="padding-right: 100px;">
 				      <el-input type="textarea" style="width: 570px;"></el-input>
@@ -61,7 +117,11 @@
 		</el-form>	
 	</div>
 	<div slot="footer" class="dialog-footer">		
+<<<<<<< HEAD
 		<el-button size="mini" round @click="close()">返回</el-button>
+=======
+		<el-button type="primary" size="mini" round @click="close()">返回</el-button>
+>>>>>>> warehouse
 	</div>
 	</el-dialog>
 </template>
@@ -81,7 +141,11 @@
 	     	return {					
 				dataPicke: new Date,
 				custom: 'custom',
+<<<<<<< HEAD
 				productId:'',
+=======
+				safetystockId:'',
+>>>>>>> warehouse
 				labelPosition: 'right',				       
 				selectstockdetails_selectstock_dialog_visible: false,
 			   
@@ -102,7 +166,11 @@
 					registertime:'',					
 				},
 				isadmin: 3,	
+<<<<<<< HEAD
 				safetystock: {},	
+=======
+				safetystock:[],	
+>>>>>>> warehouse
 					res:{
 						id:'',
 					},
@@ -113,8 +181,13 @@
 		},
 		
 		created(){			
+<<<<<<< HEAD
 			let productId=this.$route.params[Object.keys(this.$route.params)[0]];
 			this.productId=productId;
+=======
+			let safetystockId=this.$route.params[Object.keys(this.$route.params)[0]];
+			this.safetystockId=safetystockId;
+>>>>>>> warehouse
 			
 			console.log(this.$route);
 			this.selectstockdetails_selectstock_dialog_visible = true;						
@@ -126,9 +199,15 @@
 				this.$router.go(-1)
 			},
 			getAllsafetyById(){
+<<<<<<< HEAD
 				let productId=this.productId;
 				this.$axios.get('api/safetystock/getAllsafetyById/'+this.productId).then(response=>{
 						this.safetystock=response.data;						
+=======
+				//let productId=this.productId;
+				this.$axios.get('api/safetystock/getAllsafetyById/'+this.safetystockId).then(response=>{
+						this.safetystock.push(response.data);						
+>>>>>>> warehouse
 					})
 			},
 				

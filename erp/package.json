@@ -22,7 +22,10 @@
     "qs": "^6.9.3",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
+<<<<<<< HEAD
     "v-charts": "^1.19.0",
+=======
+>>>>>>> warehouse
     "vue": "^2.6.11",
     "vue-loader": "^15.9.0",
     "vue-router": "^3.1.6",
@@ -33,8 +36,12 @@
     "webpack-dev-server": "^3.10.3"
   },
   "main": "webpack.config.js",
+<<<<<<< HEAD
   "description": "",
   "dependencies": {
     "echarts": "^4.7.0"
   }
+=======
+  "description": ""
+>>>>>>> warehouse
 }

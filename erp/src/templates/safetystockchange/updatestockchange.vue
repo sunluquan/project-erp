@@ -3,22 +3,37 @@
   
 	<div id="box">
 		<el-form :inline="true" :model="safetystock" class="demo-form-inline" :label-position="labelPosition" label-width="130px">
+<<<<<<< HEAD
 		  <el-form-item  label="产品编号:" style="padding-right: 90px;" prop="productid">
 		    <el-input class="input" v-model="safetystock.product_id"></el-input>
 		  </el-form-item>
 		  <el-form-item label="产品名称:" prop="productname">
+=======
+		  <el-form-item  label="产品编号:" style="padding-right: 160px;margin-top: 22px;" prop="productid">
+		    <el-input class="input" v-model="safetystock.productId"></el-input>
+		  </el-form-item>
+		  <el-form-item label="产品名称:" prop="productname" style="margin-top: 22px;">
+>>>>>>> warehouse
 		     <el-input  class="MyClass" v-model="safetystock.product_name"></el-input>
 		  </el-form-item>				  		 
 		</el-form>	
 		
 		<el-form :inline="true" :model="safetystock" class="demo-form-inline" :label-position="labelPosition" label-width="130px">
+<<<<<<< HEAD
 			<el-form-item label="库存报警下限数:" style="padding-right: 90px;" prop="minamount">
+=======
+			<el-form-item label="库存报警下限数:" style="padding-right: 160px;" prop="minamount">
+>>>>>>> warehouse
 			  <el-input class="MyClass" v-model="safetystock.minamount"></el-input>
 			</el-form-item>
 			<el-form-item label="库存报警上限数:" prop="maxamount">
 			   <el-input  class="MyClass" v-model="safetystock.maxamount"></el-input>
 			</el-form-item>
+<<<<<<< HEAD
 			<el-form-item label="设置B/N或S/N:" style="padding-right: 90px;">
+=======
+			<el-form-item label="设置B/N或S/N:" style="padding-right: 160px;">
+>>>>>>> warehouse
 			   <el-input  class="MyClass"></el-input>
 			</el-form-item>
 			<el-form-item label="设计人" prop="register"> 
@@ -51,7 +66,11 @@
 				</el-table-column>				
 			  </el-table>	
 			  
+<<<<<<< HEAD
 				<el-form-item label="审核人:" style="padding-right: 90px;" prop="register">
+=======
+				<el-form-item label="审核人:" style="padding-right: 160px;" prop="register">
+>>>>>>> warehouse
 				   <el-input  class="MyClass" v-model="safetystock.checker"></el-input>
 				</el-form-item>
 				
@@ -84,7 +103,11 @@
 		data() {			
 	     	return {
 				id:'',
+<<<<<<< HEAD
 				productId:'',
+=======
+				safetystockId:'',
+>>>>>>> warehouse
 				dataPicke: new Date,
 				custom: 'custom',
 				productid:'',
@@ -120,8 +143,13 @@
 		},
 		
 		created(){			
+<<<<<<< HEAD
 			let productId=this.$route.params[Object.keys(this.$route.params)[0]];
 			this.productId=productId;
+=======
+			let safetystockId=this.$route.params[Object.keys(this.$route.params)[0]];
+			this.safetystockId=safetystockId;
+>>>>>>> warehouse
 			
 			console.log(this.$route);
 			this.updatestockchange_selectstock_dialog_visible = true;						
@@ -134,8 +162,13 @@
 				this.$router.go(-1)
 			},
 			getAllsafetyById(){
+<<<<<<< HEAD
 				let productId=this.productId;
 				this.$axios.get('api/safetystock/getAllsafetyById/'+this.productId).then(response=>{
+=======
+				//let safetystockId=this.safetystockId;
+				this.$axios.get('api/safetystock/getAllsafetyById/'+this.safetystockId).then(response=>{
+>>>>>>> warehouse
 						this.safetystock=response.data;									
 					})
 			},
@@ -146,6 +179,10 @@
 					})
 			},
 			update(){
+<<<<<<< HEAD
+=======
+				this.safetystock.safetystockId=this.safetystockId;
+>>>>>>> warehouse
 				this.$axios.post('/api/safetystock/updateStockChange',this.safetystock).then(response=>{
 						if(response.statusCord==200){
 							this.$message({

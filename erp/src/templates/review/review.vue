@@ -56,7 +56,11 @@
 			  </el-table-column>
 			  <el-table-column prop="date" label="审核" width="100px">
 				  <template slot-scope="scope">
+<<<<<<< HEAD
 				  <el-button type="text" @click="reviewsheet(scope.row.productId)">复核</el-button>
+=======
+				  <el-button type="text" @click="reviewsheet(scope.row.safetystockId)">复核</el-button>
+>>>>>>> warehouse
 				  </template>
 			  </el-table-column>
 		    </el-table>
@@ -98,8 +102,13 @@
 			     			alert('请求失败')
 			          })
 					},
+<<<<<<< HEAD
 					reviewsheet(productId){
 				     	this.$router.push({path:'/index/review.html/reviewsheet/'+productId})
+=======
+					reviewsheet(safetystockId){
+				     	this.$router.push({path:'/index/review.html/reviewsheet/'+safetystockId})
+>>>>>>> warehouse
 					},
 				/*	  	 								
 	  	 		//cx(){

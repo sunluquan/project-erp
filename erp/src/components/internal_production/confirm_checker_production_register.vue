@@ -53,7 +53,11 @@
 					{{scope.row.amount|formNumerical()}}
 				</template>
 			</el-table-column>
+<<<<<<< HEAD
 			<el-table-column label="已领取数量" prop="renew_amount">
+=======
+			<el-table-column label="补充数量" prop="renew_amount">
+>>>>>>> warehouse
 				<template slot-scope="scope">
 					{{scope.row.renew_amount|formNumerical1()}}
 				</template>
@@ -65,10 +69,14 @@
 			</el-table-column>
 			<el-table-column label="当前使用数量">
 				<template slot-scope="scope">
+<<<<<<< HEAD
 					{{scope.row.use_amount}}
 					<!-- <number v-model="scope.row.productionProcessMaterialCourse.use_amount" :min=0 :max='((scope.row.amount+scope.row.renew_amount)-scope.row.real_amount)'></number> -->
 					<!-- <number @change="useAmountChange" :production_process_material="scope.row" v-model="scope.row.use_amount" :min=0 :max="(scope.row.renew_amount-scope.row.real_amount)"
 					 :step="scope.row.single_material_design_amount" :step_strictly="true"></number> -->
+=======
+					<number v-model="scope.row.productionProcessMaterialCourse.use_amount" :min=0 :max='((scope.row.amount+scope.row.renew_amount)-scope.row.real_amount)'></number>
+>>>>>>> warehouse
 				</template>
 			</el-table-column>
 		</el-table>
@@ -93,7 +101,11 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 	import number from '@/components/production_register_number.vue'
+=======
+	import number from '@/components/number.vue'
+>>>>>>> warehouse
 	export default{
 		name:'confirm_checker_production_register',
 		model:{
@@ -114,6 +126,7 @@
 				production_process_course:{}
 			}
 		},methods:{
+<<<<<<< HEAD
 			useAmountChange(data){
 				//当某一个物料的使用数量发生改变时  其他的物料也会跟着改变
 				//获取当前物料的使用数量倍数
@@ -134,6 +147,8 @@
 					}
 				})
 			},
+=======
+>>>>>>> warehouse
 			renewal(allUpdate){
 				//allUpdate:跟新所有吗  true更新所有 false更新上一个
 				this.$emit('renewal',allUpdate);

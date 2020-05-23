@@ -31,6 +31,10 @@
 		inner join product_use u
 		on p.use_type=u.id 
 		where check_tag=1 and inventory_allocation_tag=0
+<<<<<<< HEAD
+=======
+        and (select COUNT(1) from safetystock where productId=p.product_id )&lt;(select count(1) from storehouse where use_type=p.use_type)
+>>>>>>> warehouse
 	</select>
 	<!-- //获取符合制定派工单的产品 在制定派工单时用到 //按产品划分 -->
 	<!-- ,

@@ -9,7 +9,10 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.github.pagehelper.PageInfo;
 import com.slq.common.Params;
 import com.slq.pojo.production.ManufactureSum;
+<<<<<<< HEAD
 import com.slq.util.ManufactureChart;
+=======
+>>>>>>> warehouse
 import com.slq.util.TimeLine;
 
 @Mapper
@@ -30,7 +33,10 @@ public interface ManufactureMapper extends BaseMapper<ManufactureSum>{
 
 	List<TimeLine> getProductionProgressByManufactureId(Integer id);
 
+<<<<<<< HEAD
 	List<ManufactureChart> getProductProductionFinishChartResult();
 
+=======
+>>>>>>> warehouse
 	
 }

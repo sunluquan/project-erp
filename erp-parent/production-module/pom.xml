@@ -55,10 +55,18 @@
 			<artifactId>commons-pool2</artifactId>
 		</dependency>
 		<!-- ehcache -->
+<<<<<<< HEAD
+=======
+		<!--
+>>>>>>> warehouse
 		<dependency>
 			<groupId>net.sf.ehcache</groupId>
 			<artifactId>ehcache</artifactId>
 		</dependency>
+<<<<<<< HEAD
+=======
+		 -->
+>>>>>>> warehouse
 		<!-- ehcache启动器 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

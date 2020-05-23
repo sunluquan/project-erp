@@ -11,6 +11,10 @@ import feign.Param;
 @Mapper
 public interface GatherDetailMapper extends BaseMapper<GatherDetails>{
 
+<<<<<<< HEAD
 	int batchInsertFinishedGatherDetail(@Param("id")Integer id, @Param("list") List<GatherDetails> gatherDetailsList);
+=======
+	int batchInsertFinishedGatherDetail(@Param("id")String id, @Param("list") List<GatherDetails> gatherDetailsList);
+>>>>>>> warehouse
 
 }

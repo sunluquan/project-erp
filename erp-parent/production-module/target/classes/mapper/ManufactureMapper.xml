@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.slq.mapper.production.ManufactureMapper">
 
+<<<<<<< HEAD
 	<!-- 生产报表 -->
 	<select id="getProductProductionFinishChartResult"
 		resultType="com.slq.util.ManufactureChart">
@@ -40,10 +41,24 @@
 		resultMap="timeLineResult">
 		SELECT * FROM `production_process_course` where
 		parent_id=#{id}
+=======
+	<resultMap type="com.slq.util.TimeLine" id="timeLineResult">
+		<id column="id" property="id" />
+		<result  column="register_time" property="registerTime" />
+		<result  column="process_name" property="registerContent" />
+		<result  column="register" property="register" />
+		<result  column="checker" property="checker" />
+		<result  column="check_time" property="checkTime" />
+		<result  column="procedure_describe" property="describe" />
+	</resultMap>
+	<select id="getProductionProgressByManufactureId" resultMap="timeLineResult">
+		SELECT * FROM `production_process_course` where parent_id=#{id}
+>>>>>>> warehouse
 		order by register_time asc
 	</select>
 	<!-- //获取通过生产总表的id获取该总表下的 //工序集合的实际总物料 和 实际工时总价格 -->
 	<select id="getManufactureReal" resultType="ManufactureSum">
+<<<<<<< HEAD
 		SELECT m.*,
 		(SELECT
 		SUM(real_subtotal) FROM `production_process` WHERE parent_id=m.id) AS
@@ -52,6 +67,15 @@
 		`production_process` WHERE
 		parent_id=m.id) AS
 		`real_material_cost_price_sum`
+=======
+		SELECT m.id,m.manufacture_id,m.product_id,m.product_name,m.amount,m.tested_amount,m.production_id_group,
+		m.material_cost_price_sum,m.labour_cost_price_sum,m.designer,m.register,m.register_time,m.checker,
+		m.check_time,m.check_suggestion,m.remark,m.check_tag,m.manufacture_procedure_tag,m.real_labour_cost_price_sum1,m.real_material_cost_price_sum1
+		(SELECT SUM(real_subtotal) FROM `production_process` WHERE parent_id=m.id) AS
+		`real_labour_cost_price_sum`,
+		(SELECT SUM(real_module_subtotal) FROM `production_process` WHERE
+		parent_id=m.id) AS `real_material_cost_price_sum`
+>>>>>>> warehouse
 		FROM `manufacture_sum` m WHERE id=#{id}
 	</select>
 	<resultMap type="ManufactureSum" id="manufactureResult1"

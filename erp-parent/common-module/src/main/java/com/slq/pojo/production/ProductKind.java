@@ -1,6 +1,9 @@
 package com.slq.pojo.production;
 
+<<<<<<< HEAD
 import java.io.Serializable;
+=======
+>>>>>>> warehouse
 import java.util.List;
 
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -19,9 +22,14 @@ import lombok.Data;
  */
 @TableName("product_kind")
 @Data
+<<<<<<< HEAD
 public class ProductKind implements Serializable{
 
 	private static final long serialVersionUID=1L;
+=======
+public class ProductKind {
+
+>>>>>>> warehouse
 	@TableId(type = IdType.AUTO)
 	private Integer id;
 	//父级产品类别编号
@@ -29,12 +37,16 @@ public class ProductKind implements Serializable{
 	//产品种类名称
 	private String kindName;
 	//备注
+<<<<<<< HEAD
 	@TableField(value = "`describe`")
 	private String describe;
 	
 	private Integer state;
 	@TableField(exist = false)
 	private ProductKind parent;
+=======
+	private String describe;
+>>>>>>> warehouse
 	@TableField(exist = false)//不是数据库中的字段
 	private List<ProductKind> children;
 	public void setChildren(List<ProductKind> children) {

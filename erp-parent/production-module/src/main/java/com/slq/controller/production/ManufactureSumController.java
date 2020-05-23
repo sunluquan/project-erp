@@ -17,7 +17,10 @@ import com.slq.common.Params;
 import com.slq.pojo.production.ManufactureSum;
 import com.slq.service.production.IManufactureService;
 import com.slq.util.DefaultResponseData;
+<<<<<<< HEAD
 import com.slq.util.ManufactureChart;
+=======
+>>>>>>> warehouse
 import com.slq.util.ResponseData;
 import com.slq.util.TimeLine;
 
@@ -32,6 +35,7 @@ public class ManufactureSumController {
 
 	@Autowired
 	private IManufactureService manufactureService;
+<<<<<<< HEAD
 	//获取图表数据
 	@GetMapping("/getProductProductionFinishChartResult")
 	public ResponseData getProductProductionFinishChartResult() {
@@ -44,6 +48,9 @@ public class ManufactureSumController {
 			List<ManufactureSum> manufactures = manufactureService.getMeetProfitAndLossManufactures();
 			return DefaultResponseData.successResponseData(manufactures);
 		}
+=======
+	
+>>>>>>> warehouse
 	@GetMapping("/getProductionProgressByManufactureId/{id}")
 	public ResponseData getProductionProgressByManufactureId(@PathVariable("id")Integer id) {
 		List<TimeLine> timeLines=manufactureService.getProductionProgressByManufactureId(id);

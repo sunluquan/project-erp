@@ -12,7 +12,10 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.slq.mapper.production.ProductionProcessMaterialMapper;
+<<<<<<< HEAD
 import com.slq.pojo.production.ProductProfitLossDetail;
+=======
+>>>>>>> warehouse
 import com.slq.pojo.production.ProductionProcess;
 import com.slq.pojo.production.ProductionProcessMaterial;
 import com.slq.service.production.IProductionProcessMaterialService;
@@ -67,6 +70,7 @@ public class ProductionProcessMaterialServiceImpl extends ServiceImpl<Production
 		return this.baseMapper.batchUpdateRealAmount1(production_process_id, productionProcessMaterials);
 	}
 
+<<<<<<< HEAD
 	@Transactional
 	@CacheEvict(allEntries = true)
 	@Override
@@ -84,4 +88,6 @@ public class ProductionProcessMaterialServiceImpl extends ServiceImpl<Production
 		return this.baseMapper.getProductionProcessMaterialByManufactureId(id);
 	}
 
+=======
+>>>>>>> warehouse
 }

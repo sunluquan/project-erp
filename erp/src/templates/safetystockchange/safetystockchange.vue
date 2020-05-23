@@ -33,7 +33,7 @@
 		      <el-table-column prop="productname" label="产品名称" :sortable="custom" >
 				  <template slot-scope="scope">
 				  	<span>
-				  		{{ scope.row.productName }}</span>
+				  		{{ scope.row.product_name }}</span>
 				  </template>
 		      </el-table-column>
 		      <el-table-column prop="useName" label="用途类型" :sortable="custom">
@@ -57,7 +57,7 @@
 			  </el-table-column>
 			  <el-table-column prop="date" label="变更" width="100px">
 				  <template slot-scope="scope">
-				  <el-link type="primary" @click="change(scope.row.id)">变更</el-link>
+				  <el-link type="primary" @click="change(scope.row.safetystockId)">变更</el-link>
 				  </template>
 			  </el-table-column>
 		    </el-table>
@@ -99,8 +99,8 @@
 			     			alert('请求失败')
 			          })
 					},
-					change(id){
-				     	this.$router.push({path:'/index/safetystockchange.html/updatestockchange/'+id})
+					change(safetystockId){
+				     	this.$router.push({path:'/index/safetystockchange.html/updatestockchange/'+safetystockId})
 					},
 				/*	  	 								
 	  	 		//cx(){

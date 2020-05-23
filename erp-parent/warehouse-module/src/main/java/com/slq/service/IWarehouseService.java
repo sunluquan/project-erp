@@ -9,7 +9,7 @@ import com.slq.pojo.warehouse.Storehouse;
 public interface IWarehouseService {
 
 	List<Storehouse> selectAll();
-	List<Storehouse> selectByid(Integer useType);
+	List<Storehouse> selectByid(Integer id);
 
 	int updateWarehouseStatus(Integer sid,Integer oldstoreStatus);
 	List<Storehouse> selectByName(String storeName);

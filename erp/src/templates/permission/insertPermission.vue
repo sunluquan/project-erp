@@ -103,10 +103,11 @@
 							required: true,
 							message: '请输入权限名称',
 							trigger: 'blur',
-					},sort:[
-						{ required: true, message: '排序号不能为空',trigger:'blur'},
-						{ type: 'number', message: '排序号必须为数字值',trigger:'blur'}
-					]
+					}
+					// ,sort:[
+					// 	{ required: true, message: '排序号不能为空',trigger:'blur'},
+					// 	{ type: Number, message: '排序号必须为数字值',trigger:'blur'}
+					// ]
 				}
 			}
 		},

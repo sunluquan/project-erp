@@ -5,9 +5,13 @@
 	<select id="selectAll" resultType="Storehouse">
 		select*from storehouse		  		  		   
 	</select>
-	<select id="selectByid" resultType="Storehouse">
-	   select s.storeName,s.sid from storehouse s,product p
+	<!--  select s.storeName,s.sid from storehouse s,product p
 	   where s.use_type=p.use_type and p.use_type=#{useType} GROUP BY storeName
+	    -->
+	<select id="selectByid" resultType="Storehouse">
+	   select  s.storeName,s.sid from storehouse s
+	   where s.use_type =(select use_type from product where id=#{id})
+	   GROUP BY storeName
 	</select>
 	<update id="updateWarehouseStatus">
 		update storehouse

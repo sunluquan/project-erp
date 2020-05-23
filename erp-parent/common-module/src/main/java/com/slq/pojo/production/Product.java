@@ -84,4 +84,9 @@ public class Product implements Serializable{
 	private String message;//信息
 	
 	private String factory_name;
+	@TableField(exist = false)
+	private List<ProductionPlanDetail> productionPlanDetails;
+	@TableField(exist = false)
+	private Integer mobile;
+	
 }

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.slq.mapper.common.StockMapper1">
+	<!-- 
+	<result property="product_id" column="product_id"/>
+        <result property="product_name" column="product_name"/>
+        <result property="product_rank" column="product_rank"/>
+        <result property="product_unit" column="product_unit"/>
+        <result property="list_price" column="list_price"/>
+        <result property="cost_price" column="cost_price"/>
+        <result property="real_cost_price" column="real_cost_price"/>
+	 -->
+	<resultMap type="Product" id="myMap" autoMapping="true" >
+        <!-- 主键使用id标签映射， 其它列使用result标签映射-->
+        <id property="id" column="id"/>
+        <!-- 关联单个对象，装配一个对象 -->
+        <association property="product_kind" javaType="productKind">
+            <id property="parentId" column="parentId"></id>
+            <result property="kindName" column="kindName"/> 
+        </association>
+        <!-- 关联单个对象，装配一个对象 -->
+        <association property="product_use" javaType="productUse">
+            <id property="id" column="id"></id>
+            <result property="useName" column="useName"/> 
+        </association>
+        
+   </resultMap>
+   
+   <select id="product_add" resultMap="myMap">
+        select a.id as id,a.product_id,a.product_name,b.kindName,c.useName,a.product_rank,a.product_unit,a.list_price,
+a.cost_price,a.real_cost_price
+        from product a,product_kind b,product_use c 
+        where a.product_kind_id=b.parentId and a.use_type=c.id and c.useName=#{name}
+   </select>
+   <select id="select_provideInfo" resultType="provideInfo">
+   select * from provideInfo
+   </select>
+   <select id="use" resultType="productUse">
+        select * from product_use
+   </select>
+   <select id="pkind" resultType="productKind">
+        select * from product_kind
+   </select>
+   
+   <insert id="select_stockstoragetable" useGeneratedKeys="true">
+        insert into stockstoragetable(cid,stockstorageno,storagedate,purveyname,je,depotname,stodept) values(#{cid},#{stockstorageno},NOW(),#{purveyname},#{je},#{depotname},#{stodept})
+   </insert>
+   <insert id="insert_stockapplydetails" useGeneratedKeys="true">
+	    insert into stockapplydetails(apdrows,apdmateridlid,apdmateridlname,apdunit,listprice,costprice,realcos,apdintomoney,appdate) values(#{apdrows},#{apdmateridlid},#{apdmateridlname},#{apdunit},#{list_price},#{cost_price},#{REAL_COST_PRICE},#{apdintomoney},NOW())
+	</insert>
+   <insert id="insert_stocka" useGeneratedKeys="true">
+		INSERT INTO stockapply(appid,appdate,apptype,appcirce,appperson,appauditing,enables,je) values (#{appid},NOW(),#{apptype},default,default,default,default,#{je})
+   </insert>
+   <insert id="select_stockorder" useGeneratedKeys="true">
+   insert into stockorder(stoid,stodate,stopeoname,je,stodept) values(#{stoid},NOW(),#{stopeoname},#{je},#{stodept})
+   </insert>
+   <insert id="insert_stockorderdetails" useGeneratedKeys="true">
+   insert into stockorderdetails(sodlineid,sodmaterielid,sodmaterielname,sodamoun,sodsum,sodsdate) values(#{stoid},#{sodmaterielid},#{sodmaterielname},#{sodamoun},#{sodsum},NOW())
+   </insert>
+   <insert id="insert_stockstoragedetails" useGeneratedKeys="true">
+   insert into stockstoragedetails(storagedetailno,materielid,materielname,amount,moneys) values(#{storagedetailno},#{materielid},#{materielname},#{amount},#{moneys})
+   </insert>
+   
+   <select id="s_stockstoragetable" resultType="stockstoragetable">
+   select * from stockstoragetable
+   </select>
+   <select id="select_stockstoragedetails" resultType="stockstoragedetails">
+   select * from stockstoragedetails where storagedetailno=#{id}
+   </select>
+   <!-- 
+   	   		<result column="stodate" property="stodate"/>
+   		<result property="stopeoname" column="stopeoname"/> 
+   		<result property="stopeoid" column="stopeoid"/> 
+   		<result property="stopeoadress" column="stopeoadress"/> 
+   		<result property="stostate" column="stostate"/> 
+   		<result property="stoadress" column="stoadress"/> 
+   		<result property="stoempstock" column="stoempstock"/> 
+   		<result property="stopersonid" column="stopersonid"/> 
+   		<result property="stodept" column="stodept"/> 
+   		<result property="stodeptid" column="stodeptid"/> 
+   		<result property="stoempcheck" column="stoempcheck"/> 
+   		<result property="checkstate" column="checkstate"/> 
+   		<result property="stomark" column="stomark"/>
+   	
+   	
+    -->
+   
+   <select id="sod" resultType="stockOrderDetails">
+   		select * from stockOrderDetails where sodlineid=${stoid} and sodrecede=1
+   </select>
+   <update id="updateOrderDetails">
+   		update stockOrderDetails set sodrecede=0 where sodid=${stoid}
+   </update>
+   <select id="select_stock" resultType="stockapply">
+        select * from stockapply
+   </select>
+   
+   <select id="select_stock_id" resultType="stockapply">
+        select * from stockapply where appauditing=1
+   </select>
+   
+   <resultMap  type="stockorder" id="stockOrderdetailResult" autoMapping="true">
+   		<id column="stoid" property="stoid"/>
+   		<association  property="stockorderDetails" select="sod" column="stoid"></association>
+   </resultMap>
+   <select id="s_stockorder" resultMap="stockOrderdetailResult">
+   		select * from stockorder
+   </select>
+   <select id="select_stockapplydetails" resultType="stockapplydetails">
+      select * from stockapplydetails where apdrows=#{id}
+   </select>
+   <select id="select_storehouse" resultType="Storehouse">
+   select * from storehouse
+   </select>
+   <select id="qwe_stockorder" resultType="stockorder">
+     select * from stockorder where checkstate=1 
+   </select>
+   <select id="select_stockorderdetails" resultType="stockorderdetails">
+      select * from stockorderdetails where sodlineid=#{id} 
+   </select>
+   
+   <update id="update_stock">
+		UPDATE stockapply
+		<set>
+			appauditing=1
+		</set>
+		where appid=#{id}
+	</update>
+	<update id="update_s">
+		UPDATE stockapply
+		<set>
+			appauditing=3
+		</set>
+		where appid=#{id}
+	</update>
+	
+	<update id="update_stockorder">
+		UPDATE stockorder
+		<set>
+			checkstate=1
+		</set>
+		where stoid=#{id}
+	</update>
+	<update id="update_order">
+	UPDATE stockorder
+		<set>
+			checkstate=3
+		</set>
+		where stoid=#{id}
+	</update>
+	<update id="update_stockstoragetable">
+	UPDATE stockstoragetable
+		<set>
+			estate=1
+		</set>
+		where cid=#{cid}
+	</update>
+	<update id="update_qwe">
+	UPDATE stockorder
+		<set>
+			checkstate=4
+		</set>
+		where stoid=#{cid}
+	</update>
+	<update id="update_q">
+	UPDATE stockorder
+		<set>
+			checkstate=5
+		</set>
+		where stoid=#{cid}
+	</update>
+	<insert id="insertStockOrder" parameterType="stockorder">
+		insert into stockrecede  values 
+  			(#{stoid},#{stodate},#{stopeoid},#{stopeoname},#{stopeoadress},
+			null,null,${0},#{stoempstock},${stopersonid},#{stodept},${stodeptid},#{stoempcheck},#{stomark},0)
+	</insert>
+	<insert id="insertStockOrderDetails">
+		insert into recededetails values 
+		<foreach collection='list' item='item' index='index' separator=','>
+		(#{item.sodlineid},default,#{item.sodmaterielid},#{item.sodmaterielname},#{item.sodamoun},#{item.sodpreprice},#{item.sodagio},#{item.sodprice},#{item.sodsum},#{item.sodsdate},#{item.sodsmark} )
+		</foreach>
+	</insert>
+</mapper>

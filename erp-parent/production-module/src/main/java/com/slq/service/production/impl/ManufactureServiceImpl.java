@@ -41,6 +41,7 @@ import com.slq.service.production.IProductionProcessMaterialService;
 import com.slq.service.production.IProductionProcessService;
 import com.slq.util.ActiveUser;
 import com.slq.util.IDGenerateUtil;
+import com.slq.util.TimeLine;
 
 @Service
 @Transactional
@@ -317,6 +318,12 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		updateWrapper.set(ManufactureSum::getManufacture_procedure_tag, manufacture_procedure_tag);
 		updateWrapper.eq(ManufactureSum::getId, manufacture.getId());
 		return this.baseMapper.update(null, updateWrapper);
+	}
+	@Cacheable(keyGenerator = "keyGenerator")
+	@Override
+	public List<TimeLine> getProductionProgressByManufactureId(Integer id) {
+		
+		return this.baseMapper.getProductionProgressByManufactureId(id);
 	}
 
 	

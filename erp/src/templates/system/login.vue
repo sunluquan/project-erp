@@ -71,13 +71,14 @@
 				this.$socket.createSocket()
 				this.$store.dispatch("init_user_resource")
 					.then(response=>{
+						console.log(response)
 						//非测试环境使用
-						// this.$router.addRoutes([{
-						// 	path: '/index',
-						// 	component: () => import('@/templates/system/index.vue'),
-						// 	children: response
-						// }])
-						// this.$router.addRoutes(this.$error_router);
+						this.$router.addRoutes([{
+							path: '/index',
+							component: () => import('@/templates/system/index.vue'),
+							children: response
+						}])
+						//this.$router.addRoutes(this.$error_router);
 						let hostname=this.$route.query.redirect;
 						if(hostname!=undefined){
 							this.$router.go(-1)

@@ -32,7 +32,7 @@
 		where pp.check_tag=1 and ppd.manufacture_tag=0 and ppd.product_id = #{product_id}
 	</select>
 	<insert id="batchInsert">
-		INSERT INTO `project`.`production_plan_detail` (
+		INSERT INTO `production_plan_detail` (
 		`id`,`parent_id`,`product_id`,`amount`,
 		`manufacture_tag`,`manufacture_id`)
 		VALUES

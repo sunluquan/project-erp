@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.github.pagehelper.PageInfo;
-import com.slq.common.Params;
 import com.slq.pojo.warehouse.Dept;
 
 @Mapper

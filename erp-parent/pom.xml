@@ -102,5 +102,6 @@
 		<module>cluster-eureka-server-7001</module>
 		<module>spring-cloud-config-server</module>
 		<module>main-project</module>
+		<module>stock-module</module>
 	</modules>
 </project>

@@ -27,13 +27,13 @@
 		      <el-table-column prop="productid" label="产品编号" :sortable="custom">
 				  <template slot-scope="scope">
 				  	<span>
-				  		{{ scope.row.productId }}</span>
+				  		{{ scope.row.product_id }}</span>
 				  </template>
 		      </el-table-column>
 		      <el-table-column prop="productname" label="产品名称" :sortable="custom" >
 				  <template slot-scope="scope">
 				  	<span>
-				  		{{ scope.row.productName }}</span>
+				  		{{ scope.row.product_name }}</span>
 				  </template>
 		      </el-table-column>
 		      <el-table-column prop="useName" label="用途类型" width="130px" :sortable="custom">
@@ -56,7 +56,7 @@
 			  </el-table-column>
 			  <el-table-column prop="date" label="审核" width="100px">
 				  <template slot-scope="scope">
-				  <el-button type="text" @click="reviewsheet(scope.row.id)">复核</el-button>
+				  <el-button type="text" @click="reviewsheet(scope.row.safetystockId)">复核</el-button>
 				  </template>
 			  </el-table-column>
 		    </el-table>
@@ -92,14 +92,14 @@
 	  	 			
 	  	 		},
 				  searchreview(){
-						this.$axios.post('api/safetystock/search').then(response => {
+						this.$axios.get('api/safetystock/search').then(response => {
 								this.reviewPage = response.data;
 					    }).catch(err=>{
 			     			alert('请求失败')
 			          })
 					},
-					reviewsheet(id){
-				     	this.$router.push({path:'/index/review.html/reviewsheet/'+id})
+					reviewsheet(safetystockId){
+				     	this.$router.push({path:'/index/review.html/reviewsheet/'+safetystockId})
 					},
 				/*	  	 								
 	  	 		//cx(){

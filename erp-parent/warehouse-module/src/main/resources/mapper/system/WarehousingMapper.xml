@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.warehouse.WarehousingMapper">
+ <insert id="addgather">
+  insert into s_gather values(null,#{gatherId},#{storer},#{reasonexact},
+  #{amountSum},#{costPriceSum},#{amountSum},#{remark},
+  #{register},registerTime=now(),null,null,DEFAULT,null,null,DEFAULT)
+ </insert>
+ 
+ <insert id="addgatherdetails">
+ insert into s_gather_details(id,parentId,productId,productName,amount,productUnit,REAL_COST_PRICE,subtotal,sid,payTag) values
+ <foreach collection="gatherDetails" item="gatherDetail" separator=",">
+  (null,#{id},#{gatherDetail.productId},#{gatherDetail.productName},#{amount},
+  #{productUnit},#{realCostPrice},#{subtotal},#{sid},DEFAULT)
+ </foreach>
+ </insert>
+ 
+ <update id="updatestocknum">
+  update stock set amount=(amount+#{amount}) where id=#{id}
+ </update>
+ 
+ <select id="gatherReview" resultType="Gather">
+ select g.gatherId,p.product_id,p.product_name,u.useName,g.registerTime
+ from s_gather g,product p,product_use u,safetystock s 
+ where g.id=s.id and s.id=p.id and p.use_type=u.id and s.checktag='审核通过' and g.checkTag='等待审核'
+ </select>
+ 
+ 
+ <!-- 入库调度 -->
+ <select id="gatherScheduling" resultType="Gather">
+ select g.gatherId,g.stockid,g.reasonexact,g.registerTime,SUM(d.mustAmount) as sumnum,sum(d.subtotal) as summoneys
+ from s_gather g,s_gather_details d
+ where g.gatherId=d.parentId GROUP BY g.gatherId
+ </select>
+ 
+ <select id="getSchedulingid" resultType="Gather">
+ <!--select g.gatherId,g.reasonexact,g.amountSum,g.costPriceSum,d.id,d.productId,
+ d.productName,d.amount,d.paidAmount,d.subtotal,s.amount as stockamount,s.moneys
+ from s_gather g,stockstoragetable r,s_gather_details d,stockstoragedetails s
+ where g.gatherId=d.parentId and d.productId=s.materielid and g.stockid=r.stockstorageno
+  and r.stockstorageno=s.storagedetailno and g.gatherId=#{gatherId}  -->
+  select g.gatherId,g.reasonexact,g.amountSum,g.costPriceSum,d.id,d.productId,
+ d.productName,d.mustAmount,d.paidAmount,d.subtotal,d.realCostPrice,d.payTag
+ from s_gather g,s_gather_details d
+ where g.gatherId=d.parentId and g.gatherId=#{gatherId}
+ </select>
+ 
+ <update id="updGatherDetailsSid">
+ update s_gather_details set sid=#{sid} where productId=#{productId}
+ </update>
+ 
+ <resultMap type="Gather" id="gatherSafetystockResult" autoMapping="true">
+ 	 <id property="id" column="id"/>
+ 	 <result property="productId" column="productId"/>	 
+ 	 <collection property="gatherDetails" column="productId" select="getListGatherDetailsSafetystocks" ofType="Safetystock"></collection>
+ </resultMap>
+ <select id="getGatherDetailsByid" resultMap="gatherSafetystockResult">
+ <!-- select g.gatherId,g.amountSum,g.costPriceSum,d.productId,d.productName,d.id,d.realCostPrice,
+ d.mustAmount,d.amount,d.mustAmount,d.subtotal 
+ from s_gather g,s_gather_details d
+ where g.gatherId=d.parentId and d.productId=#{productId} -->
+ select*from s_gather g,s_gather_details d 
+ where g.gatherId=d.parentId and d.productId=#{productId}
+ </select>
+ <select id="getListGatherDetailsSafetystocks" resultType="GatherDetails">
+ select productId,productName,id,realCostPrice,
+ amount,mustAmount,subtotal
+ from s_gather_details
+ where productId=#{productId}
+ </select>
+<select id="selectStorehousesGather" resultType="Storehouse">
+select  s.storeName,s.sid,s.storeAddress,s.maxamount from storehouse s
+where s.use_type =(select use_type from product p,s_gather_details d where d.productId=p.product_id and d.productId=#{productId})
+GROUP BY storeName
+</select>
+ 
+ 
+ <!-- 修改库存调度的数量 -->
+ <update id="updgahternum">
+   update s_gather set amountSum=amountSum+#{amountSum},costPriceSum=costPriceSum+#{costPriceSum},attemper=#{attemper},attemmperTime=now(),storeTag=2
+   where gatherId=#{gatherId}
+ </update>
+ <update id="updgatherDetailsNum">
+ <foreach collection="list" item="gatherDetail" separator=";">
+ update s_gather_details set amount=#{gatherDetail.amount},subtotal=#{gatherDetail.amount}*realCostPrice,
+ sid=#{gatherDetail.sid},payTag=2 where id=#{gatherDetail.id}
+ 	</foreach>
+ </update>
+ 
+ <!-- 入库登记 -->
+ <select id="gatherRegistrationList" resultType="Gather">
+ select*from s_gather where storeTag=2 and checkTag=0
+ </select>
+ 
+ <resultMap type="Gather" id="gatherResult" autoMapping="true">
+ 	 <id property="id" column="id"/>
+ 	 <result property="gatherId" column="gatherId"/>
+ 	 <collection property="gatherDetails" column="gatherId" select="getGatherDetailsByParentId" ofType="GatherDetails"></collection>
+ </resultMap>
+ <select id="getGatherByIdAll" resultMap="gatherResult">
+ 	select * from s_gather where gatherId=#{gatherId}
+ </select>
+ <select id="getGatherDetailsByParentId" resultType="GatherDetails">
+ select d.id,d.productId,d.productName,d.paidAmount,d.amount,d.realCostPrice,s.sid,s.storeName,s.storeAddress from s_gather_details d,storehouse s
+ where d.sid=s.sid and parentId=#{gatherId}
+ </select>
+ 
+ <!-- <select id="gatherRegistrationByid" resultType="Gather">
+   select g.gatherId,g.reasonexact,g.amountSum,g.costPriceSum,g.register,g.gatheredAmountSum,g.registerTime,
+   d.productId,d.productName,s.storeName,s.storeAddress,d.amount,d.paidAmount,d.id
+   from s_gather g,s_gather_details d,storehouse s
+   where g.gatherId=d.parentId and d.sid=s.sid and gatherId=#{gatherId}
+ </select> -->
+ 
+ 
+ <update id="batchUpdate" >
+ 	<foreach collection="list" item="gatherDetail" separator=";">
+ 		update s_gather_details set paidAmount=#{gatherDetail.paidAmount},subtotal=#{gatherDetail.paidAmount}*realCostPrice,
+        payTag=2 where id=#{gatherDetail.id}
+ 	</foreach>
+ </update>
+
+<update id="updcheck">
+update s_gather set checker=#{checker},checkTime=#{checkTime},
+<if test="checkTag==1">
+ checkTag=#{checkTag},storeTag=1
+</if>
+ <if test="checkTag==2">
+ checkTag=#{checkTag},storeTag=2 
+ </if>
+ where gatherId=#{gatherId}
+</update>
+<update id="updpayTag">
+  update s_gather_details set payTag=1 where productId=#{productId}
+</update>
+
+<select id="selectRegistration" resultType="Gather">
+select gatherId,reasonexact,gatheredAmountSum,costPriceSum,registerTime,checkTag,storeTag
+from s_gather where storeTag=1 or storeTag=2
+</select>
+</mapper>

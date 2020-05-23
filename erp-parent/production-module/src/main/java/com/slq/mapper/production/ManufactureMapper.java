@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.github.pagehelper.PageInfo;
 import com.slq.common.Params;
 import com.slq.pojo.production.ManufactureSum;
+import com.slq.util.TimeLine;
 
 @Mapper
 public interface ManufactureMapper extends BaseMapper<ManufactureSum>{
@@ -25,6 +26,8 @@ public interface ManufactureMapper extends BaseMapper<ManufactureSum>{
 	//获取通过生产总表的id获取该总表下的
 	//工序集合的实际总物料 和 实际工时总价格
 	ManufactureSum getManufactureReal(Integer id);
+
+	List<TimeLine> getProductionProgressByManufactureId(Integer id);
 
 	
 }

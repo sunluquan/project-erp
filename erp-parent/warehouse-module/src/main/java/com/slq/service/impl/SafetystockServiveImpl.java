@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.github.pagehelper.PageInfo;
 import com.slq.common.Params;
+import com.slq.mapper.GatherMapper;
 import com.slq.mapper.SafetystockMapper;
 import com.slq.pojo.production.Product;
+import com.slq.pojo.warehouse.GatherDetails;
 import com.slq.pojo.warehouse.Safetystock;
 import com.slq.pojo.User;
 import com.slq.service.ISafetystockServive;
@@ -25,7 +27,7 @@ public class SafetystockServiveImpl implements ISafetystockServive {
 
 	@Autowired
 	SafetystockMapper safetystockMapper;
-	
+	@Autowired GatherMapper mapper;
 	
 	
 	@Override
@@ -39,15 +41,19 @@ public class SafetystockServiveImpl implements ISafetystockServive {
 	}
 
 	@Override
-	public Safetystock getAllsafetyById(Integer id) {
+	public Safetystock getAllsafetyById(String safetystockId) {
 		
-		return safetystockMapper.getAllsafetyById(id);
+		return safetystockMapper.getAllsafetyById(safetystockId);
 	}
 
 	@Override
-	public int updateSefeStatus(Safetystock safetystock) {
+	public int updateSefeStatus(Safetystock safetystock) {		
 		User user=((ActiveUser)SecurityUtils.getSubject().getPrincipal()).getUser();
-		safetystock.setChecker(user.getUid());
+		safetystock.setChecker(user.getUname());	
+		//GatherDetails gatherDetails=new GatherDetails();
+		//gatherDetails.setSid(safetystock.getSid());
+		//gatherDetails.setProductId(safetystock.getProductId());
+		//mapper.updGatherDetailsSid(gatherDetails);
 		return safetystockMapper.updateSefeStatus(safetystock);
 	}
 
@@ -60,6 +66,7 @@ public class SafetystockServiveImpl implements ISafetystockServive {
 	@Override
 	public List<Safetystock> selectByReviewList() {
 		// TODO Auto-generated method stub
+		System.out.println(safetystockMapper.selectByReviewList()+"qwwee");
 		return safetystockMapper.selectByReviewList();
 	}
 

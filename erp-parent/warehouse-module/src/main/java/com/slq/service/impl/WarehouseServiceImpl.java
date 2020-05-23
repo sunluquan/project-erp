@@ -64,10 +64,10 @@ public class WarehouseServiceImpl implements IWarehouseService{
 	}
 
 	@Override
-	public List<Storehouse> selectByid(Integer useType) {
+	public List<Storehouse> selectByid(Integer id) {
 		// TODO Auto-generated method stub
 		
-		return  wareHouseMapper.selectByid(useType);
+		return  wareHouseMapper.selectByid(id);
 	}
 	
 }

@@ -3,6 +3,7 @@ package com.slq.controller.api;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 /***
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 import com.slq.common.CascadeChoice;
+import com.slq.common.Template;
 import com.slq.service.ICascadeChoiceService;
 import com.slq.util.DefaultResponseData;
 import com.slq.util.ResponseData;
@@ -30,5 +32,14 @@ public class CascadeChoiceController {
 	public ResponseData getCascadePermission() {
 		List<CascadeChoice> cascadechoices = cascadeChoiceService.getCascadePermission();
 		return DefaultResponseData.successResponseData(cascadechoices);
+	}
+	/***
+	 * 获取所有的在templates下的文件名
+	 * @return
+	 */
+	@GetMapping("/templates")
+	public ResponseData getCascadeTemplates() {
+		List<Template> templates = cascadeChoiceService.getCascadeTemplates();
+		return DefaultResponseData.successResponseData(templates);
 	}
 }

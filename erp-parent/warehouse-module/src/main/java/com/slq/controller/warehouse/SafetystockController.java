@@ -16,8 +16,9 @@ import com.slq.common.Params;
 import com.slq.pojo.production.Product;
 import com.slq.pojo.warehouse.Safetystock;
 import com.slq.pojo.User;
-import com.slq.service.IProductService;
-import com.slq.service.ISafetystockServive;
+import com.slq.service.production.IProductService;
+import com.slq.service.warehouse.ISafetystockServive;
+import com.slq.service.IGatherService;
 import com.slq.util.DefaultResponseData;
 import com.slq.util.ResponseData;
 
@@ -30,6 +31,8 @@ public class SafetystockController {
 	
 	@Autowired
 	IProductService service;
+	
+	@Autowired IGatherService gatherservice;
 	
 	@RequestMapping("/getAllsafety")
 	public ResponseData getAllsafety() {
@@ -45,10 +48,10 @@ public class SafetystockController {
 		return DefaultResponseData.successResponseData(saPageInfo);
 	}
 	
-	@RequestMapping("/getAllsafetyById/{id}")
-	public ResponseData getAllsafetyById(@PathVariable("id")Integer id) {
-		System.out.println("配置单编号"+id);
-		Safetystock safetystock=safetystockService.getAllsafetyById(id);
+	@RequestMapping("/getAllsafetyById/{productId}")
+	public ResponseData getAllsafetyById(@PathVariable("productId")String productId) {
+		System.out.println("配置单编号"+productId);
+		Safetystock safetystock=safetystockService.getAllsafetyById(productId);
 		return DefaultResponseData.successResponseData(safetystock);
 	}
 	
@@ -90,8 +93,7 @@ public class SafetystockController {
 	 * 修改传3个值:是否通过值、当前配置单的单号、审核人的名字
 	 */
 	@RequestMapping("/updateSefeStatus")
-	public ResponseData updateSefeStatus(@RequestBody Safetystock safetystock) {
-		
+	public ResponseData updateSefeStatus(@RequestBody Safetystock safetystock) {			
 		int i = safetystockService.updateSefeStatus(safetystock);
 		System.out.println(safetystock.getId());
 		if(i>0) {

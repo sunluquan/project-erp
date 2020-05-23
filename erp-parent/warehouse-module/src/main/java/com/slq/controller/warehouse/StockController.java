@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.slq.pojo.warehouse.Stock;
-import com.slq.service.IStockService;
+import com.slq.service.warehouse.IStockService;
 import com.slq.util.DefaultResponseData;
 import com.slq.util.ResponseData;
 
@@ -30,15 +30,5 @@ public class StockController {
 		System.out.println("库存编号"+stockId);
 		Stock stock=stockService.getStockById(stockId);
 		return DefaultResponseData.successResponseData(stock);
-	}
-	
-	@RequestMapping("/addStock")
-	public ResponseData addStock(Stock stock) {
-		int i = stockService.addStock(stock);
-		if(i>0) {
-			return DefaultResponseData.successResponseData(i);
-		}else {
-			return DefaultResponseData.ADD_ERROR;
-		}
 	}
 }

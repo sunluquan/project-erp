@@ -3,22 +3,22 @@
   
 	<div id="box">
 		<el-form :inline="true" :model="safetystock" class="demo-form-inline" :label-position="labelPosition" label-width="130px">
-		  <el-form-item  label="产品编号:" style="padding-right: 90px;" prop="productid">
+		  <el-form-item  label="产品编号:" style="padding-right: 160px;margin-top: 22px;" prop="productid">
 		    <el-input class="input" v-model="safetystock.productId"></el-input>
 		  </el-form-item>
-		  <el-form-item label="产品名称:" prop="productname">
-		     <el-input  class="MyClass" v-model="safetystock.productName"></el-input>
+		  <el-form-item label="产品名称:" prop="productname" style="margin-top: 22px;">
+		     <el-input  class="MyClass" v-model="safetystock.product_name"></el-input>
 		  </el-form-item>				  		 
 		</el-form>	
 		
 		<el-form :inline="true" :model="safetystock" class="demo-form-inline" :label-position="labelPosition" label-width="130px">
-			<el-form-item label="库存报警下限数:" style="padding-right: 90px;" prop="minamount">
+			<el-form-item label="库存报警下限数:" style="padding-right: 160px;" prop="minamount">
 			  <el-input class="MyClass" v-model="safetystock.minamount"></el-input>
 			</el-form-item>
 			<el-form-item label="库存报警上限数:" prop="maxamount">
 			   <el-input  class="MyClass" v-model="safetystock.maxamount"></el-input>
 			</el-form-item>
-			<el-form-item label="设置B/N或S/N:" style="padding-right: 90px;">
+			<el-form-item label="设置B/N或S/N:" style="padding-right: 160px;">
 			   <el-input  class="MyClass"></el-input>
 			</el-form-item>
 			<el-form-item label="设计人" prop="register"> 
@@ -30,7 +30,7 @@
 			    </el-table-column>	
 			    <el-table-column prop="sid" label="仓库"  >
 					<template slot-scope="scope">
-						    <el-select v-model="safetystock.sid" size="small">
+						    <el-select v-model="safetystock.storeName" size="small">
 								<el-option v-for="(storehouse,index) in warehousePage" v-bind:key="index"
 								 :label="storehouse.storeName" :value="storehouse.sid">
 								</el-option>								
@@ -51,7 +51,7 @@
 				</el-table-column>				
 			  </el-table>	
 			  
-				<el-form-item label="审核人:" style="padding-right: 90px;" prop="register">
+				<el-form-item label="审核人:" style="padding-right: 160px;" prop="register">
 				   <el-input  class="MyClass" v-model="safetystock.checker"></el-input>
 				</el-form-item>
 				
@@ -82,8 +82,9 @@
 	export default {
 		name:'selectstockdetails',
 		data() {			
-	     	return {	
+	     	return {
 				id:'',
+				safetystockId:'',
 				dataPicke: new Date,
 				custom: 'custom',
 				productid:'',
@@ -108,10 +109,7 @@
 				},
 				isadmin: 3,	
 				warehousePage:'',
-				safetystock: {
-					productid:'',
-					productName:''					
-			},	
+				safetystock: {},	
 					res:{
 						id:'',
 					},
@@ -122,8 +120,8 @@
 		},
 		
 		created(){			
-			let id=this.$route.params[Object.keys(this.$route.params)[0]];
-			this.id=id;
+			let safetystockId=this.$route.params[Object.keys(this.$route.params)[0]];
+			this.safetystockId=safetystockId;
 			
 			console.log(this.$route);
 			this.updatestockchange_selectstock_dialog_visible = true;						
@@ -136,12 +134,19 @@
 				this.$router.go(-1)
 			},
 			getAllsafetyById(){
-				let id=this.id;
-				this.$axios.get('api/safetystock/getAllsafetyById/'+this.id).then(response=>{
-						this.safetystock=response.data;						
+				//let safetystockId=this.safetystockId;
+				this.$axios.get('api/safetystock/getAllsafetyById/'+this.safetystockId).then(response=>{
+						this.safetystock=response.data;									
+					})
+			},
+			searchWarehouse(){
+				let id=this.safetystock.id;
+				this.$axios.post('/api/warehouse/getByid/'+this.id).then(response=>{
+						this.warehousePage=response.data;
 					})
 			},
 			update(){
+				this.safetystock.safetystockId=this.safetystockId;
 				this.$axios.post('/api/safetystock/updateStockChange',this.safetystock).then(response=>{
 						if(response.statusCord==200){
 							this.$message({
@@ -162,11 +167,7 @@
 						}
 					})
 			},
-			searchWarehouse(){
-				this.$axios.post('/api/warehouse/getAllHouse').then(response=>{
-						this.warehousePage=response.data;
-					})
-			},
+			
 			
 				
 		},

@@ -5,7 +5,7 @@
 			<el-form :inline="true" class="demo-form-inline">
 				
 				<el-form-item label="产品名称:">					
-					<el-input v-model="productName" placeholder="产品名称"></el-input>					
+					<el-input v-model="product_name" placeholder="产品名称"></el-input>					
 				</el-form-item>
 				<el-form-item label="登记日期:">					
 					<el-date-picker v-model="registertime"  type="date"  placeholder="产品配置登记日期">
@@ -19,31 +19,35 @@
 		
 		   <el-table :data="selectPage" border style="width: 100%" :border="true" :highlight-current-row="true">
 			   
-			  <el-table-column prop="safetystockId" width="350px" label="配置单编号" :sortable="custom">
+			  <el-table-column prop="safetystockId" width="270px" label="配置单编号" :sortable="custom">
 				  <template slot-scope="scope">
-					  <el-link @click="selectdetails(scope.row.id)"><span>{{ scope.row.safetystockId }}</span></el-link> 	
+					  <el-link @click="selectdetails(scope.row.safetystockId)"><span>{{ scope.row.safetystockId }}</span></el-link> 	
 				  </template>
 			  </el-table-column>
-		      <el-table-column prop="productid" width="270px" label="产品编号" :sortable="custom">
+		      <el-table-column prop="productid" width="210px" label="产品编号" :sortable="custom">
 				  <template slot-scope="scope">
-				  	<span>{{ scope.row.productId }}</span>
+				  	<span>{{ scope.row.product_id }}</span>
 					
 				  </template>
 		      </el-table-column>
 		      <el-table-column prop="productname" label="产品名称" :sortable="custom" >
 				  <template slot-scope="scope">
 				  	<span>
-				  		{{ scope.row.productName }}</span>
+				  		{{ scope.row.product_name }}</span>
 				  </template>
 		      </el-table-column>
-		     
-			  <el-table-column prop="configStatus"   label="配置单状态">
+		     <el-table-column prop="registertime" label="登记时间" :sortable="custom" width="220px">
+		     		<template slot-scope="scope">
+		     		     <span>{{ scope.row.registertime }}</span>
+		     		</template>
+		     </el-table-column>
+			  <el-table-column prop="configStatus"   label="配置单状态" :sortable="custom">
 				  <template slot-scope="scope">
 				  	<span style="color: #409EFF;">
 				  		{{ scope.row.configStatus }}</span>
 				  </template>
 			  </el-table-column>
-			  <el-table-column prop="checktag"  label="复核状态" >
+			  <el-table-column prop="checktag"  label="复核状态" :sortable="custom">
 				  <template slot-scope="scope">
 				  	<span style="color: #409EFF;">
 				  		{{ scope.row.checktag }}</span>
@@ -62,7 +66,7 @@
 			 	custom:'custom',
 				configStatus:'',
 				checktag:'',
-				productName:'',
+				product_name:'',
 				registertime:'',
 			 	selectPage:{},		 	
 			 	params:{
@@ -86,14 +90,14 @@
 	  	 			
 	  	 		},
 				  searchSelect(){
-						this.$axios.post('api/safetystock/selectSafetyStocks').then(response => {
+						this.$axios.get('api/safetystock/selectSafetyStocks').then(response => {
 								this.selectPage = response.data;
 					    }).catch(err=>{
 			     			alert('请求失败')
 			          })
 					},
-					selectdetails(id){
-				           this.$router.push({path:'/index/selectstock.html/selectstockdetails/'+id})
+					selectdetails(safetystockId){
+				           this.$router.push({path:'/index/selectstock.html/selectstockdetails/'+safetystockId})
 					},
 					search(){
 						if(this.productName!=''){

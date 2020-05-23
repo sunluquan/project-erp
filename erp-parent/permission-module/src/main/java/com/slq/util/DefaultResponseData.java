@@ -53,11 +53,11 @@ public class DefaultResponseData {
     }
     
     public static ResponseData logoutResponseData() {
-    	org.springframework.context.ApplicationContext applicationContext = ApplicationContext.getApplicationContext();
-    	System.out.println(applicationContext==null);
-    	String loginUrl=applicationContext.getBean(ShiroFilterFactoryBean.class).getLoginUrl();
-    	return new ResponseData(RESPONSE_SUCCESS_CORD, LOGOUT_MESSAGE, true, loginUrl);
-    }
+//    	org.springframework.context.ApplicationContext applicationContext = ApplicationContext.getApplicationContext();
+//    	System.out.println(applicationContext==null);
+//    	String loginUrl=applicationContext.getBean(ShiroFilterFactoryBean.class).getLoginUrl();
+    	return new ResponseData(RESPONSE_SUCCESS_CORD, LOGOUT_MESSAGE, true, null);
+    } 
 //    public static ResponseData response(Object data,String success,ResponseData error) {
 //    	if(data.getClass()==int.class||data.getClass()==Integer) {
 //    		

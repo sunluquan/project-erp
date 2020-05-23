@@ -18,6 +18,7 @@ import com.slq.pojo.production.ManufactureSum;
 import com.slq.service.production.IManufactureService;
 import com.slq.util.DefaultResponseData;
 import com.slq.util.ResponseData;
+import com.slq.util.TimeLine;
 
 /***
  * 制定产品控制类
@@ -30,6 +31,12 @@ public class ManufactureSumController {
 
 	@Autowired
 	private IManufactureService manufactureService;
+	
+	@GetMapping("/getProductionProgressByManufactureId/{id}")
+	public ResponseData getProductionProgressByManufactureId(@PathVariable("id")Integer id) {
+		List<TimeLine> timeLines=manufactureService.getProductionProgressByManufactureId(id);
+		return DefaultResponseData.successResponseData(timeLines);
+	}
 	//获取满足审核状态的派工单
 	@GetMapping("/meetChecker")
 	public ResponseData getMeetCheckerInternalProductions() {

@@ -18,12 +18,12 @@
 		   :default-sort = "{prop: 'sort', order: 'ascending'}" @sort-change="sortChange">
 		      <el-table-column prop="product_id" label="产品编号" :sortable="custom" >
 				  <template slot-scope="scope">
-				  	{{scope.row.productId}}
+				  	{{scope.row.product_id}}
 				  </template>
 		      </el-table-column>
 		      <el-table-column prop="product_name" label="产品名称" :sortable="custom">
 				  <template slot-scope="scope">
-				  	{{scope.row.productName}}
+				  	{{scope.row.product_name}}
 				  </template>
 		      </el-table-column>
 		      <el-table-column prop="useName" label="用途类型" :sortable="custom">
@@ -33,7 +33,7 @@
 		      </el-table-column>
 			  <el-table-column prop="product_rank" label="档次级别" :sortable="custom">
 				  <template slot-scope="scope">
-				  	{{scope.row.productRank}}
+				  	{{scope.row.product_rank}}
 				  </template>
 			  </el-table-column>
 			  <el-table-column prop="kindName" label="分类" :sortable="custom">
@@ -43,7 +43,7 @@
 			  </el-table-column>
 			  <el-table-column label="操作" width="120px">
 			  	<template slot-scope="scope">
-			  		<el-button type="text" @click="safetysheet(scope.row.productId)">制定</el-button>
+			  		<el-button type="text" @click="safetysheet(scope.row.id)">制定</el-button>
 			  	</template>
 			  </el-table-column>
 		    </el-table>
@@ -76,13 +76,13 @@
 	  	 			
 	  	 		},
 	  	 		selectProList(){			
-	  	 			this.$axios.post('/api/product/selectProList').then(response=>{
+	  	 			this.$axios.get('/api/product/getNotConfigureInventoryProducts').then(response=>{
 	  	 				this.productPage=response.data;
 						
 	  	 				})
 	  	 		},	
-			   safetysheet(productId){
-					this.$router.push({path: '/index/safetystockss.html/safetysheet/'+productId})
+			   safetysheet(id){
+					this.$router.push({path: '/index/safetystockss.html/safetysheet/'+id})
 				},
 	  	 		/*
 				//cx(){

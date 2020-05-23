@@ -20,6 +20,7 @@ import com.slq.pojo.production.ManufactureSum;
 import com.slq.pojo.production.ProcessDesign;
 import com.slq.pojo.production.ProductionProcess;
 import com.slq.pojo.production.ProductionProcessMaterial;
+import com.slq.service.IGatherService;
 import com.slq.service.production.IManufactureService;
 import com.slq.service.production.IProductionProcessMaterialService;
 import com.slq.service.production.IProductionProcessService;
@@ -34,7 +35,10 @@ public class ProductionProcessServiceImpl extends ServiceImpl<ProductionProcessM
 	private IProductionProcessMaterialService productionProcessMaterialService;
 	@Autowired
 	private IManufactureService manufactureService;
-
+	//制入库单的业务层
+	@Autowired
+	private IGatherService gatherService;
+	
 	@CacheEvict(allEntries = true)
 	@Transactional
 	@Override
@@ -217,6 +221,7 @@ public class ProductionProcessServiceImpl extends ServiceImpl<ProductionProcessM
 				manufacture.setId(productionProcess.getParent_id());
 				//获取通过生产总表的id获取该总表下的
 				//工序集合的实际总物料 和 实际工时总价格
+				//和manufacture实体
 				manufacture=manufactureService.getManufactureReal(manufacture.getId());
 				//设置整个生产完成的合格数量为当前最后一次交接的合格数量
 				manufacture.setTested_amount(productionProcess.getReal_amount());
@@ -226,6 +231,8 @@ public class ProductionProcessServiceImpl extends ServiceImpl<ProductionProcessM
 				//实际总工时数 实际总合格数量
 				//和生产状态
 				manufactureService.updateReal(manufacture);
+				//成品的入库
+				gatherService.finishedProductStorage(manufacture); 
 			}else {
 				//如果没有交接状态的数量大于0的话
 				//那就说明这个产品的内部生产还未完成

@@ -36,14 +36,14 @@
 					this.$store.replaceState(Object.assign({},this.$store.state,state))
 					console.log(this.$store.state)
 					//非测试环境使用的方法
-					// this.$store.dispatch("init_user_resource")
-					// 	.then(response=>{
-					// 		this.$router.addRoutes([{
-					// 			path: '/index',
-					// 			component: () => import('@/templates/system/index.vue'),
-					// 			children: response
-					// 		}])
-					// 	})
+					this.$store.dispatch("init_user_resource")
+						.then(response=>{
+							this.$router.addRoutes([{
+								path: '/index',
+								component: () => import('@/templates/system/index.vue'),
+								children: response
+							}])
+						})
 				}
 			},delSessionStorage(){
 				this.$common.removeSessionStorage(this.vuex_storage_name);

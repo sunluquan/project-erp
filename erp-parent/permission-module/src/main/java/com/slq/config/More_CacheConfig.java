@@ -55,6 +55,7 @@ public class More_CacheConfig {
 	 */
 	@Bean
 	public KeyGenerator keyGenerator() {
+		System.out.println("------------------------------------------------------------123-----------------------------------");
 		return new KeyGenerator() {
 			
 			@Override

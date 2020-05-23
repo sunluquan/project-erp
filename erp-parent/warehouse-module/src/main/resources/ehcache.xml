@@ -12,8 +12,7 @@
             memoryStoreEvictionPolicy="LRU">
         <persistence strategy="localTempSwap"/>
     </defaultCache>
-    
-    <cache name="myCache" maxElementsInMemory="10000"
+     <cache name="myCache" maxElementsInMemory="10000"
             eternal="false"
             timeToIdleSeconds="120"
             timeToLiveSeconds="120"
@@ -22,5 +21,14 @@
             memoryStoreEvictionPolicy="LRU">
         <persistence strategy="localTempSwap"/>
     </cache>
-    
- </ehcache>
+<!-- 生产模块的缓存 -->
+	 <cache name="productionModule" maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            maxElementsOnDisk="10000000"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU">
+        <persistence strategy="localTempSwap"/>
+    </cache>
+</ehcache>

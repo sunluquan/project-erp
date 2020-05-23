@@ -5,6 +5,7 @@ import java.util.List;
 import com.github.pagehelper.PageInfo;
 import com.slq.common.Params;
 import com.slq.pojo.production.ManufactureSum;
+import com.slq.util.TimeLine;
 
 public interface IManufactureService {
 
@@ -33,5 +34,7 @@ public interface IManufactureService {
 	ManufactureSum getManufactureReal(Integer id);
 
 	int updateReal(ManufactureSum manufacture);
+
+	List<TimeLine> getProductionProgressByManufactureId(Integer id);
 
 }

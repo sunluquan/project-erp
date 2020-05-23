@@ -15,7 +15,7 @@ public interface ISafetystockServive {
 	int addSafety(Safetystock safetystocks);
 	int updatestockId(Safetystock stocks);
 	List<Safetystock> selectByReviewList();
-	Safetystock getAllsafetyById(Integer id);
+	Safetystock getAllsafetyById(String safetystockId);
 	
 	int updateChecktag(Safetystock safetystock);
 

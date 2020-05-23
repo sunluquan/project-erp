@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.GatherMapper">
+ <insert id="addgather">
+  insert into s_gather values(null,#{gatherId},#{storer},#{reasonexact},
+  #{amountSum},#{costPriceSum},#{amountSum},#{remark},
+  #{register},registerTime=now(),null,null,DEFAULT,null,null,DEFAULT)
+ </insert>
+ 
+ <insert id="addgatherdetails">
+ insert into s_gather_details(id,parentId,productId,productName,amount,productUnit,REAL_COST_PRICE,subtotal,sid,payTag) values
+ <foreach collection="gatherDetails" item="gatherDetail" separator=",">
+  (null,#{id},#{gatherDetail.productId},#{gatherDetail.productName},#{amount},
+  #{productUnit},#{realCostPrice},#{subtotal},#{sid},DEFAULT)
+ </foreach>
+ </insert>
+ 
+ <update id="updatestocknum">
+  update stock set amount=(amount+#{amount}) where id=#{id}
+ </update>
+ 
+ <select id="gatherReview" resultType="Gather">
+ select g.gatherId,p.product_id,p.product_name,u.useName,g.registerTime
+ from s_gather g,product p,product_use u,safetystock s 
+ where g.id=s.id and s.id=p.id and p.use_type=u.id and s.checktag='审核通过' and g.checkTag='等待审核'
+ </select>
+ 
+ 
+ <!-- 入库调度 -->
+ <select id="gatherScheduling" resultType="Gather">
+ select g.gatherId,g.stockid,g.reasonexact,g.registerTime,SUM(d.amount),SUM(d.moneys)
+ from s_gather g,stockstoragetable r,stockstoragedetails d
+ where g.stockid=r.stockstorageno and r.stockstorageno=d.storagedetailno
+ </select>
+ 
+ <select id="getSchedulingid" resultType="Gather">
+ select g.gatherId,g.reasonexact,g.amountSum,g.costPriceSum,d.id,d.productId,
+ d.productName,d.amount,d.paidAmount,d.subtotal,s.amount as stockamount,s.moneys
+ from s_gather g,stockstoragetable r,s_gather_details d,stockstoragedetails s
+ where g.gatherId=d.parentId and d.productId=s.materielid and g.stockid=r.stockstorageno
+  and r.stockstorageno=s.storagedetailno and g.gatherId=#{gatherId}
+ </select>
+ 
+ <update id="updGatherDetailsSid">
+ update s_gather_details set sid=#{sid} where productId=#{productId}
+ </update>
+ 
+ <select id="getByidGather" resultType="Gather">
+ select g.gatherId,g.amountSum,g.costPriceSum,d.productId,d.productName,d.id,d.realCostPrice as realCostPrice,
+ d.amount,d.subtotal,a.sid,s.storeName,s.maxamount,s.storeAddress,t.amount as stockamount,t.moneys 
+ from s_gather g,stockstoragetable r,s_gather_details d,storehouse s,stockstoragedetails t,safetystock a
+ where g.gatherId=d.parentId and d.productId=t.materielid and g.stockid=r.stockstorageno
+ and r.stockstorageno=t.storagedetailno and d.productId=a.productId and a.sid=s.sid and d.id=#{id}
+ </select>
+ 
+ <!-- 修改库存调度的数量 -->
+ <update id="updgahternum">
+   update s_gather set amountSum=amountSum+#{amountSum},costPriceSum=costPriceSum+#{costPriceSum},storeTag=2
+   where gatherId=#{gatherId}
+ </update>
+ <update id="updgatherDetailsNum">
+   update s_gather_details set amount=#{amount},subtotal=#{amount}*realCostPrice,
+   paidAmount=0,payTag=2 where id=#{id}
+ </update>
+ <!-- 入库登记 -->
+ <select id="gatherRegistrationList" resultType="Gather">
+ select*from s_gather where storeTag=2
+ </select>
+ 
+ 
+ <resultMap type="Gather" id="gatherResult" autoMapping="true">
+ 	 <id property="id" column="id"/>
+ 	 <collection property="gatherDetails" column="gatherId" select="getGatherDetailsByParentId" ofType="GatherDetails"></collection>
+ </resultMap>
+ <select id="getGatherByIdAll" resultMap="gatherResult">
+ 	select * from s_gather where gatherId=#{gatherId}
+ </select>
+ <select id="getGatherDetailsByParentId" resultType="GatherDetails">
+ 	select d.*,s.storeName,s.storeAddress from s_gather_details d,storehouse s where d.sid=s.sid and parentId=#{gatherId}
+ </select>
+ <select id="gatherRegistrationByid" resultType="Gather">
+   select g.gatherId,g.reasonexact,g.amountSum,g.costPriceSum,g.register,g.gatheredAmountSum,g.registerTime,
+   d.productId,d.productName,s.storeName,s.storeAddress,d.amount,d.paidAmount,d.id
+   from s_gather g,s_gather_details d,storehouse s
+   where g.gatherId=d.parentId and d.sid=s.sid and gatherId=#{gatherId}
+ </select>
+ 
+ <update id="batchUpdate" >
+ 	<foreach collection="list" item="gatherDetail" separator=";">
+ 		update s_gather_details set paidAmount=#{gatherDetail.paidAmount},subtotal=#{gatherDetail.paidAmount}*realCostPrice,
+        payTag=2 where id=#{gatherDetail.id}
+ 	</foreach>
+ </update>
+
+</mapper>

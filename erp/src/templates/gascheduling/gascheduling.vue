@@ -29,20 +29,20 @@
 				  <template slot-scope="scope">
 				  	{{scope.row.registerTime}}
 				  </template>
-		      </el-table-column>`
-			  <el-table-column prop="amount" label="总件数" :sortable="custom">
+		      </el-table-column>
+			  <el-table-column prop="mustAmount" label="总件数" :sortable="custom">
 				  <template slot-scope="scope">
-				  	{{scope.row.amount}}
+				  	{{scope.row.sumnum}}
 				  </template>
 			  </el-table-column>
 			  <el-table-column prop="moneys" label="总金额" :sortable="custom">
 				  <template slot-scope="scope">
-				  	{{scope.row.moneys}}
+				  	{{scope.row.summoneys}}
 				  </template>
 			  </el-table-column>
 			  <el-table-column label="入库调度" width="120px">
 			  	<template slot-scope="scope">
-			  		<el-button type="text" @click="scheduling(scope.row.stockid)">入库调度</el-button>
+			  		<el-button type="text" @click="scheduling(scope.row.gatherId)">入库调度</el-button>
 			  	</template>
 			  </el-table-column>
 		    </el-table>
@@ -80,8 +80,8 @@
 						
 	  	 				})
 	  	 		},				   
-				scheduling(stockid){
-					this.$router.push({path: '/index/gascheduling.html/gaschedulingsheet/'+stockid})
+				scheduling(gatherId){
+					this.$router.push({path: '/index/gascheduling.html/gaschedulingsheet/'+gatherId})
 				},
 	  	 		/*
 				//cx(){

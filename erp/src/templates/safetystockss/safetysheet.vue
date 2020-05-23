@@ -3,11 +3,11 @@
   
 	<div id="box">
 		<el-form :inline="true" :model="safetystock" :label-position="labelPosition" label-width="130px">
-		  <el-form-item  label="产品编号:" style="padding-right: 90px;" prop="product_id">
-		    <el-input class="input" v-model="safetystock.productId"></el-input>
+		  <el-form-item  label="产品编号:" style="padding-right: 90px;margin-top: 30px;" prop="product_id">
+		    <el-input class="input" v-model="safetystock.product_id"></el-input>
 		  </el-form-item>
-		  <el-form-item label="产品名称:" prop="product_name">
-		     <el-input  class="MyClass" v-model="safetystock.productName"></el-input>
+		  <el-form-item label="产品名称:" prop="product_name" style="margin-top: 30px;">
+		     <el-input  class="MyClass" v-model="safetystock.product_name"></el-input>
 		  </el-form-item>				  		 
 		</el-form>	
 		
@@ -28,8 +28,7 @@
 			    <el-table-column prop="id" label="序号"  >				
 			    </el-table-column>	
 			    <el-table-column prop="sid" label="仓库"  >
-					<template slot-scope="scope">
-						
+					<template slot-scope="scope">						
 						<el-select v-model="safetystocks.sid" size="small">
 						      <el-option v-for="(storehouse,index) in warehousePage" v-bind:key="index"
 						       :label="storehouse.storeName" :value="storehouse.sid">
@@ -50,12 +49,12 @@
 					</template>
 				</el-table-column>				
 			  </el-table>	
-			  
-				<el-form-item label="登记人:" style="padding-right: 120px;" prop="activeUser">
+			  <br />
+				<el-form-item label="登记人:" style="padding-right: 160px;" prop="activeUser">
 				   <span>{{activeUser}}</span>
 				</el-form-item>	
 				   <el-form-item label="登记时间:" prop="registertime">		  	     
-						 <el-date-picker type="date" placeholder="选择日期" size="small">						   
+						 <el-date-picker type="date" v-model="safetystocks.registertime" placeholder="选择日期" size="small">						   
 						 </el-date-picker>
 				   </el-form-item>
 				   <el-form-item label="配置要求:" style="padding-right: 80px;">
@@ -64,8 +63,8 @@
 		</el-form>	
 	</div>
 	<div slot="footer" class="dialog-footer">
-		<el-button size="small" round  v-on:click="insert()">提交</el-button>
-		<el-button size="mini" round @click="close()">返回</el-button>
+		<el-button type="danger" size="mini" round  v-on:click="insert()">提交</el-button>
+		<el-button type="primary" size="mini" round @click="close()">返回</el-button>
 	</div>
 	</el-dialog>
 </template>
@@ -80,7 +79,7 @@
 				id:'',
 				dataPicke: new Date,
 				custom: 'custom',
-				productId:'',
+				product_id:'',
 				labelPosition: 'right',				       
 				safetysheet_safetystock_dialog_visible: false,
 			   
@@ -103,8 +102,8 @@
 				warehousePage:'',
 				isadmin: 3,	
 				safetystock: {
-					productId:'',
-					productName:''					
+					product_id:'',
+					product_name:''					
 			},	
 					res:{
 						id:'',
@@ -116,8 +115,8 @@
 		},
 		
 		created(){			
-			let productId=this.$route.params[Object.keys(this.$route.params)[0]];
-			this.productId=productId;
+			let id=this.$route.params[Object.keys(this.$route.params)[0]];
+			this.id=id;
 			
 			console.log(this.$route);
 			this.safetysheet_safetystock_dialog_visible = true;						
@@ -137,16 +136,16 @@
 			},
 			
 			getselectByid(){	
-				let productId=this.productId;
-				this.$axios.get('api/product/selectByid/'+this.productId).then(response=>{
+				let id=this.id;
+				this.$axios.get('/api/product/getById/'+this.id).then(response=>{
 						this.safetystock=response.data;
 						
 					})
 			},
 			insert(){
-				        this.safetystocks.productId=this.productId;
+				        this.safetystocks.productId=this.safetystock.product_id;
 						this.$axios.post('/api/safetystock/addSafety',this.safetystocks).then(response => {
-							   alert('来了');							   
+							   							   
 							    let responseData=response.data;
 								this.res=response.data;
 								
@@ -177,7 +176,7 @@
 			},
 			update(){
 				this.$axios.post('/api/safetystock/updateChecktag',this.safetystocks).then(response =>{
-					alert('随机数');
+					
 				})
 			},selectProList(){			
 	  	 			this.$axios.post('/api/product/selectProList').then(response=>{
@@ -186,14 +185,14 @@
 	  	 				})
 	  	 		},
 				searchWarehouse(){
-				this.$axios.post('/api/warehouse/getByid/'+this.productId).then(response=>{
+				this.$axios.post('/api/warehouse/getByid/'+this.id).then(response=>{
 						this.warehousePage=response.data;
 					})
 			},				
 		},
 		computed: {
 			activeUser() {
-				return this.$store.getters.getActiveUser.user.uid;
+				return this.$store.getters.getActiveUser.user.uname;
 			},
 			routerNames() {
 				return this.$store.getters.getRouterNames;

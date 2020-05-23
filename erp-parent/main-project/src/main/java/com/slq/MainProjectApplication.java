@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@SpringBootApplication(scanBasePackages = {"com.slq.*"})
+@SpringBootApplication
 //@EnableTransactionManagement
 ///@ComponentScan(basePackages = {"com.slq.*"})
 //@ComponentScan(basePackages={"com.slq.dao.*","com.slq.controller.*","com.slq.service.*"})

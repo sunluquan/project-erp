@@ -20,10 +20,16 @@
 				<el-form-item label="制定人: ">
 					<el-input v-model="manufacture.designer" placeholder="请输入制定人"></el-input>
 				</el-form-item>
-				<el-form-item label="审核人: ">
-					<span></span>
-					<!-- <el-input v-model="productProcessDesign.designer" placeholder="请输入设计人"></el-input> -->
-				</el-form-item>
+			<!-- 	<el-form-item label="入库名称: ">
+					 <el-select v-model="storehouse" placeholder="请选择">
+					    <el-option
+					      v-for="(item,key,index) in storehouses"
+					      :key="item.index"
+					      :label="item.storeName"
+					      :value="item.sid">
+					    </el-option>
+					  </el-select>
+				</el-form-item> -->
 				<!-- <el-form-item style="text-align: right;">
 					<el-button type="success" size="small" v-on:click="insertProcessSearch">添加工序</el-button>
 				</el-form-item> -->
@@ -139,6 +145,7 @@
 				processMaterialView:false,
 				cacheMaterial:{},
 				id:null,//工序编号
+				//storehouses:[],//生产完工后的入库仓库
 				//processDesign:{}
 			}
 		},

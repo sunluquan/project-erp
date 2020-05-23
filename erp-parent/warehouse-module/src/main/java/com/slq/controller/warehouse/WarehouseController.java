@@ -3,19 +3,15 @@ package com.slq.controller.warehouse;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSON;
-import com.baomidou.mybatisplus.core.injector.methods.SelectById;
-import com.slq.common.Params;
-import com.slq.pojo.production.Product;
 import com.slq.pojo.warehouse.Storehouse;
-import com.slq.service.IProductService;
 import com.slq.service.IWarehouseService;
+import com.slq.service.production.IProductService;
 import com.slq.util.DefaultResponseData;
 import com.slq.util.ResponseData;
 
@@ -41,12 +37,12 @@ public class WarehouseController {
 		return DefaultResponseData.successResponseData(houseList);
 	}
 	
-	@RequestMapping("/getByid/{productId}")
-    public ResponseData byid(@PathVariable("productId") String productId) {
-		Product product=productService.selectByid(productId);
-		System.out.println(product);
-		int usetype=product.getUse_type();
-		List<Storehouse> strList=wareHouseService.selectByid(usetype);
+	@RequestMapping("/getByid/{id}")
+    public ResponseData byid(@PathVariable("id") Integer id) {
+//		Product product=productService.selectByid(productId);
+//		System.out.println(product);
+//		int usetype=product.getUse_type();
+		List<Storehouse> strList=wareHouseService.selectByid(id);
 		System.out.println(strList);
 		return DefaultResponseData.successResponseData(strList);
 		

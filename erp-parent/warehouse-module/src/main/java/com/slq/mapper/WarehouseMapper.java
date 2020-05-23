@@ -10,7 +10,7 @@ import com.slq.pojo.warehouse.Storehouse;
 public interface WarehouseMapper {
 
 	List<Storehouse> selectAll();
-	List<Storehouse> selectByid(@Param("useType") Integer useType);
+	List<Storehouse> selectByid(@Param("id") Integer id);
     int updateWarehouseStatus(@Param("sid")Integer sid, @Param("newstoreStatus")Integer newstoreStatus);
     List<Storehouse> selectByName(@Param("storeName") String storeName);
 	Storehouse getHouseById(Integer sid);

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.production.MaterialDesignMapper">
+
+	<select id="checkMaterialUseState" resultType="int">
+		SELECT COUNT(0) FROM product_material_design
+		WHERE product_id=#{parent_id} AND
+		id IN 
+		(SELECT parent_id FROM material_design_detail  WHERE parent_id=product_material_design.id
+			AND residual_amount>0
+		)
+	</select>
+	<select id="search" resultType="ProductMaterialDesign">
+		select pmd.*,p.product_name from product_material_design pmd
+		inner join product p
+		on p.product_id=pmd.product_id
+		<where>
+			<if test="keyWord!=null and keyWord!=''">
+				(
+				pmd.design_id like concat('%',#{keyWord},'%')
+				or p.product_id like concat('%',#{keyWord},'%')
+				or p.product_name like concat('%',#{keyWord},'%')
+				or initial like concat('%',#{keyWord},'%')
+				)
+			</if>
+		</where>
+		order by
+		<choose>
+			<when
+				test="orderingRule!=null and orderingRule.prop!=null and orderingRule.prop!='' and orderingRule.order!=null and orderingRule.order!=''">
+				${orderingRule.prop} ${orderingRule.order}
+			</when>
+			<otherwise>
+				design_id desc
+			</otherwise>
+		</choose>
+	</select>
+	<select id="checkerMaterialDesign" resultType="ProductMaterialDesign">
+		select pmd.*,p.product_name from product_material_design pmd
+		inner join product p
+		on p.product_id=pmd.product_id
+		where pmd.check_tag =0
+		order by pmd.id desc
+	</select>
+	<resultMap id="productMaterialDesignResult" type="ProductMaterialDesign" autoMapping="true">
+		<id column="id" property="id"/>
+		<collection property="materials" ofType="MaterialDesignDetail"
+		 select="com.slq.mapper.production.MaterialDesignDetailMapper.getMaterialDesignDetailById"
+		  column="id" autoMapping="true"></collection>
+	</resultMap>
+	<select id="getMateralDesignById" resultMap="productMaterialDesignResult">
+		select pmd.*,p.product_name from product_material_design pmd
+		inner join product p
+		on p.product_id=pmd.product_id
+		where pmd.id=#{id}
+	</select>
+</mapper>

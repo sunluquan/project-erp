@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.production.ProcessDesignMapper">
+	
+	<!-- 
+	//在新增派工单的时候使用 
+		//获取这个产品的工序以及工序详细单
+		//因为在新增生产工序表的时候需要用到 工序总表的编号
+	 -->
+	<select id="getProcessDesignByProductId" resultMap="processDesignResult">
+		select * from product_process_design where product_id=#{product_id}
+	</select>
+	<!-- 工序物料的search -->
+	<select id="processMaterialSearch" resultType="ProcessDesign">
+		SELECT ppd.*,p.product_name AS 'product.product_name',
+		pk.`kindName` AS 'product.kindName',pu.`useName` AS 'product.useName'
+		FROM `product_process_design` ppd
+		INNER JOIN product p ON ppd.`product_id`=p.`product_id`
+		LEFT JOIN `product_kind` pk ON p.`product_kind_id`=pk.`id`
+		INNER JOIN `product_use` pu ON p.`use_type`=pu.`id`
+		<where>
+			ppd.check_tag=1 and ppd.process_material_tag!=-1 and
+			register_time BETWEEN
+			<foreach collection="dateTimeRange" item="date" separator="and">
+				  #{date}
+			</foreach>
+			<if test="keyWord!='' and keyWord!=null">
+				and (
+				ppd.process_id like concat('%',#{keyWord},'%')
+				or p.product_id like concat('%',#{keyWord},'%')
+				or p.product_name like concat('%',#{keyWord},'%')
+				or p.initial like concat('%',#{keyWord},'%')
+				)
+			</if>
+		</where>
+	</select>
+	<select id="processDesignsearch" resultType="ProcessDesign">
+		SELECT ppd.*,p.product_name AS 'product.product_name',
+		pk.`kindName` AS 'product.kindName',pu.`useName` AS 'product.useName'
+		FROM `product_process_design` ppd
+		INNER JOIN product p ON ppd.`product_id`=p.`product_id`
+		LEFT JOIN `product_kind` pk ON p.`product_kind_id`=pk.`id`
+		INNER JOIN `product_use` pu ON p.`use_type`=pu.`id`
+		<where>
+			<if test="keyWord!='' and keyWord!=null">
+				(
+				ppd.process_id like concat('%',#{keyWord},'%')
+				or p.product_id like concat('%',#{keyWord},'%')
+				or p.product_name like concat('%',#{keyWord},'%')
+				or p.initial like concat('%',#{keyWord},'%')
+				)
+			</if>
+		</where>
+		order by
+		<choose>
+			<when
+				test="orderingRule!=null and orderingRule.prop!=null and orderingRule.prop!='' and orderingRule.order!=null and orderingRule.order!=''">
+				${orderingRule.prop} ${orderingRule.order}
+			</when>
+			<otherwise>
+				ppd.process_id desc
+			</otherwise>
+		</choose>
+	</select>
+	<!--  -->
+	<select id="getProcessList" resultType="ProcessDesign">
+		SELECT ppd.*,p.product_name AS 'product.product_name',
+		pk.`kindName` AS 'product.kindName',pu.`useName` AS 'product.useName'
+		FROM `product_process_design` ppd
+		INNER JOIN product p ON ppd.`product_id`=p.`product_id`
+		LEFT JOIN `product_kind` pk ON p.`product_kind_id`=pk.`id`
+		INNER JOIN `product_use` pu ON p.`use_type`=pu.`id`
+		<where>
+			ppd.check_tag=#{check_tag}
+			<if test="process_material_tag!=null">
+				and process_material_tag=#{process_material_tag}
+			</if>
+		</where>
+		order by ppd.process_id desc
+	</select>
+	
+	<resultMap id="processDesignResult" type="ProcessDesign" autoMapping="true">
+		<id column="id" property="id"/>
+		<collection property="processDetails" ofType="ProcessDetail" autoMapping="true"
+		select="com.slq.mapper.production.ProcessDetailMapper.getProcessDetailByParentId"
+		column="id" />
+	</resultMap>
+	<select id="getProcessDesignById" resultMap="processDesignResult">
+		SELECT ppd.*,p.product_name AS 'product.product_name'
+		FROM `product_process_design` ppd 
+		INNER JOIN product p ON ppd.`product_id`=p.`product_id`
+		where ppd.id=#{id}
+	</select>
+	<!-- 设置工序物料设计时需要 -->
+	 <resultMap id="processDesignResult1" type="ProcessDesign" autoMapping="true">
+		<id column="id" property="id"/>
+		<collection property="processDetails" ofType="ProcessDetail" autoMapping="true"
+		select="com.slq.mapper.production.ProcessDetailMapper.getProcessDetailByParentIdJoinMaterialDetail"
+		column="id" />
+	</resultMap> 
+	<select id="getProcessDesignJoinMaterialDetail" resultMap="processDesignResult1">
+		SELECT ppd.*,p.product_name AS 'product.product_name'
+		FROM `product_process_design` ppd 
+		INNER JOIN product p ON ppd.`product_id`=p.`product_id`
+		where ppd.id=#{id}
+	</select>
+</mapper>

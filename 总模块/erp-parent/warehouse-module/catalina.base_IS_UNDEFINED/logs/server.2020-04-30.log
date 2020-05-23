@@ -1,0 +1,2 @@
+2020-04-30 12:52:55.294 [restartedMain] ERROR com.baomidou.mybatisplus.core.MybatisConfiguration - mapper[com.slq.mapper.CommonMapper.getTreeMenuChild] is ignored, because it exists, maybe from xml file
+2020-04-30 12:52:57.961 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)

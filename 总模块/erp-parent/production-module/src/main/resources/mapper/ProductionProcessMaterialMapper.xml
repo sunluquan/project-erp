@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.slq.mapper.production.ProductionProcessMaterialMapper">
+	<!-- 
+	ppm.`id`,ppm.`parent_id`,ppm.`process_number`,
+		ppm.`product_id`,ppm.`product_name`,ppm.`cost_price`,
+		ppm.`amount`,ppm.`renew_amount`,(ppm.`real_amount`-ppmc.use_amount) as real_amount,
+		ppm.`subtotal`,ppm.`real_subtotal`
+	 -->
+	 <!-- 获取生产领取物料的集合 -->
+	 <select id="getProductionProcessMaterialByManufactureId" resultType="ProductionProcessMaterial">
+	 	select parent_id,product_id,product_name,cost_price,amount,single_material_design_amount  from production_process_material
+	 	where parent_id in
+	 	(select id from production_process where parent_id=#{id})
+	 	
+	 </select>
+	 
+	  <update id="batchUpdateRenewAmount">
+	 	<foreach collection="list" item="productProfitLossDetails" separator=";">
+	 		update production_process_material
+			set
+			renew_amount=renew_amount+(${productProfitLossDetails.profit_loss_amount})
+			where
+			parent_id=#{production_process_id} and product_id=#{productProfitLossDetails.product_id}
+	 	</foreach>
+	 </update>
+	<select id="getProductionProcessMaterialAndUseAmount"
+		resultType="ProductionProcessMaterial">
+		select ppm.* ,
+		ppmc.use_amount as 'productionProcessMaterialCourse.use_amount',
+		ppmc.id as 'productionProcessMaterialCourse.id',
+		ppmc.cost_price as 'productionProcessMaterialCourse.cost_price' from
+		production_process_material ppm
+		inner join
+		production_process_material_course ppmc
+		on
+		ppm.product_id=ppmc.product_id
+		where
+		ppm.parent_id=#{production_process_id}
+		and ppmc.parent_id=#{production_process_course_id}
+	</select>
+	<update id="batchUpdateRealAmount1">
+		<foreach collection="list" item="productionProcessMaterial"
+			separator=";">
+			update production_process_material
+			set
+			real_amount=real_amount+${productionProcessMaterial.productionProcessMaterialCourse.use_amount},
+			real_subtotal=real_subtotal+
+			(${productionProcessMaterial.productionProcessMaterialCourse.use_amount}*
+			${productionProcessMaterial.productionProcessMaterialCourse.cost_price})
+			where
+			id=#{productionProcessMaterial.id}
+		</foreach>
+	</update>
+	<update id="batchUpdateRealAmount">
+		<foreach collection="list" item="productionProcessMaterial"
+			separator=";">
+			update production_process_material
+			set
+			real_amount=real_amount+${productionProcessMaterial.use_amount}
+			where
+			id=#{productionProcessMaterial.id}
+		</foreach>
+	</update>
+	<!-- 有变动 single_material_design_amount-->
+	<insert id="batchInsert">
+		INSERT INTO production_process_material
+		(`id`,`parent_id`,`process_number`,`product_id`,`product_name`,`cost_price`
+		,`amount`,`renew_amount`,`real_amount`,`subtotal`,`real_subtotal`,`single_material_design_amount`)
+		values
+		<foreach collection="list" item="productionProcess"
+			separator=",">
+			<foreach
+				collection="productionProcess.productionProcessMaterials"
+				item="productionProcessMaterial" separator=",">
+				(default,#{productionProcess.id},default,#{productionProcessMaterial.product_id},
+				#{productionProcessMaterial.product_name},#{productionProcessMaterial.cost_price},
+				#{productionProcessMaterial.amount},#{productionProcessMaterial.renew_amount},default,#{productionProcessMaterial.subtotal},default,#{productionProcessMaterial.single_material_design_amount})
+			</foreach>
+		</foreach>
+
+	</insert>
+</mapper>

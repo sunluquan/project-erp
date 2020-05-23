@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.production.ProductKindMapper">
+	
+	<resultMap type="ProductKind" id="productKindResult" autoMapping="true">
+		<id column="id" property="id"/>
+		<collection property="children" ofType="ProductKind" select="getKindChildren" autoMapping="true" column="id"></collection>
+	</resultMap>
+	<select id="getProductKindAll" resultMap="productKindResult">
+		select id,kindName from product_kind
+		where parentId is null or parentId =''
+	</select>
+	<select id="getKindChildren" resultMap="productKindResult">
+		select id,kindName from product_kind
+		where parentId =#{id}
+	</select>
+	
+	<select id="searchProductKind" resultType="ProductKind">
+		select pk.*,ppk.kindName as 'parent.kindName' from product_kind pk
+		left join product_kind ppk
+		on pk.parentId=ppk.id
+		<where>
+			<if test="keyWord!=null and keyWord!=''">
+				(
+					pk.KindName like concat('%',#{keyWord},'%')
+				)
+			</if>
+		</where>
+		order by
+		<choose>
+			<when
+				test="orderingRule!=null and orderingRule.prop!=null and orderingRule.prop!='' and orderingRule.order!=null and orderingRule.order!=''">
+				${orderingRule.prop} ${orderingRule.order}
+			</when>
+			<otherwise>
+				pk.id desc
+			</otherwise>
+		</choose>
+	</select>
+</mapper>

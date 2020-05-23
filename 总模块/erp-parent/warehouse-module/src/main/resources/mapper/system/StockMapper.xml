@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.StockMapper">
+
+	<select id="getStocks" resultType="Stock">
+	select s.stockId,t.storeName,p.product_id as productId,p.product_name as productName,
+	k.kindName,u.useName,p.product_rank as productRank,p.product_unit as productUnit,
+    s.amount,a.minamount,a.maxamount,a.maxCapacityAmount
+    from stock s,storehouse t,product p,product_use u,product_kind k,safetystock a
+    where s.productId=p.product_id and p.id=a.id and a.sid=t.sid 
+    and p.product_kind_id=k.id and p.use_type=u.id
+	</select>
+	
+	<select id="getStockById" resultType="Stock">
+		SELECT * FROM stock WHERE stockId=#{stockId}
+	</select>
+	
+	<insert id="addStock">
+		INSERT INTO stock VALUES(NULL,#{stockId},#{productId},#{amount},#{registMan},NOW(),null,null,0)
+	</insert>
+	
+	
+</mapper>

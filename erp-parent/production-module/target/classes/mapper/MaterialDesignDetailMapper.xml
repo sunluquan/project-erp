@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.slq.mapper.production.MaterialDesignDetailMapper">
+
+	<select id="totalMaterialCostPriceSum" resultType="java.lang.Float">
+		SELECT SUM((amount-residual_amount)*cost_price) FROM 	(
+		SELECT mdd.parent_id,mdd.amount,mdd.residual_amount,p.cost_price
+		 FROM material_design_detail mdd
+		INNER JOIN product p
+		ON p.product_id=mdd.product_id
+		) AS material
+		WHERE parent_id =
+		(SELECT id FROM product_material_design WHERE product_id=#{product_id})
+	</select>
+	<update id="batchUpdateResidualAmount">
+		<foreach collection="list" item="material" separator=";">
+			<if test="material.residual_amount>=0">
+				update material_design_detail
+				set residual_amount=#{material.residual_amount} 
+				where id=#{material.id}
+			</if> 
+			
+		</foreach>
+	</update>
+	<!-- 
+	<update id="batchUpdateResidualAmount">
+		<foreach collection="list" item="processMaterial" separator=";">
+			update material_design_detail
+			set residual_amount=(#{processMaterial.residual_amount}-#{processMaterial.useAmount}) 
+			where id=#{processMaterial.material_id}
+		</foreach>
+	</update>
+	 -->
+	<insert id="insert">
+		INSERT INTO
+		`project`.`material_design_detail` (`parent_id`,`product_id`,`amount`,`residual_amount`)
+		VALUES
+		<foreach collection="details" separator="," item="material">
+			(#{parentId},#{material.product_id},#{material.amount},#{material.amount})
+		</foreach>
+	</insert>
+	<!-- ,p.useName -->
+	<select id="getMaterialDesignDetailById" resultType="MaterialDesignDetail">
+		select mdd.*,pu.useName,p.product_name,p.cost_price,p.product_unit from material_design_detail mdd
+		left join product p
+		on p.product_id=mdd.product_id
+		left join product_use pu on
+		pu.id=p.use_type
+		where mdd.parent_id=#{parentId}
+	</select>
+	<!-- 根据产品编号  查询这个产品所需要的物料详细信息 -->
+	<select id="getMaterialDesignDetailByProductId" resultType="MaterialDesignDetail">
+		select mdd.*,pu.useName,p.product_name,p.cost_price,p.product_unit from material_design_detail mdd
+		left join product p
+		on p.product_id=mdd.product_id
+		left join product_use pu on
+		pu.id=p.use_type
+		where mdd.parent_id =
+		(select id from product_material_design where product_id=#{product_id})
+	</select>
+	<!-- 
+	SELECT mdd.*,p.product_name,p.cost_price
+		 FROM material_design_detail mdd
+		INNER JOIN product_material_design pmd
+		ON pmd.id=mdd.parent_id
+		LEFT JOIN product p
+		ON p.product_id=pmd.product_id
+		WHERE pmd.product_id=#{productId}
+	 -->
+</mapper>

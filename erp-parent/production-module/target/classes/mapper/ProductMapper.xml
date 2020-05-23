@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.production.ProductMapper">
+	<sql id="common">
+		p.`id`,p.`initial`,p.`product_id`,p.`product_name`,
+		p.`product_rank`,
+		p.`product_unit`,p.`list_price`,p.`message`
+	</sql>
+	<sql id="material">
+		p.`id`,p.`initial`,p.`product_id`,p.`product_name`,p.`product_kind_id`,p.`use_type`,
+		p.`product_rank`,
+		p.`product_unit`,p.`list_price`,p.`cost_price`,p.`message`
+	</sql>
+	<sql id="pass_product">
+		p.check_tag=1
+			and p.material_tag=1
+			and p.process_tag=1
+			and u.parent_id in (1,2)
+	</sql>
+	<resultMap type="Product" id="productResult" autoMapping="true">
+		<id column="id" property="id"/>
+		<result column="product_id" property="product_id"/>
+		<collection property="productionPlanDetails" ofType="ProductionPlanDetail" 
+		select="com.slq.mapper.production.ProductionPlanDetailMapper.getProductionPlanDetailAndProductionPlanByProductId"
+		 column="product_id" ></collection>
+	</resultMap>
+	
+	<!-- //获取符合制定派工单的产品 在制定派工单时用到 //按产品划分 -->
+	<!-- ,
+		(SELECT SUM(labour_hour_amount*cost_price) FROM process_detail 
+		where parent_id=(select id from product_process_design where product_id=p.product_id)) as 'manhour_cost_price_sum'
+		 -->
+	<select id="getMeetDispatchingProduction" resultMap="productResult">
+		select DISTINCT p.*,k.kindName,u.useName from product p
+		left join product_kind k
+		on p.product_kind_id=k.id
+		inner join product_use u
+		on p.use_type=u.id
+		WHERE <include refid="pass_product" /> and product_id IN
+		(SELECT product_id FROM `production_plan_detail` WHERE manufacture_tag=0 and parent_id
+		IN (SELECT id FROM `production_plan` WHERE check_tag=1)
+		)
+	</select>
+	<!-- //这个是在新增生产计划的时候选择产品的时候用到 //他需要能够生产 也就是 物料设计 工序设计 工序物料设计 等都要为已经设计 -->
+	<select id="searchCanProductionProduct" resultType="Product">
+		select p.*,k.kindName,u.useName from product p
+		left join product_kind k
+		on p.product_kind_id=k.id
+		inner join product_use u
+		on p.use_type=u.id
+		<where>
+			p.check_tag=#{check_tag}
+			and p.material_tag=#{material_tag}
+			and p.process_tag=#{process_tag}
+			and u.parent_id in (1,2)
+			<if
+				test="params.replenishParams!=null and params.replenishParams.kind!=null and params.replenishParams.kind!=''">
+				and k.id in(${params.replenishParams.kind})
+			</if>
+			<if test="params.keyWord!=null and params.keyWord!=''">
+				and
+				(
+				product_name like concat('%',#{params.keyWord},'%')
+				or initial like
+				concat('%',#{params.keyWord},'%')
+				or product_id like
+				concat('%',#{params.keyWord},'%')
+				)
+			</if>
+
+		</where>
+		order by
+		<choose>
+			<when
+				test="params.orderingRule!=null and params.orderingRule.prop!=null and params.orderingRule.prop!='' and params.orderingRule.order!=null and params.orderingRule.order!=''">
+				${params.orderingRule.prop} ${params.orderingRule.order}
+			</when>
+			<otherwise>
+				product_id desc
+			</otherwise>
+		</choose>
+	</select>
+	<!-- 通用 -->
+	<select id="getProducts" resultType="Product">
+		select
+		<include refid="common" />
+		,k.kindName,u.useName from product p
+		left join product_kind k
+		on
+		p.product_kind_id=k.id
+		inner join product_use u
+		on p.use_type=u.id
+		<where>
+			<if test="uses!=null and uses!=''">
+				u.parent_id in
+				<foreach collection="uses" open="(" close=")" separator=","
+					item="useId">
+					#{useId}
+				</foreach>
+				and
+			</if>
+			<if test="check_tag!=null and check_tag!=''">
+				check_tag=#{check_tag}
+			</if>
+			<if test="material_tag!=null and material_tag!=''">
+				and material_tag=#{material_tag}
+			</if>
+			<if test="process_tag!=null and process_tag!=''">
+				and process_tag=#{process_tag}
+			</if>
+			<if
+				test="inventory_allocation_tag!=null and inventory_allocation_tag!=''">
+				and inventory_allocation_tag=#{inventory_allocation_tag}
+			</if>
+		</where>
+	</select>
+	<!-- 查询 已近通过审核的物料 所有 -->
+	<select id="getNotProductWantMaterialDesign"
+		resultType="Product">
+		select
+		<include refid="material" />
+		,u.useName from product p
+		inner join product_use u
+		on p.use_type=u.id
+		where p.check_tag=1
+		and
+		u.parent_id in
+		<foreach collection="array" open="(" close=")" separator=","
+			item="useId">
+			#{useId}
+		</foreach>
+		order by
+		product_id desc
+	</select>
+	<!--查询 已近通过审核的产品部件等 但是没有设计物料的 product_use表的parent_id=1表示为商品 3部件 2为零件 -->
+	<select id="getProductWantMaterialDesign" resultType="Product">
+		select
+		<include refid="material" />
+		,k.kindName,u.useName from product p
+		left join product_kind k
+		on
+		p.product_kind_id=k.id
+		inner join product_use u
+		on p.use_type=u.id
+		where
+		check_tag=1
+		and `material_tag`=-1 and
+		u.parent_id in
+		<foreach collection="array" open="(" close=")" separator=","
+			item="useId">
+			#{useId}
+		</foreach>
+		order by
+		product_id desc
+	</select>
+	<select id="checkerProduct" resultType="Product">
+		select
+		p.*,k.kindName,u.useName from product p
+		left join product_kind k
+		on
+		p.product_kind_id=k.id
+		inner join product_use u
+		on p.use_type=u.id
+		where
+		p.check_tag=0
+		order by
+		product_id desc
+	</select>
+	<select id="productSearch" resultType="Product">
+		select p.*,k.kindName,u.useName from product p
+		left join product_kind k
+		on p.product_kind_id=k.id
+		inner join product_use u
+		on p.use_type=u.id
+		<where>
+			<if test="keyWord!=null and keyWord!=''">
+				and
+				(
+				product_name like concat('%',#{keyWord},'%')
+				or initial like
+				concat('%',#{keyWord},'%')
+				or product_id like
+				concat('%',#{keyWord},'%')
+				)
+			</if>
+			<if
+				test="replenishParams.kinds!=null and replenishParams.kinds!=''">
+				and k.id in(${replenishParams.kinds})
+			</if>
+		</where>
+		order by
+		<choose>
+			<when
+				test="orderingRule!=null and orderingRule.prop!=null and orderingRule.prop!='' and orderingRule.order!=null and orderingRule.order!=''">
+				${orderingRule.prop} ${orderingRule.order}
+			</when>
+			<otherwise>
+				product_id desc
+			</otherwise>
+		</choose>
+	</select>
+
+	<!-- MaterialController下 -->
+	<!-- -->
+
+	<select id="searchMaterial" resultType="Product">
+		select
+		<include refid="material" />
+		,u.useName from product p
+		inner join product_use u
+		on p.use_type=u.id
+		where p.check_tag=1
+		and
+		u.parent_id in
+		<foreach collection="replenishParams.array" open="(" close=")"
+			separator="," item="useId">
+			#{useId}
+		</foreach>
+		<if test="keyWord!=null and keyWord!=''">
+			and
+			(
+			product_name like concat('%',#{keyWord},'%')
+			or initial like concat('%',#{keyWord},'%')
+			or product_id like concat('%',#{keyWord},'%')
+			)
+		</if>
+		order by
+		<choose>
+			<when
+				test="orderingRule!=null and orderingRule.prop!=null and orderingRule.prop!='' and orderingRule.order!=null and orderingRule.order!=''">
+				${orderingRule.prop} ${orderingRule.order}
+			</when>
+			<otherwise>
+				product_id desc
+			</otherwise>
+		</choose>
+	</select>
+</mapper>

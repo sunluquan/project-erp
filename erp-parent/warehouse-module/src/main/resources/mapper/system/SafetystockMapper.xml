@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.warehouse.SafetystockMapper">
+
+	<select id="getAllsafety" resultType="Safetystock">
+		SELECT * FROM safetystock
+	</select>
+	
+	<select id="getAllsafetyById" resultType="Safetystock">
+      select s.safetystockId,s.productId,s.minamount,s.maxamount,s.sid,s.maxCapacityAmount,
+      s.storeUnit,s.register,s.registertime,s.checker,s.checktime,
+      s.checktag,s.configStatus,s.changeStatus,
+      p.id,p.product_id,p.product_name,h.storeName,h.storeAddress
+      from safetystock s,product p,storehouse h where
+      s.productId=p.product_id and s.sid=h.sid and s.safetystockId=#{safetystockId}	
+     </select>
+	
+	<insert id="addSafety">
+		INSERT into safetystock(id,safetystockId,productId,minamount,maxamount,sid,maxCapacityAmount,storeUnit,register,registertime,checker,checktime,checktag,configStatus,changeStatus)
+		values(NULL,DEFAULT,#{productId},#{minamount},#{maxamount},#{sid},#{maxCapacityAmount},#{storeUnit},#{register},now(),NULL,NULL,DEFAULT,DEFAULT,DEFAULT)
+	</insert>	
+	<update id="updatestockId">
+	 update safetystock set safetystockId=substr(md5(rand()),1,23) where minamount=#{minamount}	 
+	</update>
+	<!--  select s.*,p.product_id,p.product_name,u.useName,p.product_rank,k.kindName,s.registertime from product p 
+     left join product_kind k
+     on p.product_kind_id=k.id
+     left join product_use u
+     on p.use_type=u.id
+     left join safetystock s
+     on s.productId=p.product_id where (s.checktag='等待审核' or changeStatus='已变更'  and s.checktag='等待审核')   -->
+	<select id="selectByReviewList" resultType="Safetystock">
+	 	select s.*,p.product_id,p.product_name,u.useName,p.product_rank,k.kindName,s.registertime from
+	 safetystock s
+	 left join product p 
+	 on s.productId=p.product_id
+     left join product_kind k
+     on p.product_kind_id=k.id
+     left join product_use u
+     on p.use_type=u.id
+      where (s.checktag='等待审核' or changeStatus='已变更'  and s.checktag='等待审核')
+	</select>
+	
+	<update id="updateChecktag">
+	  UPDATE safetystock set				
+		checker=#{checker},checktime=now(),checktag='审核未通过',configStatus='未完成'
+		WHERE safetystockId=#{safetystockId}
+	</update>
+<!-- 
+(p.productname like "%"#{String}"%" or s.registertime like "%"#{String}"%")
+	/*审核成功，修改审核状态和配置状态*/
+	UPDATE safetystock SET check_tag=1,config_status=1,checker='小王',check_time=NOW() WHERE safetystockId='2020042601';
+
+	/*审核失败*/
+	UPDATE safetystock SET check_tag=2,config_status=2,checker='小王',check_time=NOW() WHERE safetystockId='2020042601';
+-->
+	 
+	<update id="updateSefeStatus">
+		UPDATE safetystock set				
+		checker=#{checker},checktime=now(),checktag='审核通过',configStatus='完成'
+		WHERE safetystockId=#{safetystockId}				    			
+	</update>
+	<!-- 审核通过，传过来的值为1 <if test="checktag==1">		    	
+		    </if>-->		    		    
+		    <!-- 
+			<if test="checktag==2">
+				checktag=2,configstatus=2,checker=#{checker},checktime=NOW()
+			</if> -->
+	<select id="selectSafetystocks" resultType="Safetystock"> 
+	 select s.id,s.safetystockId,s.productId,s.registertime,p.product_id,p.product_name,s.configStatus,s.checktag
+	  from safetystock s,product p
+	  where s.productId=p.product_id 
+	</select>
+	
+	<select id="selectByName" resultType="Safetystock">
+	 select s.id,s.safetystockId,p.product_id as productId,p.product_name as productName,s.configStatus,s.checktag,s.registertime
+	  from safetystock s,product p	  	  
+	  <where>
+	  <if test="product_name!=null and product_name!=''">
+	      p.product_name=#{product_name}
+	    </if>
+	    and s.id=p.id
+	  </where>	    					
+	  </select> 
+	  	  	
+	<select id="selectBytime" resultType="Safetystock">
+	 select s.id,s.safetystockId,p.product_id as productId,p.product_name as productName,s.configStatus,s.checktag,s.registertime
+	 from safetystock s,product p
+	 <where>
+	  <if test="registertime!=null and registertime!=''">
+	     s.registertime=#{registertime}
+	  </if>
+	  and s.id=p.id
+	 </where>
+	</select>
+	
+	<select id="selectStockChange" resultType="Safetystock">
+	  select s.id,s.safetystockId,s.productId,p.product_id,p.product_name,
+	  p.product_unit,p.REAL_COST_PRICE,u.useName,p.product_rank,k.kindName,s.registertime 
+	  from safetystock s,product p,product_use u,product_kind k
+	  where s.productId=p.product_id and p.use_type=u.id 
+	  and p.product_kind_id=k.id and s.checktag='审核通过' 
+	</select>
+	<update id="updateStockChange">
+	  update safetystock set minamount=#{minamount},maxamount=#{maxamount},maxCapacityAmount=#{maxCapacityAmount},
+	  storeUnit=#{storeUnit},register=#{register},checker=#{checker},checktag='等待审核',configStatus='未完成',changeStatus='已变更'  where safetystockId=#{safetystockId}
+	</update>	
+</mapper>

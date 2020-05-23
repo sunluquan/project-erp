@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.WarehouseMapper">
+
+	<select id="selectAll" resultType="Storehouse">
+		select*from storehouse		  		  		   
+	</select>
+	<!--  select s.storeName,s.sid from storehouse s,product p
+	   where s.use_type=p.use_type and p.use_type=#{useType} GROUP BY storeName
+	    -->
+	<select id="selectByid" resultType="Storehouse">
+	   select  s.storeName,s.sid from storehouse s
+	   where s.use_type =(select use_type from product where id=#{id})
+	   GROUP BY storeName
+	</select>
+	<update id="updateWarehouseStatus">
+		update storehouse
+		set storeStatus=#{newstoreStatus}
+		where sid=#{sid}
+	</update>
+	<select id="selectByName" resultType="Storehouse">
+	  select*from storehouse 	
+	  <where>
+	   <if test="storeName!=null and storeName!=''">
+	       and storehouse.storeName=#{storeName}
+       </if>
+	  </where>  
+	</select>
+	<select id="getHouseById" resultType="Storehouse">
+		SELECT * FROM storehouse WHERE sid=#{sid}
+	</select>
+	
+	<insert id="addHouse">
+		INSERT INTO storehouse VALUES(NULL,#{storeName},#{storeAddress},DEFAULT,#{storeRemark});
+	</insert>
+	
+	<update id="updateHouse">
+		UPDATE storehouse SET storeName=#{storeName},storeAddress=#{storeAddress},storeRemark=#{storeRemark} WHERE sid=#{sid}
+	</update>
+	
+	<delete id="delHouse">
+		DELETE FROM  storehouse WHERE sid=#{sid}
+	</delete>
+</mapper>

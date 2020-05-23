@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.production.ProcessDetailMapper">
+	
+	<!-- 根据产品编号查询  该产品的工序详细
+		在新增派工单的时候使用到  修改也用到
+	 -->
+	<select id="getProcessDetailByProductId" resultType="ProcessDetail">
+		select pd.*,pp.processName 'process.processName',pp.message as 'process.message' from process_detail pd
+		inner join product_process pp
+		on pd.process_id=pp.id
+		where parent_id =
+		(select id from product_process_design where product_id=#{product_id})
+	</select>
+	<select id="processTotalManhoirCostPriceSum" resultType="java.lang.Float">
+		SELECT SUM(labour_hour_amount*cost_price) FROM process_detail where parent_id=#{id}
+	</select>
+	<insert id="batchInsert" >
+		insert into process_detail(`id`,`parent_id`,`details_number`,
+        `process_id`,`labour_hour_amount`,`process_describe`,
+        `time_unit`,`cost_price`,`material_tag`,`material_change_tag`)
+        values
+        <foreach collection="processDetails"  separator=","
+         item="processDetail">
+         	(default,#{parent_id},#{processDetail.details_number}
+         	,#{processDetail.process_id},#{processDetail.labour_hour_amount},
+         	default,#{processDetail.time_unit},#{processDetail.cost_price},0,0)
+         </foreach>
+	</insert>
+	<!-- 再ProcessDesignMapper.xml使用了这个select -->
+	<select id="getProcessDetailByParentId"  resultType="com.slq.pojo.production.ProcessDetail">
+		select pd.*,pp.processName 'process.processName',pp.message as 'process.message' from process_detail pd
+		inner join product_process pp
+		on pd.process_id=pp.id
+		where parent_id=#{parentId}
+	</select>
+	<resultMap autoMapping="true" type="ProcessDetail" id="processDetailResult">
+		<id column="id" property="id"/>
+		<collection property="processMaterials" ofType="ProcessMaterialDetail"
+		select="com.slq.mapper.production.ProcessMaterialDetailMapper.getProcessMaterialDesignByParentId"
+		 column="id"
+		/>
+	</resultMap>
+	<!-- 再ProcessDesignMapper.xml使用了这个select -->
+	<select id="getProcessDetailByParentIdJoinMaterialDetail" resultMap="processDetailResult">
+		select pd.*,pp.processName 'process.processName',pp.message as 'process.message' from process_detail pd
+			inner join product_process pp
+			on pd.process_id=pp.id
+			where parent_id=#{parentId}
+	</select>
+</mapper>
+

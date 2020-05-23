@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.production.ManufactureMapper">
+
+	<resultMap type="com.slq.util.TimeLine" id="timeLineResult">
+		<id column="id" property="id" />
+		<result  column="register_time" property="registerTime" />
+		<result  column="process_name" property="registerContent" />
+		<result  column="register" property="register" />
+		<result  column="checker" property="checker" />
+		<result  column="check_time" property="checkTime" />
+		<result  column="procedure_describe" property="describe" />
+	</resultMap>
+	<select id="getProductionProgressByManufactureId" resultMap="timeLineResult">
+		SELECT * FROM `production_process_course` where parent_id=#{id}
+		order by register_time asc
+	</select>
+	<!-- //获取通过生产总表的id获取该总表下的 //工序集合的实际总物料 和 实际工时总价格 -->
+	<select id="getManufactureReal" resultType="ManufactureSum">
+		SELECT m.id,m.manufacture_id,m.product_id,m.product_name,m.amount,m.tested_amount,m.production_id_group,
+		m.material_cost_price_sum,m.labour_cost_price_sum,m.designer,m.register,m.register_time,m.checker,
+		m.check_time,m.check_suggestion,m.remark,m.check_tag,m.manufacture_procedure_tag,m.real_labour_cost_price_sum1,m.real_material_cost_price_sum1
+		(SELECT SUM(real_subtotal) FROM `production_process` WHERE parent_id=m.id) AS
+		`real_labour_cost_price_sum`,
+		(SELECT SUM(real_module_subtotal) FROM `production_process` WHERE
+		parent_id=m.id) AS `real_material_cost_price_sum`
+		FROM `manufacture_sum` m WHERE id=#{id}
+	</select>
+	<resultMap type="ManufactureSum" id="manufactureResult1"
+		autoMapping="true">
+		<id column="id" property="id" />
+		<result column="product_id" property="product_id" />
+		<collection property="processDetails"
+			ofType="ProcessDetail"
+			select="com.slq.mapper.production.ProcessDetailMapper.getProcessDetailByProductId"
+			column="product_id"></collection>
+	</resultMap>
+	<select id="getManufactureById" resultMap="manufactureResult1">
+		select * from
+		manufacture_sum where id=#{id}
+	</select>
+	<resultMap type="ManufactureSum" id="manufactureResult"
+		autoMapping="true">
+		<collection property="processDetails"
+			ofType="ProcessDetails"
+			select="com.slq.mapper.production.ProcessDetailMapper.getProcessDetailByProductId"
+			column="product_id" />
+	</resultMap>
+	<!-- <foreach collection="productionPlanDetailIds" open="(" close=")" separator="," 
+		item="id"> #{id} </foreach> -->
+	<select id="getInsert" resultMap="manufactureResult">
+		select product_id,product_name,real_cost_price,
+		(select sum(amount)
+		from production_plan_detail
+		where id in
+		<foreach collection="productionPlanDetailIds" open="("
+			close=")" separator="," item="id">
+			#{id}
+		</foreach>
+		) as amount
+		from product where product_id=#{product_id}
+	</select>
+
+	<select id="searchManufactureSum" resultType="ManufactureSum">
+		select * from manufacture_sum
+		<where>
+			register_time between
+			<foreach collection="dateTimeRange" item="date"
+				separator="and">
+				#{date}
+			</foreach>
+			<if test="keyWord!=null and keyWord!=''">
+				and (
+				manufacture_id like concat('%',#{keyWord},'%')
+				or
+				product_id like concat('%',#{keyWord},'%')
+				or product_name like
+				concat('%',#{keyWord},'%')
+				or product_id in (select product_id from
+				product where initial like
+				concat('%',#{keyWord},'%'))
+				)
+			</if>
+		</where>
+		order by
+		<choose>
+			<when
+				test="orderingRule!=null and orderingRule.prop!=null and orderingRule.prop!='' and orderingRule.order!=null and orderingRule.order!=''">
+				${orderingRule.prop} ${orderingRule.order}
+			</when>
+			<otherwise>
+				process_id desc
+			</otherwise>
+		</choose>
+	</select>
+</mapper>

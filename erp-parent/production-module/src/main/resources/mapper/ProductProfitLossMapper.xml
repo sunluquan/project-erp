@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.production.ProductProfitLossMapper">
+	
+	<select id="searchProductProfitLoss" resultType="ProductProfitLoss">
+		select * from product_profit_loss
+		<where>
+			register_time between
+			<foreach collection="dateTimeRange" item="date" separator="and">
+				#{date}
+			</foreach>
+			<if test="keyWord!=null and keyWord!=''">
+				and (
+					process_id like concat('%',#{keyWord},'%')
+				)
+			</if>
+		</where>
+		order by
+		<choose>
+			<when
+				test="orderingRule!=null and orderingRule.prop!=null and orderingRule.prop!='' and orderingRule.order!=null and orderingRule.order!=''">
+				${orderingRule.prop} ${orderingRule.order}
+			</when>
+			<otherwise>
+				manufacture_id desc
+			</otherwise>
+		</choose>
+	</select>
+</mapper>

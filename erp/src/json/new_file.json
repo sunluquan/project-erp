@@ -1,0 +1,35 @@
+{
+	"statusCord": 200,
+	"message": "响应成功",
+	"gotoPage": false,
+	"url": null,
+	"data": [{
+		"id": 22,
+		"production_id": "SCJH20200519000004",
+		"designer": "123",
+		"production_reason": "新产品的生产",
+		"register": "123",
+		"register_time": "2020-05-19 11:01:24",
+		"checker": null,
+		"check_suggestion": null,
+		"check_time": null,
+		"check_tag": 1,
+		"production_state": -1,
+		"remark": "",
+		"productionPlanDetails": null,
+		"productionPlanDetail": {
+			"id": null,
+			"parent_id": null,
+			"product_id": "CP20200511000001",
+			"amount": 5,
+			"manufacture_tag": null,
+			"manufacture_id": null,
+			"useName": "商品",
+			"product_name": "笔记本电脑",
+			"cost_price": null,
+			"real_cost_price": 1111.0,
+			"product_unit": "台",
+			"productionPlan": null
+		}
+	}]
+}

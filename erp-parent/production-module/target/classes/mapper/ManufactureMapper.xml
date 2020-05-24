@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.production.ManufactureMapper">
+
+	<!-- 生产报表 -->
+	<select id="getProductProductionFinishChartResult"
+		resultType="com.slq.util.ManufactureChart">
+		SELECT manufacture.* FROM year_month_view AS ym LEFT JOIN
+		(SELECT
+		(SELECT DATE_FORMAT(check_time,'%Y-%m') FROM `production_process_course`
+		WHERE parent_id =manufacture_sum.id ORDER BY check_time DESC LIMIT 1)
+		AS `year_month`,
+		product_id,product_name,
+		SUM(`real_material_cost_price_sum`) AS real_material_price_sum,
+		SUM(`real_labour_cost_price_sum`) AS real_labour_price_sum,
+		SUM(`tested_amount`) AS tested_amount_sum,
+		SUM(`amount`) AS amount_sum,
+		SUM(`material_cost_price_sum`) AS material_price_sum,
+		SUM(`labour_cost_price_sum`) AS labour_price_sum,
+		(SUM(real_material_cost_price_sum+real_labour_cost_price_sum)*tested_amount)
+		AS price_sum
+		FROM manufacture_sum
+		WHERE check_tag=1 AND manufacture_procedure_tag=1 AND
+		(SELECT DATE_FORMAT(check_time,'%Y-%m') FROM `production_process_course`
+		WHERE parent_id =manufacture_sum.id ORDER BY check_time DESC LIMIT 1)>
+		DATE_FORMAT(DATE_SUB(CURDATE(),INTERVAL 12 MONTH),'%Y-%m')
+		) AS manufacture ON ym.year_month=manufacture.year_month GROUP BY
+		ym.year_month AND manufacture.product_id
+	</select>
+	<resultMap type="com.slq.util.TimeLine" id="timeLineResult">
+		<id column="id" property="id" />
+		<result column="register_time" property="registerTime" />
+		<result column="process_name" property="registerContent" />
+		<result column="register" property="register" />
+		<result column="checker" property="checker" />
+		<result column="check_time" property="checkTime" />
+		<result column="procedure_describe" property="describe" />
+	</resultMap>
+	<select id="getProductionProgressByManufactureId"
+		resultMap="timeLineResult">
+		SELECT * FROM `production_process_course` where
+		parent_id=#{id}
+		order by register_time asc
+	</select>
+	<!-- //获取通过生产总表的id获取该总表下的 //工序集合的实际总物料 和 实际工时总价格 -->
+	<select id="getManufactureReal" resultType="ManufactureSum">
+		SELECT m.*,
+		(SELECT
+		SUM(real_subtotal) FROM `production_process` WHERE parent_id=m.id) AS
+		`real_labour_cost_price_sum`,
+		(SELECT SUM(real_module_subtotal) FROM
+		`production_process` WHERE
+		parent_id=m.id) AS
+		`real_material_cost_price_sum`
+		FROM `manufacture_sum` m WHERE id=#{id}
+	</select>
+	<resultMap type="ManufactureSum" id="manufactureResult1"
+		autoMapping="true">
+		<id column="id" property="id" />
+		<result column="product_id" property="product_id" />
+		<collection property="processDetails"
+			ofType="ProcessDetail"
+			select="com.slq.mapper.production.ProcessDetailMapper.getProcessDetailByProductId"
+			column="product_id"></collection>
+	</resultMap>
+	<select id="getManufactureById" resultMap="manufactureResult1">
+		select * from
+		manufacture_sum where id=#{id}
+	</select>
+	<resultMap type="ManufactureSum" id="manufactureResult"
+		autoMapping="true">
+		<collection property="processDetails"
+			ofType="ProcessDetails"
+			select="com.slq.mapper.production.ProcessDetailMapper.getProcessDetailByProductId"
+			column="product_id" />
+	</resultMap>
+	<!-- <foreach collection="productionPlanDetailIds" open="(" close=")" separator="," 
+		item="id"> #{id} </foreach> -->
+	<select id="getInsert" resultMap="manufactureResult">
+		select product_id,product_name,real_cost_price,
+		(select sum(amount)
+		from production_plan_detail
+		where id in
+		<foreach collection="productionPlanDetailIds" open="("
+			close=")" separator="," item="id">
+			#{id}
+		</foreach>
+		) as amount
+		from product where product_id=#{product_id}
+	</select>
+
+	<select id="searchManufactureSum" resultType="ManufactureSum">
+		select * from manufacture_sum
+		<where>
+			register_time between
+			<foreach collection="dateTimeRange" item="date"
+				separator="and">
+				#{date}
+			</foreach>
+			<if test="keyWord!=null and keyWord!=''">
+				and (
+				manufacture_id like concat('%',#{keyWord},'%')
+				or
+				product_id like concat('%',#{keyWord},'%')
+				or product_name like
+				concat('%',#{keyWord},'%')
+				or product_id in (select product_id from
+				product where initial like
+				concat('%',#{keyWord},'%'))
+				)
+			</if>
+		</where>
+		order by
+		<choose>
+			<when
+				test="orderingRule!=null and orderingRule.prop!=null and orderingRule.prop!='' and orderingRule.order!=null and orderingRule.order!=''">
+				${orderingRule.prop} ${orderingRule.order}
+			</when>
+			<otherwise>
+				process_id desc
+			</otherwise>
+		</choose>
+	</select>
+</mapper>

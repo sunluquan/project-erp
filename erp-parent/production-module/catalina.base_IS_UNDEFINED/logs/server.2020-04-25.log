@@ -1,0 +1,1232 @@
+2020-04-25 09:36:00.287 [restartedMain] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-04-25 09:36:04.913 [restartedMain] DEBUG org.springframework.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-04-25 09:36:04.914 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 7756 ms
+2020-04-25 09:36:06.802 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-04-25 09:36:06.985 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 51 mappings in 'requestMappingHandlerMapping'
+2020-04-25 09:36:07.076 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-04-25 09:36:07.113 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-04-25 09:36:07.195 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-04-25 09:36:08.148 [restartedMain] DEBUG o.s.w.s.server.standard.ServerEndpointExporter - Registering @ServerEndpoint class: class com.slq.websocket.WebSocketServer
+2020-04-25 09:36:20.856 [http-nio-8011-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-25 09:36:20.857 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2020-04-25 09:36:20.886 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-04-25 09:36:20.887 [http-nio-8011-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 30 ms
+2020-04-25 09:36:21.068 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/noLogin;JSESSIONID=114b9471-3b34-4729-9c32-24b0482761ed", parameters={}
+2020-04-25 09:36:21.079 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#noLogin()
+2020-04-25 09:36:21.811 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:36:21.817 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=302, message=未登录!, gotoPage=true, url=/login.html, data=null)]
+2020-04-25 09:36:21.873 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:36:22.118 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/verificationImg", parameters={}
+2020-04-25 09:36:22.118 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#responseVerificationImg(HttpServletRequest, HttpServletResponse)
+2020-04-25 09:36:23.585 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:36:25.304 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/login", parameters={masked}
+2020-04-25 09:36:25.307 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#login(User, String)
+2020-04-25 09:36:26.645 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:36:26.646 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=登录成功!, gotoPage=false, url=null, data=ActiveUser(user=User(id=1 (truncated)...]
+2020-04-25 09:36:26.706 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:36:26.777 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/common/getTreeMenus", parameters={}
+2020-04-25 09:36:26.778 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.CommonController#getTreeMenus()
+2020-04-25 09:36:27.224 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:36:27.225 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[TreeMenu(id=1, title=系統管理 (truncated)...]
+2020-04-25 09:36:27.242 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:36:31.153 [http-nio-8011-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/product/wantMaterialDesign", parameters={}
+2020-04-25 09:36:31.154 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.ProductController#getProductWantMaterialDesign()
+2020-04-25 09:36:31.229 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:36:31.230 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[Product(id=1, product_id= (truncated)...]
+2020-04-25 09:36:31.257 [http-nio-8011-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:37:41.397 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/product/wantMaterialDesign", parameters={}
+2020-04-25 09:37:41.398 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.ProductController#getProductWantMaterialDesign()
+2020-04-25 09:37:41.400 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:37:41.401 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[Product(id=1, product_id= (truncated)...]
+2020-04-25 09:37:41.409 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:37:41.448 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 09:37:41.449 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 09:37:41.797 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 09:37:42.018 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:37:42.019 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 09:37:42.040 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:39:09.241 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 09:39:09.241 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 09:39:09.244 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 09:39:09.249 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:39:09.251 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 09:39:09.251 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:39:47.187 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 09:39:47.190 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 09:39:47.192 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 09:39:47.234 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:39:47.234 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 09:39:47.236 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:41:22.508 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 09:41:22.509 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 09:41:22.514 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 09:41:22.519 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:41:22.519 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 09:41:22.525 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:42:03.498 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 09:42:03.502 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 09:42:03.505 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 09:42:03.554 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:42:03.555 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 09:42:03.557 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:44:25.931 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 09:44:25.932 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 09:44:25.933 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 09:44:25.964 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:44:25.964 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 09:44:25.968 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:52:37.388 [http-nio-8011-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 09:52:37.389 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 09:52:37.391 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 09:52:37.417 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:52:37.417 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 09:52:37.419 [http-nio-8011-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:56:18.919 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/permission/search", parameters={}
+2020-04-25 09:56:18.920 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.PermissionController#getPermissionPage(Params)
+2020-04-25 09:56:18.926 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=sort, order=asc), replenishPa (truncated)...]
+2020-04-25 09:56:19.043 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:56:19.044 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 09:56:19.052 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:56:22.205 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/cascaded/permission", parameters={}
+2020-04-25 09:56:22.207 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.CascadeChoiceController#getCascadePermission()
+2020-04-25 09:56:22.329 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:56:22.330 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[CascadeChoice(title=系統管理, (truncated)...]
+2020-04-25 09:56:22.334 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:56:22.522 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/common/descSort?tableName=sys_permission&columnName=sort", parameters={masked}
+2020-04-25 09:56:22.528 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.CommonController#getDescSort(Sort)
+2020-04-25 09:56:22.548 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:56:22.548 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=24)]
+2020-04-25 09:56:22.548 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:56:36.513 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/product/wantMaterialDesign", parameters={}
+2020-04-25 09:56:36.514 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.ProductController#getProductWantMaterialDesign()
+2020-04-25 09:56:36.525 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:56:36.526 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[Product(id=1, product_id= (truncated)...]
+2020-04-25 09:56:36.530 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:58:40.315 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 09:58:40.316 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 09:58:40.317 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 09:58:40.340 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:58:40.340 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 09:58:40.343 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 09:58:49.143 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 09:58:49.144 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 09:58:49.146 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 09:58:49.151 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 09:58:49.152 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 09:58:49.155 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:02:11.402 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 10:02:11.403 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 10:02:11.404 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 10:02:11.423 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:02:11.424 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:02:11.425 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:03:01.453 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 10:03:01.454 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 10:03:01.455 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 10:03:01.455 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:03:01.456 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:03:01.457 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:03:57.796 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 10:03:57.796 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 10:03:57.799 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 10:03:57.800 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:03:57.801 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:03:57.803 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:05:11.773 [http-nio-8011-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 10:05:11.775 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 10:05:11.780 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 10:05:11.809 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:05:11.809 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:05:11.832 [http-nio-8011-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:05:55.217 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 10:05:55.218 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 10:05:55.219 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 10:05:55.220 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:05:55.220 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:05:55.222 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:06:37.610 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 10:06:37.610 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 10:06:37.614 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 10:06:37.615 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:06:37.615 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:06:37.628 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:07:53.125 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 10:07:53.126 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 10:07:53.133 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 10:07:53.167 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:07:53.168 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:07:53.170 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:09:33.787 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 10:09:33.788 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 10:09:33.789 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 10:09:33.792 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:09:33.792 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:09:33.793 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:14:26.659 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 10:14:26.660 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 10:14:26.660 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 10:14:26.689 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:14:26.690 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:14:26.691 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:15:45.940 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 10:15:45.940 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 10:15:45.943 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 10:15:45.944 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:15:45.945 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:15:45.947 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:16:11.950 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/product/wantMaterialDesign", parameters={}
+2020-04-25 10:16:11.951 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.ProductController#getProductWantMaterialDesign()
+2020-04-25 10:16:11.964 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:16:11.964 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[Product(id=1, product_id= (truncated)...]
+2020-04-25 10:16:11.965 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:16:13.006 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 10:16:13.007 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 10:16:13.009 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 10:16:13.012 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:16:13.015 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:16:13.017 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:16:46.405 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/product/wantMaterialDesign", parameters={}
+2020-04-25 10:16:46.406 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.ProductController#getProductWantMaterialDesign()
+2020-04-25 10:16:46.407 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:16:46.407 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[Product(id=1, product_id= (truncated)...]
+2020-04-25 10:16:46.408 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:16:47.514 [http-nio-8011-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 10:16:47.514 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 10:16:47.516 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 10:16:47.533 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:16:47.534 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:16:47.535 [http-nio-8011-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:18:49.448 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 10:18:49.451 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 10:18:49.454 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 10:18:49.480 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:18:49.481 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:18:49.482 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:19:40.861 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/product/search", parameters={}
+2020-04-25 10:19:40.862 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.ProductController#search(JSONObject)
+2020-04-25 10:19:40.891 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [{"checkKinds":[],"params":{"pageNum":1,"pageSize":5,"keyWord":"","orderingRule":{"prop":"product_id" (truncated)...]
+2020-04-25 10:19:40.923 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/productKind/getKinds", parameters={}
+2020-04-25 10:19:40.923 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.ProductKindController#getKinds()
+2020-04-25 10:19:40.979 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:19:40.979 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[ProductKind(id=1, parentI (truncated)...]
+2020-04-25 10:19:40.988 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:19:41.391 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:19:41.392 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:19:41.399 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:19:45.817 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/productKind/getKinds", parameters={}
+2020-04-25 10:19:45.817 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.ProductKindController#getKinds()
+2020-04-25 10:19:45.829 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:19:45.830 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[ProductKind(id=1, parentI (truncated)...]
+2020-04-25 10:19:45.831 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:19:46.178 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/productUse/All", parameters={}
+2020-04-25 10:19:46.178 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.ProductUseController#getProductUseAll()
+2020-04-25 10:19:46.179 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/unit/product_rank", parameters={}
+2020-04-25 10:19:46.183 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.common.UnitController#getUnitValueByKey(String)
+2020-04-25 10:19:46.236 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:19:46.236 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=Unit(id=1, parent_id=null, (truncated)...]
+2020-04-25 10:19:46.247 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:19:46.263 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/unit/product_unit", parameters={}
+2020-04-25 10:19:46.264 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.common.UnitController#getUnitValueByKey(String)
+2020-04-25 10:19:46.284 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:19:46.285 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[ProductUse(id=1, useName= (truncated)...]
+2020-04-25 10:19:46.288 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:19:46.291 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:19:46.291 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=Unit(id=2, parent_id=null, (truncated)...]
+2020-04-25 10:19:46.295 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:20:16.992 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/product/insert", parameters={}
+2020-04-25 10:20:16.994 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.ProductController#insert(JSONObject)
+2020-04-25 10:20:16.999 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [{"use_type":3,"factoryName":1,"product_rank":"低级档次","list_price":10,"real_cost_price":5,"message":"" (truncated)...]
+2020-04-25 10:20:17.450 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:20:17.451 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=1)]
+2020-04-25 10:20:17.452 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 10:20:17.502 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/product/search", parameters={}
+2020-04-25 10:20:17.503 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.ProductController#search(JSONObject)
+2020-04-25 10:20:17.504 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [{"checkKinds":[],"params":{"pageNum":1,"pageSize":5,"keyWord":"","orderingRule":{"prop":"product_id" (truncated)...]
+2020-04-25 10:20:17.530 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 10:20:17.531 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 10:20:17.533 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 13:46:47.440 [restartedMain] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-04-25 13:46:50.682 [restartedMain] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper - Warn: Could not find @TableId in Class: com.slq.pojo.production.MaterialDesignDetail.
+2020-04-25 13:46:50.721 [restartedMain] WARN  c.b.mybatisplus.core.injector.AbstractMethod - [com.slq.mapper.production.MaterialDesignDetailMapper.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2020-04-25 13:46:55.751 [restartedMain] DEBUG org.springframework.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-04-25 13:46:55.752 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 11733 ms
+2020-04-25 13:46:56.538 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'materialDesignController': Unsatisfied dependency expressed through field 'materialDesignService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'materialDesignServiceImpl': Unsatisfied dependency expressed through field 'materialDesignDetailService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'materialDesignDetailServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.slq.mapper.production.MaterialDesignDetailMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-04-25 13:46:56.857 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'materialDesignController': Unsatisfied dependency expressed through field 'materialDesignService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'materialDesignServiceImpl': Unsatisfied dependency expressed through field 'materialDesignDetailService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'materialDesignDetailServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.slq.mapper.production.MaterialDesignDetailMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.slq.ProductionModuleApplication.main(ProductionModuleApplication.java:13)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'materialDesignServiceImpl': Unsatisfied dependency expressed through field 'materialDesignDetailService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'materialDesignDetailServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.slq.mapper.production.MaterialDesignDetailMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'materialDesignDetailServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.slq.mapper.production.MaterialDesignDetailMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 37 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.slq.mapper.production.MaterialDesignDetailMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1695)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1253)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 50 common frames omitted
+2020-04-25 13:53:57.351 [restartedMain] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-04-25 13:53:59.447 [restartedMain] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper - Warn: Could not find @TableId in Class: com.slq.pojo.production.MaterialDesignDetail.
+2020-04-25 13:53:59.462 [restartedMain] WARN  c.b.mybatisplus.core.injector.AbstractMethod - [com.slq.mapper.production.MaterialDesignDetailMapper.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2020-04-25 13:54:02.734 [restartedMain] DEBUG org.springframework.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-04-25 13:54:02.734 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 8151 ms
+2020-04-25 13:54:05.386 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-04-25 13:54:05.586 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 52 mappings in 'requestMappingHandlerMapping'
+2020-04-25 13:54:05.778 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-04-25 13:54:05.800 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-04-25 13:54:05.917 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-04-25 13:54:07.295 [restartedMain] DEBUG o.s.w.s.server.standard.ServerEndpointExporter - Registering @ServerEndpoint class: class com.slq.websocket.WebSocketServer
+2020-04-25 13:54:14.748 [http-nio-8011-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-25 13:54:14.748 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2020-04-25 13:54:14.806 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-04-25 13:54:14.807 [http-nio-8011-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 59 ms
+2020-04-25 13:54:14.981 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - OPTIONS "/noLogin;JSESSIONID=16353eb0-57d4-4f4a-80ab-12acbe11bce2", parameters={}
+2020-04-25 13:54:14.992 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#noLogin()
+2020-04-25 13:54:15.017 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/noLogin;JSESSIONID=485e3f4c-db71-4ede-8f7c-6edddc2ad165", parameters={}
+2020-04-25 13:54:15.018 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#noLogin()
+2020-04-25 13:54:15.054 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 13:54:15.113 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/noLogin;JSESSIONID=16353eb0-57d4-4f4a-80ab-12acbe11bce2", parameters={}
+2020-04-25 13:54:15.113 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#noLogin()
+2020-04-25 13:54:15.321 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 13:54:15.322 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 13:54:15.322 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=302, message=未登录!, gotoPage=true, url=/login.html, data=null)]
+2020-04-25 13:54:15.323 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=302, message=未登录!, gotoPage=true, url=/login.html, data=null)]
+2020-04-25 13:54:15.352 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 13:54:15.352 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 13:54:15.553 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/verificationImg", parameters={}
+2020-04-25 13:54:15.554 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#responseVerificationImg(HttpServletRequest, HttpServletResponse)
+2020-04-25 13:54:16.496 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 13:54:17.373 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/login", parameters={masked}
+2020-04-25 13:54:17.373 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#login(User, String)
+2020-04-25 13:54:18.972 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 13:54:18.973 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=登录成功!, gotoPage=false, url=null, data=ActiveUser(user=User(id=1 (truncated)...]
+2020-04-25 13:54:18.993 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 13:54:19.443 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/common/getTreeMenus", parameters={}
+2020-04-25 13:54:19.444 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.CommonController#getTreeMenus()
+2020-04-25 13:54:19.684 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 13:54:19.686 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[TreeMenu(id=1, title=系統管理 (truncated)...]
+2020-04-25 13:54:19.697 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 13:54:23.357 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/product/wantMaterialDesign", parameters={}
+2020-04-25 13:54:23.358 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.ProductController#getProductWantMaterialDesign()
+2020-04-25 13:54:23.465 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 13:54:23.466 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[Product(id=1, product_id= (truncated)...]
+2020-04-25 13:54:23.478 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 13:54:25.781 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 13:54:25.782 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 13:54:25.955 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 13:54:26.147 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 13:54:26.148 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 13:54:26.177 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 13:54:32.582 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/materialDesign", parameters={}
+2020-04-25 13:54:32.591 [http-nio-8011-exec-1] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
+2020-04-25 13:54:32.595 [http-nio-8011-exec-1] DEBUG o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2020-04-25 13:54:32.596 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2020-04-25 13:54:32.601 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2020-04-25 13:54:32.603 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2020-04-25 13:54:32.620 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 13:54:32.622 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Sat Apr 25 13:54:32 CST 2020, status=404, error=Not Found, message=No message available,  (truncated)...]
+2020-04-25 13:54:32.638 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2020-04-25 13:54:59.348 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 13:54:59.349 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 13:54:59.356 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 13:54:59.359 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 13:54:59.359 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 13:54:59.363 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 13:55:12.728 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/materialDesign/insert", parameters={}
+2020-04-25 13:55:12.729 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialDesignController#insert(ProductMaterialDesign)
+2020-04-25 13:55:12.785 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [ProductMaterialDesign(id=null, design_id=null, product_id=123, product_name=null, designer=, module_ (truncated)...]
+2020-04-25 13:55:12.858 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Failed to complete request: java.lang.IllegalArgumentException: Illegal pattern character 'c'
+2020-04-25 13:55:12.866 [http-nio-8011-exec-7] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Illegal pattern character 'c'] with root cause
+java.lang.IllegalArgumentException: Illegal pattern character 'c'
+	at java.text.SimpleDateFormat.compile(SimpleDateFormat.java:826)
+	at java.text.SimpleDateFormat.initialize(SimpleDateFormat.java:634)
+	at java.text.SimpleDateFormat.<init>(SimpleDateFormat.java:605)
+	at java.text.SimpleDateFormat.<init>(SimpleDateFormat.java:580)
+	at com.slq.util.IDGenerateUtil.getDate(IDGenerateUtil.java:29)
+	at com.slq.service.production.impl.MaterialDesignServiceImpl.insert(MaterialDesignServiceImpl.java:42)
+	at com.slq.service.production.impl.MaterialDesignServiceImpl$$FastClassBySpringCGLIB$$10b118fb.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:53)
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:365)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:420)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.slq.service.production.impl.MaterialDesignServiceImpl$$EnhancerBySpringCGLIB$$206967e.insert(<generated>)
+	at com.slq.controller.production.MaterialDesignController.insert(MaterialDesignController.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-04-25 13:55:12.871 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2020-04-25 13:55:12.872 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2020-04-25 13:55:12.876 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 13:55:12.876 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Sat Apr 25 13:55:12 CST 2020, status=500, error=Internal Server Error, message=Illegal pa (truncated)...]
+2020-04-25 13:55:12.879 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 500
+2020-04-25 15:46:12.394 [restartedMain] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-04-25 15:46:14.635 [restartedMain] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper - Warn: Could not find @TableId in Class: com.slq.pojo.production.MaterialDesignDetail.
+2020-04-25 15:46:14.652 [restartedMain] WARN  c.b.mybatisplus.core.injector.AbstractMethod - [com.slq.mapper.production.MaterialDesignDetailMapper.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2020-04-25 15:46:17.505 [restartedMain] DEBUG org.springframework.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-04-25 15:46:17.506 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 7798 ms
+2020-04-25 15:46:19.495 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-04-25 15:46:19.684 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 53 mappings in 'requestMappingHandlerMapping'
+2020-04-25 15:46:19.741 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-04-25 15:46:19.757 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-04-25 15:46:19.832 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-04-25 15:46:21.215 [restartedMain] DEBUG o.s.w.s.server.standard.ServerEndpointExporter - Registering @ServerEndpoint class: class com.slq.websocket.WebSocketServer
+2020-04-25 15:59:05.474 [http-nio-8011-exec-10] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-25 15:59:05.475 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2020-04-25 15:59:05.497 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-04-25 15:59:05.498 [http-nio-8011-exec-10] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2020-04-25 15:59:05.662 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/noLogin;JSESSIONID=4904d895-9464-4f54-8853-b77eb7b4909f", parameters={}
+2020-04-25 15:59:05.671 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#noLogin()
+2020-04-25 15:59:05.813 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 15:59:05.814 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=302, message=未登录!, gotoPage=true, url=/login.html, data=null)]
+2020-04-25 15:59:05.839 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 15:59:05.904 [http-nio-8011-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/verificationImg", parameters={}
+2020-04-25 15:59:05.904 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#responseVerificationImg(HttpServletRequest, HttpServletResponse)
+2020-04-25 15:59:06.626 [http-nio-8011-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 15:59:07.696 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/login", parameters={masked}
+2020-04-25 15:59:07.698 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#login(User, String)
+2020-04-25 15:59:09.260 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 15:59:09.261 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=登录成功!, gotoPage=false, url=null, data=ActiveUser(user=User(id=1 (truncated)...]
+2020-04-25 15:59:09.279 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 15:59:09.644 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/common/getTreeMenus", parameters={}
+2020-04-25 15:59:09.645 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.CommonController#getTreeMenus()
+2020-04-25 15:59:09.811 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 15:59:09.811 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[TreeMenu(id=1, title=系統管理 (truncated)...]
+2020-04-25 15:59:09.823 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 15:59:13.721 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/permission/search", parameters={}
+2020-04-25 15:59:13.722 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.PermissionController#getPermissionPage(Params)
+2020-04-25 15:59:13.850 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=sort, order=asc), replenishPa (truncated)...]
+2020-04-25 15:59:14.238 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 15:59:14.239 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 15:59:14.272 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 15:59:15.815 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/permission/search", parameters={}
+2020-04-25 15:59:15.816 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.PermissionController#getPermissionPage(Params)
+2020-04-25 15:59:15.817 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=5, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=sort, order=asc), replenishPa (truncated)...]
+2020-04-25 15:59:15.833 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 15:59:15.833 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=5, pageSi (truncated)...]
+2020-04-25 15:59:15.835 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 15:59:17.688 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/cascaded/permission", parameters={}
+2020-04-25 15:59:17.689 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.CascadeChoiceController#getCascadePermission()
+2020-04-25 15:59:17.750 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 15:59:17.751 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[CascadeChoice(title=系統管理, (truncated)...]
+2020-04-25 15:59:17.762 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 15:59:17.995 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/common/descSort?tableName=sys_permission&columnName=sort", parameters={masked}
+2020-04-25 15:59:17.996 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.CommonController#getDescSort(Sort)
+2020-04-25 15:59:18.007 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 15:59:18.007 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=24)]
+2020-04-25 15:59:18.008 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 16:00:03.098 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/permission/insert", parameters={masked}
+2020-04-25 16:00:03.106 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.PermissionController#insertPermission(Permission)
+2020-04-25 16:00:03.475 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Failed to complete request: org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'componentName' at row 1
+### The error may exist in file [C:\javaEclipse作业合集\ERP\permission-module\target\classes\mapper\system\PermissionMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: INSERT INTO sys_permission(`pId`,`pName`,`initial`,`pType`,`icon`,`url`,`resource`,`permissionStatus`,`sort`,`describe`,`isFixed`,`parentId`,`componentName`,`showMenu`)   VALUES(DEFAULT,?,?,?,?,?,?,default,?,?,default,    ? ,?,?   )
+### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'componentName' at row 1
+; Data truncation: Data too long for column 'componentName' at row 1; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'componentName' at row 1
+2020-04-25 16:00:03.480 [http-nio-8011-exec-10] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'componentName' at row 1
+### The error may exist in file [C:\javaEclipse作业合集\ERP\permission-module\target\classes\mapper\system\PermissionMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: INSERT INTO sys_permission(`pId`,`pName`,`initial`,`pType`,`icon`,`url`,`resource`,`permissionStatus`,`sort`,`describe`,`isFixed`,`parentId`,`componentName`,`showMenu`)   VALUES(DEFAULT,?,?,?,?,?,?,default,?,?,default,    ? ,?,?   )
+### Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'componentName' at row 1
+; Data truncation: Data too long for column 'componentName' at row 1; nested exception is com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'componentName' at row 1] with root cause
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'componentName' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at sun.reflect.GeneratedMethodAccessor94.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy123.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:54)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy121.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy80.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:58)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:61)
+	at com.sun.proxy.$Proxy87.insertPermission(Unknown Source)
+	at com.slq.service.impl.PermissionImpl.insertPermission(PermissionImpl.java:66)
+	at com.slq.service.impl.PermissionImpl$$FastClassBySpringCGLIB$$240c3d61.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:53)
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:365)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:420)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.slq.service.impl.PermissionImpl$$EnhancerBySpringCGLIB$$dbe19ca2.insertPermission(<generated>)
+	at com.slq.controller.api.PermissionController.insertPermission(PermissionController.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-04-25 16:00:03.493 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={masked}
+2020-04-25 16:00:03.496 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2020-04-25 16:00:03.512 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 16:00:03.513 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Sat Apr 25 16:00:03 CST 2020, status=500, error=Internal Server Error, message=
+### Erro (truncated)...]
+2020-04-25 16:00:03.529 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 500
+2020-04-25 16:01:54.535 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/cascaded/permission", parameters={}
+2020-04-25 16:01:54.537 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.CascadeChoiceController#getCascadePermission()
+2020-04-25 16:01:54.542 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/common/descSort?tableName=sys_permission&columnName=sort", parameters={masked}
+2020-04-25 16:01:54.542 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.CommonController#getDescSort(Sort)
+2020-04-25 16:01:54.638 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 16:01:54.639 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=24)]
+2020-04-25 16:01:54.642 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 16:01:54.645 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 16:01:54.647 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[CascadeChoice(title=系統管理, (truncated)...]
+2020-04-25 16:01:54.689 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 16:02:53.589 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/permission/insert", parameters={masked}
+2020-04-25 16:02:53.589 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.PermissionController#insertPermission(Permission)
+2020-04-25 16:02:53.610 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 16:02:53.610 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=24)]
+2020-04-25 16:02:53.611 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 16:03:02.871 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/logout", parameters={}
+2020-04-25 16:03:02.872 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#logout()
+2020-04-25 16:03:02.880 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 16:03:02.881 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=账号已安全退出, gotoPage=true, url=/noLogin, data=null)]
+2020-04-25 16:03:02.886 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 16:03:04.427 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/verificationImg", parameters={}
+2020-04-25 16:03:04.428 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#responseVerificationImg(HttpServletRequest, HttpServletResponse)
+2020-04-25 16:03:04.486 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 16:03:05.877 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/login", parameters={masked}
+2020-04-25 16:03:05.878 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#login(User, String)
+2020-04-25 16:03:05.889 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 16:03:05.889 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=登录成功!, gotoPage=false, url=null, data=ActiveUser(user=User(id=1 (truncated)...]
+2020-04-25 16:03:05.890 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 16:03:06.128 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/common/getTreeMenus", parameters={}
+2020-04-25 16:03:06.129 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.CommonController#getTreeMenus()
+2020-04-25 16:03:06.211 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 16:03:06.212 [http-nio-8011-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[TreeMenu(id=1, title=系統管理 (truncated)...]
+2020-04-25 16:03:06.220 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 16:03:08.500 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/materialDesign/checker", parameters={}
+2020-04-25 16:03:08.500 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialDesignController#checkerMaterialDesign()
+2020-04-25 16:03:08.531 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 16:03:08.533 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Nothing to write: null body
+2020-04-25 16:03:08.533 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 16:03:08.553 [production%004dodule.data] ERROR net.sf.ehcache.store.disk.DiskStorageFactory - Disk Write of checkerMaterialDesign[] failed: 
+java.io.NotSerializableException: com.slq.pojo.production.ProductMaterialDesign
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:766)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1140)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548)
+	at java.io.ObjectOutputStream.defaultWriteObject(ObjectOutputStream.java:441)
+	at net.sf.ehcache.Element.writeObject(Element.java:876)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1140)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at net.sf.ehcache.util.MemoryEfficientByteArrayOutputStream.serialize(MemoryEfficientByteArrayOutputStream.java:97)
+	at net.sf.ehcache.store.disk.DiskStorageFactory.serializeElement(DiskStorageFactory.java:403)
+	at net.sf.ehcache.store.disk.DiskStorageFactory.write(DiskStorageFactory.java:385)
+	at net.sf.ehcache.store.disk.DiskStorageFactory$DiskWriteTask.call(DiskStorageFactory.java:477)
+	at net.sf.ehcache.store.disk.DiskStorageFactory$PersistentDiskWriteTask.call(DiskStorageFactory.java:1071)
+	at net.sf.ehcache.store.disk.DiskStorageFactory$PersistentDiskWriteTask.call(DiskStorageFactory.java:1055)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2020-04-25 16:03:27.258 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/materialDesign/checker", parameters={}
+2020-04-25 16:03:27.259 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialDesignController#checkerMaterialDesign()
+2020-04-25 16:03:27.261 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 16:03:27.261 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Nothing to write: null body
+2020-04-25 16:03:27.261 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 16:04:03.844 [Thread-9] ERROR net.sf.ehcache.store.disk.DiskStorageFactory - Disk Write of checkerMaterialDesign[] failed: 
+java.io.NotSerializableException: com.slq.pojo.production.ProductMaterialDesign
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:766)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1140)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548)
+	at java.io.ObjectOutputStream.defaultWriteObject(ObjectOutputStream.java:441)
+	at net.sf.ehcache.Element.writeObject(Element.java:876)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1140)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at net.sf.ehcache.util.MemoryEfficientByteArrayOutputStream.serialize(MemoryEfficientByteArrayOutputStream.java:97)
+	at net.sf.ehcache.store.disk.DiskStorageFactory.serializeElement(DiskStorageFactory.java:403)
+	at net.sf.ehcache.store.disk.DiskStorageFactory.write(DiskStorageFactory.java:385)
+	at net.sf.ehcache.store.disk.DiskStorageFactory$DiskWriteTask.call(DiskStorageFactory.java:477)
+	at net.sf.ehcache.store.disk.DiskStorageFactory$PersistentDiskWriteTask.call(DiskStorageFactory.java:1071)
+	at net.sf.ehcache.store.disk.DiskStorageFactory$IndexWriteTask.call(DiskStorageFactory.java:1108)
+	at net.sf.ehcache.store.disk.DiskStorageFactory.unbind(DiskStorageFactory.java:921)
+	at net.sf.ehcache.store.disk.DiskStore.dispose(DiskStore.java:664)
+	at net.sf.ehcache.store.CacheStore.dispose(CacheStore.java:342)
+	at net.sf.ehcache.Cache.dispose(Cache.java:2582)
+	at net.sf.ehcache.CacheManager.shutdown(CacheManager.java:1552)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:339)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:273)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1072)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1065)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978)
+	at org.springframework.boot.devtools.restart.Restarter.stop(Restarter.java:309)
+	at org.springframework.boot.devtools.restart.Restarter.lambda$restart$1(Restarter.java:251)
+	at org.springframework.boot.devtools.restart.Restarter$LeakSafeThread.run(Restarter.java:629)
+2020-04-25 20:39:31.695 [restartedMain] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-04-25 20:39:34.473 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shiroFilter' defined in class path resource [com/slq/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'configShiroFilterFactoryBean' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'configSecurityManagerBean' defined in class path resource [com/slq/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'configSecurityManagerBean' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRealm': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [C:\javaEclipse作业合集\ERP\permission-module\target\classes\com\slq\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias ''.  Cause: java.lang.ClassNotFoundException: Cannot find class: 
+2020-04-25 20:39:34.531 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shiroFilter' defined in class path resource [com/slq/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'configShiroFilterFactoryBean' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'configSecurityManagerBean' defined in class path resource [com/slq/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'configSecurityManagerBean' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRealm': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [C:\javaEclipse作业合集\ERP\permission-module\target\classes\com\slq\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias ''.  Cause: java.lang.ClassNotFoundException: Cannot find class: 
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:240)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:722)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:535)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.slq.ProductionModuleApplication.main(ProductionModuleApplication.java:13)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'configSecurityManagerBean' defined in class path resource [com/slq/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'configSecurityManagerBean' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRealm': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [C:\javaEclipse作业合集\ERP\permission-module\target\classes\com\slq\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias ''.  Cause: java.lang.ClassNotFoundException: Cannot find class: 
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRealm': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [C:\javaEclipse作业合集\ERP\permission-module\target\classes\com\slq\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias ''.  Cause: java.lang.ClassNotFoundException: Cannot find class: 
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 38 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [C:\javaEclipse作业合集\ERP\permission-module\target\classes\com\slq\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias ''.  Cause: java.lang.ClassNotFoundException: Cannot find class: 
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 52 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [C:\javaEclipse作业合集\ERP\permission-module\target\classes\com\slq\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias ''.  Cause: java.lang.ClassNotFoundException: Cannot find class: 
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1526)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1406)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 65 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias ''.  Cause: java.lang.ClassNotFoundException: Cannot find class: 
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1511)
+	... 76 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias ''.  Cause: java.lang.ClassNotFoundException: Cannot find class: 
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 89 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias ''.  Cause: java.lang.ClassNotFoundException: Cannot find class: 
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:591)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:426)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:624)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:222)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$fbceab6f.CGLIB$sqlSessionFactory$1(<generated>)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$fbceab6f$$FastClassBySpringCGLIB$$abe13533.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$fbceab6f.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 90 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\javaEclipse作业合集\ERP\erp-parent\production-module\target\classes\mapper\MaterialDesignDetailMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias ''.  Cause: java.lang.ClassNotFoundException: Cannot find class: 
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:122)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:94)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:589)
+	... 103 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias ''.  Cause: java.lang.ClassNotFoundException: Cannot find class: 
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:137)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:130)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	... 105 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias ''.  Cause: java.lang.ClassNotFoundException: Cannot find class: 
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 109 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: 
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 111 common frames omitted
+2020-04-25 20:40:54.918 [restartedMain] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-04-25 20:40:59.341 [restartedMain] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper - Warn: Could not find @TableId in Class: com.slq.pojo.production.MaterialDesignDetail.
+2020-04-25 20:40:59.398 [restartedMain] WARN  c.b.mybatisplus.core.injector.AbstractMethod - [com.slq.mapper.production.MaterialDesignDetailMapper.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2020-04-25 20:41:05.480 [restartedMain] DEBUG org.springframework.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-04-25 20:41:05.480 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 14652 ms
+2020-04-25 20:41:10.470 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-04-25 20:41:11.041 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 54 mappings in 'requestMappingHandlerMapping'
+2020-04-25 20:41:11.288 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-04-25 20:41:11.321 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-04-25 20:41:11.567 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-04-25 20:41:12.969 [restartedMain] DEBUG o.s.w.s.server.standard.ServerEndpointExporter - Registering @ServerEndpoint class: class com.slq.websocket.WebSocketServer
+2020-04-25 20:41:22.902 [http-nio-8011-exec-9] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-25 20:41:22.903 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2020-04-25 20:41:22.916 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-04-25 20:41:22.919 [http-nio-8011-exec-9] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2020-04-25 20:41:23.203 [http-nio-8011-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - OPTIONS "/noLogin;JSESSIONID=de6e0027-c747-4572-8491-b06d2bfd76b3", parameters={}
+2020-04-25 20:41:23.217 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#noLogin()
+2020-04-25 20:41:23.266 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/noLogin;JSESSIONID=526d23ee-b6bc-480c-8ff9-efa7600410ab", parameters={}
+2020-04-25 20:41:23.266 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#noLogin()
+2020-04-25 20:41:23.285 [http-nio-8011-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 20:41:23.510 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/noLogin;JSESSIONID=de6e0027-c747-4572-8491-b06d2bfd76b3", parameters={}
+2020-04-25 20:41:23.511 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#noLogin()
+2020-04-25 20:41:23.719 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 20:41:23.719 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 20:41:23.720 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=302, message=未登录!, gotoPage=true, url=/login.html, data=null)]
+2020-04-25 20:41:23.721 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=302, message=未登录!, gotoPage=true, url=/login.html, data=null)]
+2020-04-25 20:41:23.794 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 20:41:23.807 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 20:41:24.206 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/verificationImg", parameters={}
+2020-04-25 20:41:24.207 [http-nio-8011-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#responseVerificationImg(HttpServletRequest, HttpServletResponse)
+2020-04-25 20:41:25.303 [http-nio-8011-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 20:41:26.166 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/login", parameters={masked}
+2020-04-25 20:41:26.166 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#login(User, String)
+2020-04-25 20:41:27.552 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 20:41:27.554 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=登录成功!, gotoPage=false, url=null, data=ActiveUser(user=User(id=1 (truncated)...]
+2020-04-25 20:41:27.590 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 20:41:27.982 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/common/getTreeMenus", parameters={}
+2020-04-25 20:41:27.983 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.CommonController#getTreeMenus()
+2020-04-25 20:41:28.255 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 20:41:28.255 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[TreeMenu(id=1, title=系統管理 (truncated)...]
+2020-04-25 20:41:28.272 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 20:41:30.668 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/materialDesign/checker", parameters={}
+2020-04-25 20:41:30.669 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialDesignController#checkerMaterialDesign()
+2020-04-25 20:41:30.736 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 20:41:30.737 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[ProductMaterialDesign(id= (truncated)...]
+2020-04-25 20:41:30.750 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 20:41:30.763 [production%004dodule.data] ERROR net.sf.ehcache.store.disk.DiskStorageFactory - Disk Write of checkerMaterialDesign[] failed: 
+java.io.NotSerializableException: com.slq.pojo.production.ProductMaterialDesign
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:766)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1140)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548)
+	at java.io.ObjectOutputStream.defaultWriteObject(ObjectOutputStream.java:441)
+	at net.sf.ehcache.Element.writeObject(Element.java:876)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1140)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at net.sf.ehcache.util.MemoryEfficientByteArrayOutputStream.serialize(MemoryEfficientByteArrayOutputStream.java:97)
+	at net.sf.ehcache.store.disk.DiskStorageFactory.serializeElement(DiskStorageFactory.java:403)
+	at net.sf.ehcache.store.disk.DiskStorageFactory.write(DiskStorageFactory.java:385)
+	at net.sf.ehcache.store.disk.DiskStorageFactory$DiskWriteTask.call(DiskStorageFactory.java:477)
+	at net.sf.ehcache.store.disk.DiskStorageFactory$PersistentDiskWriteTask.call(DiskStorageFactory.java:1071)
+	at net.sf.ehcache.store.disk.DiskStorageFactory$PersistentDiskWriteTask.call(DiskStorageFactory.java:1055)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2020-04-25 20:41:37.444 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/materialDesignDetail/byParentId/2", parameters={}
+2020-04-25 20:41:37.448 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialDesignDetailController#getMaterialDesignDetailById(Integer)
+2020-04-25 20:41:37.463 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Failed to complete request: java.lang.NullPointerException
+2020-04-25 20:41:37.465 [http-nio-8011-exec-9] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.slq.controller.production.MaterialDesignDetailController.getMaterialDesignDetailById(MaterialDesignDetailController.java:24)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-04-25 20:41:37.476 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2020-04-25 20:41:37.482 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2020-04-25 20:41:37.513 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 20:41:37.513 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Sat Apr 25 20:41:37 CST 2020, status=500, error=Internal Server Error, message=No message (truncated)...]
+2020-04-25 20:41:37.530 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 500
+2020-04-25 20:43:39.030 [Thread-9] ERROR net.sf.ehcache.store.disk.DiskStorageFactory - Disk Write of checkerMaterialDesign[] failed: 
+java.io.NotSerializableException: com.slq.pojo.production.ProductMaterialDesign
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:766)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1140)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1548)
+	at java.io.ObjectOutputStream.defaultWriteObject(ObjectOutputStream.java:441)
+	at net.sf.ehcache.Element.writeObject(Element.java:876)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1140)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at net.sf.ehcache.util.MemoryEfficientByteArrayOutputStream.serialize(MemoryEfficientByteArrayOutputStream.java:97)
+	at net.sf.ehcache.store.disk.DiskStorageFactory.serializeElement(DiskStorageFactory.java:403)
+	at net.sf.ehcache.store.disk.DiskStorageFactory.write(DiskStorageFactory.java:385)
+	at net.sf.ehcache.store.disk.DiskStorageFactory$DiskWriteTask.call(DiskStorageFactory.java:477)
+	at net.sf.ehcache.store.disk.DiskStorageFactory$PersistentDiskWriteTask.call(DiskStorageFactory.java:1071)
+	at net.sf.ehcache.store.disk.DiskStorageFactory$IndexWriteTask.call(DiskStorageFactory.java:1108)
+	at net.sf.ehcache.store.disk.DiskStorageFactory.unbind(DiskStorageFactory.java:921)
+	at net.sf.ehcache.store.disk.DiskStore.dispose(DiskStore.java:664)
+	at net.sf.ehcache.store.CacheStore.dispose(CacheStore.java:342)
+	at net.sf.ehcache.Cache.dispose(Cache.java:2582)
+	at net.sf.ehcache.CacheManager.shutdown(CacheManager.java:1552)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:339)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:273)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1072)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1065)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978)
+	at org.springframework.boot.devtools.restart.Restarter.stop(Restarter.java:309)
+	at org.springframework.boot.devtools.restart.Restarter.lambda$restart$1(Restarter.java:251)
+	at org.springframework.boot.devtools.restart.Restarter$LeakSafeThread.run(Restarter.java:629)
+2020-04-25 22:29:31.663 [restartedMain] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-04-25 22:29:34.982 [restartedMain] WARN  c.b.mybatisplus.core.metadata.TableInfoHelper - Warn: Could not find @TableId in Class: com.slq.pojo.production.MaterialDesignDetail.
+2020-04-25 22:29:35.009 [restartedMain] WARN  c.b.mybatisplus.core.injector.AbstractMethod - [com.slq.mapper.production.MaterialDesignDetailMapper.insert] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]
+2020-04-25 22:29:42.204 [restartedMain] DEBUG org.springframework.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-04-25 22:29:42.207 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 13555 ms
+2020-04-25 22:29:46.799 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-04-25 22:29:47.066 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 54 mappings in 'requestMappingHandlerMapping'
+2020-04-25 22:29:47.160 [restartedMain] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-04-25 22:29:47.188 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-04-25 22:29:47.453 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-04-25 22:29:48.900 [restartedMain] DEBUG o.s.w.s.server.standard.ServerEndpointExporter - Registering @ServerEndpoint class: class com.slq.websocket.WebSocketServer
+2020-04-25 22:30:00.447 [http-nio-8011-exec-10] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-04-25 22:30:00.449 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2020-04-25 22:30:00.470 [http-nio-8011-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-04-25 22:30:00.471 [http-nio-8011-exec-10] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 23 ms
+2020-04-25 22:30:00.754 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/noLogin;JSESSIONID=72c98d30-f330-4dc6-b3a5-07b24b7cc33a", parameters={}
+2020-04-25 22:30:00.772 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#noLogin()
+2020-04-25 22:30:01.077 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 22:30:01.082 [http-nio-8011-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=302, message=未登录!, gotoPage=true, url=/login.html, data=null)]
+2020-04-25 22:30:01.140 [http-nio-8011-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 22:30:01.228 [http-nio-8011-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/verificationImg", parameters={}
+2020-04-25 22:30:01.229 [http-nio-8011-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#responseVerificationImg(HttpServletRequest, HttpServletResponse)
+2020-04-25 22:30:02.234 [http-nio-8011-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 22:30:03.344 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/login", parameters={masked}
+2020-04-25 22:30:03.345 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.SystemController#login(User, String)
+2020-04-25 22:30:05.138 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 22:30:05.139 [http-nio-8011-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=登录成功!, gotoPage=false, url=null, data=ActiveUser(user=User(id=1 (truncated)...]
+2020-04-25 22:30:05.252 [http-nio-8011-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 22:30:05.410 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/common/getTreeMenus", parameters={}
+2020-04-25 22:30:05.410 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.api.CommonController#getTreeMenus()
+2020-04-25 22:30:05.877 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 22:30:05.878 [http-nio-8011-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[TreeMenu(id=1, title=系統管理 (truncated)...]
+2020-04-25 22:30:05.888 [http-nio-8011-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 22:30:08.919 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/materialDesign/checker", parameters={}
+2020-04-25 22:30:08.922 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialDesignController#checkerMaterialDesign()
+2020-04-25 22:30:09.009 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 22:30:09.009 [http-nio-8011-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[])]
+2020-04-25 22:30:09.009 [http-nio-8011-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 22:30:12.512 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/product/wantMaterialDesign", parameters={}
+2020-04-25 22:30:12.513 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.ProductController#getProductWantMaterialDesign()
+2020-04-25 22:30:12.544 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 22:30:12.544 [http-nio-8011-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=[Product(id=2, product_id= (truncated)...]
+2020-04-25 22:30:12.561 [http-nio-8011-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 22:30:21.033 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/material/search", parameters={}
+2020-04-25 22:30:21.033 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialController#searchMaterial(Params)
+2020-04-25 22:30:21.232 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [Params(pageNum=1, pageSize=5, keyWord=, orderingRule=OrderingRule(prop=product_id, order=desc), repl (truncated)...]
+2020-04-25 22:30:21.464 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 22:30:21.465 [http-nio-8011-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=PageInfo{pageNum=1, pageSi (truncated)...]
+2020-04-25 22:30:21.494 [http-nio-8011-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2020-04-25 22:30:33.272 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/materialDesign/insert", parameters={}
+2020-04-25 22:30:33.274 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.slq.controller.production.MaterialDesignController#insert(JSONObject)
+2020-04-25 22:30:33.305 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [{"materials":[{"product_id":"YCL20200425000002","amount":1},{"product_id":"ycl20200425000001","amoun (truncated)...]
+2020-04-25 22:30:33.610 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-04-25 22:30:33.610 [http-nio-8011-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [ResponseData(statusCord=200, message=响应成功, gotoPage=false, url=null, data=8)]
+2020-04-25 22:30:33.612 [http-nio-8011-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK

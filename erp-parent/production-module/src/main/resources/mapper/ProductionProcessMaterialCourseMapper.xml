@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.production.ProductionProcessMaterialCourseMapper">
+
+	<update id="batchUpdate">
+		<foreach collection="list" separator=";" item="productionProcessMaterial">
+			update production_process_material_course
+			  set use_amount=#{productionProcessMaterial.productionProcessMaterialCourse.use_amount},
+			 subtotal= ${productionProcessMaterial.cost_price}*${productionProcessMaterial.productionProcessMaterialCourse.use_amount}
+			where id=#{productionProcessMaterial.productionProcessMaterialCourse.id}
+		</foreach>
+	</update>
+	<insert id="batchInsert">
+		insert into production_process_material_course
+		(id,parent_id,details_number,product_id,product_name,cost_price,
+		use_amount,subtotal)
+		values
+		<foreach collection="list" separator=","
+			item="productionProcessMaterial">
+			(default,#{manufacture_id},0,
+			#{productionProcessMaterial.product_id},#{productionProcessMaterial.product_name},
+			#{productionProcessMaterial.cost_price},#{productionProcessMaterial.use_amount},
+			${productionProcessMaterial.cost_price}*${productionProcessMaterial.use_amount}
+			)
+		</foreach>
+	</insert>
+</mapper>

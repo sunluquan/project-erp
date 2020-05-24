@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.GatherDetailMapper">
+
+	<insert id="batchInsertFinishedGatherDetail">
+		insert into s_gather_details(` id `, ` parentId `, 
+			` productId `, ` productName `, ` amount `, 
+			` productUnit `, ` realCostPrice `, ` subtotal `, 
+			` paidAmount `, ` sid `, ` payTag `,mustAmount)
+			values
+			<foreach collection="list" item="gatherDetail" separator=",">
+				(default,#{id},#{gatherDetail.productId},#{gatherDetail.productname},
+				0,#{gatherDetail.productUnit},#{gatherDetail.realCostPrice},
+				#{gatherDetail.subtotal},0,null,#{gatherDetail.payTag},
+				#{gatherDetail.mustAmount})
+			</foreach>
+	</insert>
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.production.ProductProfitLossDetailMapper">
+
+	<update id="batchUpdate">
+		<foreach collection="list" item="productProfitLossDetail" separator=";">
+			update product_profit_loss_detail
+			set 
+			profit_loss_amount=#{productProfitLossDetail.profit_loss_amount},
+			subtotal=${productProfitLossDetail.profit_loss_amount}*${productProfitLossDetail.cost_price}
+			where id=#{productProfitLossDetail.id}
+		</foreach>
+	</update>
+	<insert id="batchInsert" >
+		insert into product_profit_loss_detail
+		(id,parent_id,product_id,product_name,cost_price,profit_loss_amount,subtotal)
+		values
+		<foreach collection="list" item="productProfitLossDetail" separator=",">
+			(default,#{id},#{productProfitLossDetail.product_id},
+			#{productProfitLossDetail.product_name},#{productProfitLossDetail.cost_price},
+			#{productProfitLossDetail.profit_loss_amount},default)
+		</foreach>
+	</insert>
+</mapper>

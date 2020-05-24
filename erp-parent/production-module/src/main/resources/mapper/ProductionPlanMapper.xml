@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slq.mapper.production.ProductionPlanMapper">
+	
+	
+	<resultMap id="productionPlanResult1" type="ProductionPlan"  autoMapping="true">
+		<id column="id" property="id"/>
+		
+	</resultMap>
+	<!-- 获取满足制定派工单的生产计划  生产计划单的状态为1通过 并且详细计划单的派工状态为0为派工-->
+	<select id="getMeetDespatchingProductionPlans" resultType="ProductionPlan">
+		SELECT pp.*,
+		ppd.product_id as 'productionPlanDetail.product_id',
+		ppd.amount as 'productionPlanDetail.amount',
+		ppd.product_id as 'productionPlanDetail.product_id',
+		ppd.amount as 'productionPlanDetail.amount',
+		p.product_name as 'productionPlanDetail.product_name',
+		p.real_cost_price as 'productionPlanDetail.real_cost_price',
+		p.product_unit as 'productionPlanDetail.product_unit',
+		p.message as 'productionPlanDetail.message',
+		k.kindName as 'productionPlanDetail.kindName',
+		u.useName as 'productionPlanDetail.useName' 
+		FROM `production_plan` pp
+		inner join production_plan_detail ppd
+		on pp.id=ppd.parent_id 
+		inner join product p
+		on ppd.product_id=p.product_id
+		left join product_kind k
+		on p.product_kind_id=k.id
+		inner join product_use u
+		on p.use_type=u.id
+		WHERE pp.check_tag=1 and ppd.manufacture_tag=0
+	</select>
+	<resultMap id="productionPlanResult" type="ProductionPlan"  autoMapping="true">
+		<id column="id" property="id"/>
+		<collection property="productionPlanDetails" ofType="ProductionPlanDetail" 
+		select="com.slq.mapper.production.ProductionPlanDetailMapper.getProductionPlanDetailByParentId"
+		column="id" />
+	</resultMap>
+	<select id="getProductionPlanAndDetailById" resultMap="productionPlanResult">
+		SELECT * FROM production_plan where id=#{id}
+	</select>
+	<select id="searchProductionPlan" resultType="ProductionPlan">
+	
+		SELECT * FROM production_plan
+		<where>
+			register_time between
+			<foreach collection="dateTimeRange" item="date" separator="and">
+				  #{date}
+			</foreach>
+			<if test="keyWord!=null and keyWord!=''">
+				and (
+					process_id like concat('%',#{keyWord},'%')
+				)
+			</if>
+		</where>
+		order by
+		<choose>
+			<when
+				test="orderingRule!=null and orderingRule.prop!=null and orderingRule.prop!='' and orderingRule.order!=null and orderingRule.order!=''">
+				${orderingRule.prop} ${orderingRule.order}
+			</when>
+			<otherwise>
+				process_id desc
+			</otherwise>
+		</choose>
+	</select>
+</mapper>
+

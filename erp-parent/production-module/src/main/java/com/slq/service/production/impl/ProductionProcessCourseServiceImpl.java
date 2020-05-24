@@ -58,15 +58,22 @@ public class ProductionProcessCourseServiceImpl extends
 		// 生产工序表
 		ProductionProcess productionProcess = manufacture.getProductionProcess1();
 <<<<<<< HEAD
+<<<<<<< HEAD
 		//生产工序物料过程集合
 		List<ProductionProcessMaterial> productionProcessMaterials = productionProcess
 				.getProductionProcessMaterials();
 =======
 >>>>>>> warehouse
+=======
+		//生产工序物料过程集合
+		List<ProductionProcessMaterial> productionProcessMaterials = productionProcess
+				.getProductionProcessMaterials();
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		Integer manufacture_id = manufacture.getId();
 		User user = ((ActiveUser) SecurityUtils.getSubject().getPrincipal()).getUser();
 		// 未完成的审核状态
 		Integer process_finish_tag = productionProcess.getProcess_finish_tag();//
+<<<<<<< HEAD
 <<<<<<< HEAD
 		//只有当这道工序的没有物料的时候才会根据前端传过来的状态
 		//如何审核为完成时的审核的话
@@ -78,6 +85,14 @@ public class ProductionProcessCourseServiceImpl extends
 
 >>>>>>> warehouse
 		} else {
+=======
+		//只有当这道工序的没有物料的时候才会根据前端传过来的状态
+		//如何审核为完成时的审核的话
+		if (process_finish_tag != null && process_finish_tag == ProductionConstant.FINISH_CHECK_PROCESS_FINISH_TAG) {
+			//那么当前工序就设置状态为完成时候的审核状态
+			//process_finish_tag=P roductionConstant.FINISH_CHECK_PROCESS_FINISH_TAG;
+		} else {   
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			// 将它设置为未完成的审核状态
 			process_finish_tag = ProductionConstant.UNFINISHED_CHECK_PROCESS_FINISH_TAG;
 		}
@@ -115,11 +130,15 @@ public class ProductionProcessCourseServiceImpl extends
 		System.out.println("productionProcessCourse_id:" + productionProcessCourse_id);
 		if (productionProcessCourse_id != null && productionProcessCourse_id > 0) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			
 =======
 			List<ProductionProcessMaterial> productionProcessMaterials = productionProcess
 					.getProductionProcessMaterials();
 >>>>>>> warehouse
+=======
+			
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			System.out.println("productionProcessMaterials!=null&&!productionProcessMaterials.isEmpty():"
 					+ productionProcessMaterials != null && !productionProcessMaterials.isEmpty());
 			// 因为有些工序不需要使用使用物料啥的
@@ -220,6 +239,7 @@ public class ProductionProcessCourseServiceImpl extends
 		updateWrapper.eq(ProductionProcessCourse::getId, productionProcessCourse.getId());
 		int i = this.baseMapper.update(null, updateWrapper);
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 		Integer process_finish_tag = null;
 =======
@@ -235,6 +255,10 @@ public class ProductionProcessCourseServiceImpl extends
 			process_finish_tag = ProductionConstant.NOT_START_PROCESS_FINISH_TAG;
 		}
 >>>>>>> warehouse
+=======
+		
+		Integer process_finish_tag = null;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		// 总的工时数为已有工时数+新增的工时数
 		// Float
 		// real_labour_hour_amount=productionProcess.getReal_labour_hour_amount()+productionProcess.getLabour_hour_amount();
@@ -254,28 +278,49 @@ public class ProductionProcessCourseServiceImpl extends
 		Float real_module_subtotal = 0f;
 		if (productionProcessMaterials != null && !productionProcessMaterials.isEmpty()) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			//如果当前工序的所有从库存领取的物料都使用完了之后
 			//才会将当前工序状态修改为已完成的状态
 			boolean isFinish=true;
 =======
 >>>>>>> warehouse
+=======
+			//如果当前工序的所有从库存领取的物料都使用完了之后
+			//才会将当前工序状态修改为已完成的状态
+			boolean isFinish=true;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			for (ProductionProcessMaterial productionProcessMaterial : productionProcessMaterials) {
 				//实际物料成本 =当前登记的物料使用数量*物料的价格
 				real_module_subtotal += 
 						productionProcessMaterial.getProductionProcessMaterialCourse().getUse_amount()
 						*productionProcessMaterial.getCost_price();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				//当前物料使用的总数量 ：已使用的数量+当前审核时候使用的数量
 				//这里可能会出现数据不同步问题
 				//原因：productionProcessMaterial.getRenew_amount()的值可能和数据库的值不同
 				//而在下面的修改Renew_amount方法中 使用的时数据库的数量renew_amount=renew_amount+use_amount
 				//如果出现 下次就使用在到数据库查询就行了
+<<<<<<< HEAD
 				int amount_sum= productionProcessMaterial.getRenew_amount()+productionProcessMaterial.getProductionProcessMaterialCourse().getUse_amount();
 				//如果只要有一次amount_sum-productionProcessMaterial.getReal_amount()!=0
 				//成立  那么就说明 这个产品的这道工序至少还有一个物料没有使用  那它的完成状态就不能为已完成
 				if(isFinish) {
 					//总的使用数量如果==从库存领取物料的数量相同的话 说明这个工序的这个物料使用完了
 					if(amount_sum-productionProcessMaterial.getReal_amount()!=0) {
+=======
+				int amount_sum= productionProcessMaterial.getReal_amount()+productionProcessMaterial.getProductionProcessMaterialCourse().getUse_amount();
+				//如果只要有一次amount_sum-productionProcessMaterial.getReal_amount()!=0
+				//成立  那么就说明 这个产品的这道工序至少还有一个物料没有使用  那它的完成状态就不能为已完成
+				System.out.println(productionProcessMaterial.getProduct_name()+":"+amount_sum);
+				System.out.println(productionProcessMaterial.getProduct_name()+":"+productionProcessMaterial.getReal_amount());
+				System.out.println("amount_sum-productionProcessMaterial.getReal_amount()!=0:"+(amount_sum-productionProcessMaterial.getReal_amount()));
+				if(isFinish) {
+					//总的使用数量如果==从库存领取物料的数量相同的话 说明这个工序的这个物料使用完了
+					if(productionProcessMaterial.getRenew_amount()-amount_sum!=0) {
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 						isFinish=false;
 					}
 				}
@@ -291,14 +336,23 @@ public class ProductionProcessCourseServiceImpl extends
 		}else {
 			// 如果当前工序状态为已经完成的状态的审核中
 			//并且还没有设置物料
+<<<<<<< HEAD
+=======
+			System.out.println("// 如果当前工序状态为已经完成的状态的审核中\r\n" + 
+					"			//并且还没有设置物料");
+			System.out.println("productionProcess.getProcess_finish_tag() :"+productionProcess.getProcess_finish_tag() );
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			if (productionProcess.getProcess_finish_tag() == ProductionConstant.FINISH_CHECK_PROCESS_FINISH_TAG) {
 				// 设置当前工序为完成状态
 				process_finish_tag = ProductionConstant.FINISH_PROCESS_FINISH_TAG;
 			}else {
 				// 又设置为当前工序为可以登记的状态
 				process_finish_tag = ProductionConstant.NOT_START_PROCESS_FINISH_TAG;
+<<<<<<< HEAD
 =======
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			}
 		}
 		//当前登记的工序的实际工时价格
@@ -338,4 +392,16 @@ public class ProductionProcessCourseServiceImpl extends
 		}
 	}
 
+<<<<<<< HEAD
+=======
+	@Override
+	public List<ProductionProcessCourse> productionProcessCoursebyManufactureIdAndProcessId(Integer manufacture_id,
+			String process_id) {
+		LambdaQueryWrapper<ProductionProcessCourse> queryWrapper=Wrappers.lambdaQuery();
+		queryWrapper.eq(ProductionProcessCourse::getParent_id, manufacture_id);
+		queryWrapper.eq(ProductionProcessCourse::getProcess_id, process_id);
+		return this.baseMapper.selectList(queryWrapper);
+	}
+
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 }

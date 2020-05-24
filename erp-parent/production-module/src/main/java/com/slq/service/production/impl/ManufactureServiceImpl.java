@@ -42,42 +42,60 @@ import com.slq.service.production.IProductionProcessService;
 import com.slq.util.ActiveUser;
 import com.slq.util.IDGenerateUtil;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.slq.util.ManufactureChart;
 =======
 >>>>>>> warehouse
+=======
+import com.slq.util.ManufactureChart;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 import com.slq.util.TimeLine;
 
 @Service
 @Transactional
 @CacheConfig(cacheNames = "productionModule")
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, ManufactureSum>
 		implements IManufactureService {
 =======
 public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, ManufactureSum> implements IManufactureService{
 >>>>>>> warehouse
+=======
+public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, ManufactureSum>
+		implements IManufactureService {
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	@Autowired
 	private IProcessDesignService processDesignService;
 	@Autowired
 	private IProductionPlanDetailService productionPlanDetailService;
 	@Autowired
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private IProductionProcessService productionProcessService;
 =======
 	private IProductionProcessService productionProcessService ;
 >>>>>>> warehouse
+=======
+	private IProductionProcessService productionProcessService;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	@Autowired
 	private IProcessMaterialDetailService processMaterialDetailService;
 	@Autowired
 	private IProductionProcessMaterialService productionProcessMaterialService;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> warehouse
+=======
+
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	@Cacheable(keyGenerator = "keyGenerator")
 	@Override
 	public ManufactureSum getInsert(String product_id, Integer[] productionPlanDetailIds) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 <<<<<<< HEAD
 		return this.baseMapper.getInsert(product_id, productionPlanDetailIds);
 	}
@@ -86,11 +104,19 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		return this.baseMapper.getInsert(product_id,productionPlanDetailIds);
 	}
 >>>>>>> warehouse
+=======
+		return this.baseMapper.getInsert(product_id, productionPlanDetailIds);
+	}
+
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	@CacheEvict(allEntries = true)
 	@Transactional
 	@Override
 	public int insert(ManufactureSum manufactureSum) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		String product_id = manufactureSum.getProduct_id();
 		// 不需要获取工时成本和物料成本了 因为我修改之前时获取的工序详细表
 		// 修改后获取的时工序总表 所以修改后包含了工时成本和物料成本
@@ -107,6 +133,7 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		// 总设计生产量
 		Integer totalAmount = manufactureSum.getAmount();
 		LambdaUpdateWrapper<ManufactureSum> updateWrapper = Wrappers.lambdaUpdate();
+<<<<<<< HEAD
 =======
 		String product_id=manufactureSum.getProduct_id();
 		//不需要获取工时成本和物料成本了 因为我修改之前时获取的工序详细表
@@ -124,6 +151,8 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		Integer totalAmount=manufactureSum.getAmount();
 		LambdaUpdateWrapper<ManufactureSum> updateWrapper=Wrappers.lambdaUpdate();
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 //		updateWrapper.set(ManufactureSum::getManufacture_id, manufacture_id);
 //		updateWrapper.set(ManufactureSum::getCheck_tag, check_tag);
 //		updateWrapper.set(ManufactureSum::getManufacture_procedure_tag, manufacture_procedure_tag);
@@ -140,6 +169,9 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		manufactureSum.setRegister(user.getUid());
 		manufactureSum.setRegister_time(new Date());
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		manufactureSum.setMaterial_cost_price_sum(processDesign.getMaterial_cost_price_sum() * totalAmount);
 		manufactureSum.setLabour_cost_price_sum(processDesign.getManhour_cost_price_sum() * totalAmount);
 		int i = this.baseMapper.insert(manufactureSum);
@@ -212,6 +244,7 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 			i = productionProcessService.insert(id, productionProcessList);
 			message = "新增生产工序单失败!";
 			if (i > 0) {
+<<<<<<< HEAD
 =======
 		manufactureSum.setMaterial_cost_price_sum( processDesign.getMaterial_cost_price_sum()*totalAmount);
 		manufactureSum.setLabour_cost_price_sum(processDesign.getManhour_cost_price_sum()*totalAmount);
@@ -281,11 +314,16 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 			message="新增生产工序单失败!";
 			if(i>0) {
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				System.out.println("生产工序 productionProcess 的id集合:");
 				for (ProductionProcess productionProcess : productionProcessList) {
 					System.out.println(productionProcess.getId());
 				}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				// 生产工序表下有生产工序详细表
 				// 新增生产工序详细
 				i = productionProcessMaterialService.batchInsert(productionProcessList);
@@ -312,6 +350,7 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 
 	// 审核通过的时候 需要加入出库单申请单
 	// 因为还没有整合 所有就没有搞了先
+<<<<<<< HEAD
 =======
 				//生产工序表下有生产工序详细表
 				//新增生产工序详细
@@ -338,11 +377,16 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 	//审核通过的时候  需要加入出库单申请单
 	//因为还没有整合  所有就没有搞了先
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	@Transactional
 	@CacheEvict(allEntries = true)
 	@Override
 	public int pass(ManufactureSum manufactureSum) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		Integer check_tag = ProductionConstant.PASS_MANUFACTURE_CHECK_TAG;
 		Integer id=manufactureSum.getId();
 		User user = ((ActiveUser) SecurityUtils.getSubject().getPrincipal()).getUser();
@@ -360,6 +404,7 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		return i;
 	}
 
+<<<<<<< HEAD
 =======
 		Integer check_tag=ProductionConstant.PASS_MANUFACTURE_CHECK_TAG;
 		User user=((ActiveUser)SecurityUtils.getSubject().getPrincipal()).getUser();
@@ -371,10 +416,13 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		return this.baseMapper.update(null, updateWrapper);
 	}
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	@Transactional
 	@CacheEvict(allEntries = true)
 	@Override
 	public int reject(ManufactureSum manufactureSum) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 		Integer check_tag = ProductionConstant.REJECT_MANUFACTURE_CHECK_TAG;
 		User user = ((ActiveUser) SecurityUtils.getSubject().getPrincipal()).getUser();
@@ -384,6 +432,11 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		User user=((ActiveUser)SecurityUtils.getSubject().getPrincipal()).getUser();
 		LambdaUpdateWrapper<ManufactureSum> updateWrapper=Wrappers.lambdaUpdate();
 >>>>>>> warehouse
+=======
+		Integer check_tag = ProductionConstant.REJECT_MANUFACTURE_CHECK_TAG;
+		User user = ((ActiveUser) SecurityUtils.getSubject().getPrincipal()).getUser();
+		LambdaUpdateWrapper<ManufactureSum> updateWrapper = Wrappers.lambdaUpdate();
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		updateWrapper.eq(ManufactureSum::getId, manufactureSum.getId());
 		updateWrapper.set(ManufactureSum::getCheck_tag, check_tag);
 		updateWrapper.set(ManufactureSum::getChecker, user.getUid());
@@ -392,6 +445,9 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		return this.baseMapper.update(null, updateWrapper);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 
 	@Cacheable(keyGenerator = "keyGenerator")
 	@Override
@@ -416,6 +472,7 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		LambdaUpdateWrapper<ManufactureSum> updateWrapper = Wrappers.lambdaUpdate();
 		// 设置为:等待审核
 		Integer check_tag = ProductionConstant.UNREVIEWED_MANUFACTURE_CHECK_TAG;
+<<<<<<< HEAD
 =======
 	@Cacheable(keyGenerator = "keyGenerator")
 	@Override
@@ -441,6 +498,8 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		//设置为:等待审核
 		Integer check_tag=ProductionConstant.UNREVIEWED_MANUFACTURE_CHECK_TAG;
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		updateWrapper.set(ManufactureSum::getCheck_tag, check_tag);
 		updateWrapper.set(ManufactureSum::getDesigner, manufacture.getDesigner());
 		updateWrapper.set(ManufactureSum::getRemark, manufacture.getRemark());
@@ -448,6 +507,9 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		return this.baseMapper.update(null, updateWrapper);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 
 	// 查询生产主表的生产工序状态 为生产等待状态-1
 	// 生产中 0 生产审核中 2
@@ -488,6 +550,7 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		return this.baseMapper.selectList(queryWrapper);
 	}
 
+<<<<<<< HEAD
 =======
 	//查询生产主表的生产工序状态 为生产等待状态-1
 	//生产中 0 生产审核中 2
@@ -527,10 +590,13 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		return this.baseMapper.selectList(queryWrapper);
 	}
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	//
 	@CacheEvict
 	@Transactional
 	@Override
+<<<<<<< HEAD
 <<<<<<< HEAD
 	public int setManufacture_procedure_tag(Integer id, Integer manufacture_procedure_tag) {
 		LambdaUpdateWrapper<ManufactureSum> updateWrapper = Wrappers.lambdaUpdate();
@@ -538,11 +604,18 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 	public int setManufacture_procedure_tag(Integer id,Integer manufacture_procedure_tag) {
 		LambdaUpdateWrapper<ManufactureSum> updateWrapper=Wrappers.lambdaUpdate();
 >>>>>>> warehouse
+=======
+	public int setManufacture_procedure_tag(Integer id, Integer manufacture_procedure_tag) {
+		LambdaUpdateWrapper<ManufactureSum> updateWrapper = Wrappers.lambdaUpdate();
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		updateWrapper.set(ManufactureSum::getManufacture_procedure_tag, manufacture_procedure_tag);
 		updateWrapper.eq(ManufactureSum::getId, id);
 		return this.baseMapper.update(null, updateWrapper);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 
 	// 获取通过生产总表的id获取该总表下的
 	// 工序集合的实际总物料 和 实际工时总价格
@@ -555,6 +628,7 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 	// 修改当前生产主表的实际总物料价格
 	// 实际总工时数 实际总合格数量
 	// 和生产状态->已完工
+<<<<<<< HEAD
 =======
 	//获取通过生产总表的id获取该总表下的
 	//工序集合的实际总物料 和 实际工时总价格
@@ -567,17 +641,23 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 	//实际总工时数 实际总合格数量
 	//和生产状态->已完工
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	@CacheEvict(allEntries = true)
 	@Transactional
 	@Override
 	public int updateReal(ManufactureSum manufacture) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		LambdaUpdateWrapper<ManufactureSum> updateWrapper = Wrappers.lambdaUpdate();
 		// 生产状态->已完工
 		Integer manufacture_procedure_tag = ProductionConstant.FINISH_MANUFACTURE_PROCEDURE_TAG;
 		updateWrapper.set(ManufactureSum::getReal_labour_cost_price_sum, manufacture.getReal_labour_cost_price_sum());
 		updateWrapper.set(ManufactureSum::getReal_material_cost_price_sum,
 				manufacture.getReal_material_cost_price_sum());
+<<<<<<< HEAD
 =======
 		LambdaUpdateWrapper<ManufactureSum> updateWrapper=Wrappers.lambdaUpdate();
 		//生产状态->已完工
@@ -585,12 +665,17 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		updateWrapper.set(ManufactureSum::getReal_labour_cost_price_sum, manufacture.getReal_labour_cost_price_sum());
 		updateWrapper.set(ManufactureSum::getReal_material_cost_price_sum, manufacture.getReal_material_cost_price_sum());
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		updateWrapper.set(ManufactureSum::getTested_amount, manufacture.getTested_amount());
 		updateWrapper.set(ManufactureSum::getManufacture_procedure_tag, manufacture_procedure_tag);
 		updateWrapper.eq(ManufactureSum::getId, manufacture.getId());
 		return this.baseMapper.update(null, updateWrapper);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 
 	@Cacheable(keyGenerator = "keyGenerator")
 	@Override
@@ -619,6 +704,7 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 		return this.baseMapper.selectList(queryWrapper);
 	}
 
+<<<<<<< HEAD
 =======
 	@Cacheable(keyGenerator = "keyGenerator")
 	@Override
@@ -629,4 +715,6 @@ public class ManufactureServiceImpl extends ServiceImpl<ManufactureMapper, Manuf
 
 	
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 }

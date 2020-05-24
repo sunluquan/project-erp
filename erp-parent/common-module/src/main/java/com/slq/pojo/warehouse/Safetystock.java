@@ -31,11 +31,15 @@ public class Safetystock implements Serializable{
   private String product_rank;
   private String product_unit;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
   private double REAL_COST_PRICE;
   private String kindName;
   private String useName;
   private String storeName;
 
+<<<<<<< HEAD
 =======
   private double realCostPrice;
   private String kindName;
@@ -46,4 +50,6 @@ public class Safetystock implements Serializable{
   private Integer qwe;
   private Integer qwes;
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 }

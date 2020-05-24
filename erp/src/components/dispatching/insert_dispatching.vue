@@ -188,9 +188,13 @@
 					let product_id=this.manufacture.product_id
 					for (let lt in this.manufacture) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 						console.log(lt+'---'+this.product[lt])
 =======
 >>>>>>> warehouse
+=======
+						console.log(lt+'---'+this.product[lt])
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 						if(this.product[lt])
 							this.manufacture[lt] = this.product[lt]
 					}

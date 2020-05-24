@@ -56,17 +56,23 @@
 		</dependency>
 		<!-- ehcache -->
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		<!--
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		<dependency>
 			<groupId>net.sf.ehcache</groupId>
 			<artifactId>ehcache</artifactId>
 		</dependency>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		 -->
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		<!-- ehcache启动器 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

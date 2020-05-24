@@ -1,10 +1,14 @@
 <template>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
  <el-dialog id="gaschedulingsheet" :before-close="close" width="66%" title="入库调度单" style="text-align: center;" :visible.sync="gaschedulingsheet_gascheduling_dialog_visible">
   
 	<div id="box">					
 		<el-form :inline="true" :model="schedulingid" class="demo-form-inline" :label-position="labelPosition" label-width="150px">
 			<el-form-item  label="入库单编号:" style="padding-right: 180px;" prop="gatherId">
+<<<<<<< HEAD
 =======
  <el-dialog id="gaschedulingsheet" :before-close="close" width="61%" title="入库调度单" style="text-align: center;" :visible.sync="gaschedulingsheet_gascheduling_dialog_visible">
   
@@ -12,6 +16,8 @@
 		<el-form :inline="true" :model="schedulingid" class="demo-form-inline" :label-position="labelPosition" label-width="150px">
 			<el-form-item  label="入库单编号:" style="padding-right: 180px;margin-top: 22px;color: crimson;" prop="gatherId">
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			  <el-input class="input" v-model="schedulingid[0].gatherId"></el-input>
 			</el-form-item>
 			<el-form-item label=".......">
@@ -25,33 +31,46 @@
 			</el-form-item>
 			
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<el-table :data="schedulingid" size="mini" :header-cell-style="{background:'whitesmoke'}"  border style="width: 93%;margin-left: 40px;">
 =======
 			<el-table :data="schedulingid" size="small" :header-cell-style="{background:'whitesmoke'}"  border style="width: 95%;margin-left: 24px;">
 >>>>>>> warehouse
+=======
+			<el-table :data="schedulingid" size="mini" :header-cell-style="{background:'whitesmoke'}"  border style="width: 93%;margin-left: 40px;">
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			    <el-table-column prop="id" label="序号"  width="80px;">
 					<template slot-scope="scope">
 					<span>{{scope.row.id}}</span>
 					</template>
 			    </el-table-column>	
 <<<<<<< HEAD
+<<<<<<< HEAD
 			    <el-table-column prop="materielname" label="产品名称"  >
 =======
 			    <el-table-column prop="materielname" label="产品名称"  width="150px">
 >>>>>>> warehouse
+=======
+			    <el-table-column prop="materielname" label="产品名称"  >
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 					<template slot-scope="scope">
 						    <span>{{scope.row.productName}}</span>
 					</template>					
 			    </el-table-column>
 <<<<<<< HEAD
+<<<<<<< HEAD
 				<el-table-column prop="materielid" label="产品编号" width="160px">		
 =======
 				<el-table-column prop="materielid" label="产品编号" width="176px">		
 >>>>>>> warehouse
+=======
+				<el-table-column prop="materielid" label="产品编号" width="160px">		
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				    <template slot-scope="scope">
 						<span>{{scope.row.productId}}</span>
 				    </template>
 				</el-table-column>
+<<<<<<< HEAD
 <<<<<<< HEAD
 				<el-table-column prop="amount" label="应入库件数"  width="90px">
 					<template slot-scope="scope">
@@ -61,11 +80,19 @@
 					<template slot-scope="scope">
 						<span>{{scope.row.mustAmount}}</span>
 >>>>>>> warehouse
+=======
+				<el-table-column prop="amount" label="应入库件数"  width="90px">
+					<template slot-scope="scope">
+						<span>{{scope.row.stockamount}}</span>
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 					</template>										
 				</el-table-column>
 				<el-table-column prop="amount" label="已入库件数"  width="90px">
 					<template slot-scope="scope">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 						<span>{{scope.row.paidAmount}}</span>
 					</template>										
 				</el-table-column>		
@@ -76,6 +103,7 @@
 				<el-table-column  label="调度"  width="90px">
 					<template slot-scope="scope">	
 						<el-button style="font-size: 13px;" type="text" @click="schedulingids(scope.row.id)">调度</el-button>
+<<<<<<< HEAD
 =======
 						<span>0</span>
 					</template>										
@@ -91,6 +119,8 @@
 					<template slot-scope="scope">	
 						<el-button style="font-size: 13px;" size="mini" type="primary" @click="schedulingids(scope.row.productId)">调度</el-button>
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 					</template>										
 				</el-table-column>
 			  </el-table>	
@@ -98,6 +128,9 @@
 			<el-form-item label="应入库总件数:" style="padding-right: 280px;" prop="register">
 				   <span>{{shul}}</span>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			</el-form-item>	
 			<el-form-item label="已入库总件数:"  prop="register">
 				   <el-input  class="input" v-model="schedulingid[0].amountSum"></el-input>
@@ -107,6 +140,7 @@
 			</el-form-item>							
 			<el-form-item label="已入库总成本:" prop="registertime">		  	     						 
 			      	<el-input  class="input" v-model="schedulingid[0].costPriceSum"></el-input>	 
+<<<<<<< HEAD
 =======
 				   
 			</el-form-item>	
@@ -119,15 +153,21 @@
 			<el-form-item label="已入库总成本:" prop="moneys">		  	     						 
 			      	<span>{{moneys}}</span>
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			</el-form-item>			   			  					
 		</el-form>	
 	</div>
 	<div slot="footer" class="dialog-footer">		
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<el-button size="mini" round @click="close()">返回</el-button>
 =======
 		<el-button type="primary" size="mini" round @click="close()">返回</el-button>
 >>>>>>> warehouse
+=======
+		<el-button size="mini" round @click="close()">返回</el-button>
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	</div>
 	</el-dialog>
 </template>
@@ -139,6 +179,7 @@
 	     	return {
 				shul:0,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				gatherId:'',
 =======
 				sumprice:0.0,
@@ -147,16 +188,23 @@
 				nums:0,
 				moneys:0.0,
 >>>>>>> warehouse
+=======
+				gatherId:'',
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				dataPicke: new Date,
 				custom: 'custom',
 				productId:'',
 				labelPosition: 'right',				       
 				gaschedulingsheet_gascheduling_dialog_visible: false,			   								
 <<<<<<< HEAD
+<<<<<<< HEAD
 				schedulingid:[],
 =======
 				schedulingid:{},
 >>>>>>> warehouse
+=======
+				schedulingid:[],
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				isadmin: 3,					
 		}
 		},
@@ -178,6 +226,9 @@
 				this.$axios.get('api/gather/getSchedulingid/'+this.gatherId).then(response=>{
 						this.schedulingid=response.data;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 						var b=0;
 						for(var a=0;this.schedulingid.length>a;a++){
 							b=b+this.schedulingid[a].stockamount;
@@ -187,6 +238,7 @@
 			},
 			schedulingids(id){
 				this.$router.push({path: '/index/gascheduling.html/gaschedulingdetails/'+id})
+<<<<<<< HEAD
 =======
 						alert(this.schedulingid.payTag);
 						var b=0;
@@ -218,6 +270,8 @@
 				
 				
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			}
 				
 		}		
@@ -225,16 +279,22 @@
 </script>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 <style>
 	#box{
 		width: 855px;
 		height: 400px;
+<<<<<<< HEAD
 =======
 <style scoped="scoped">
 	#box{
 		width: 855px;
 		height: 450px;
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		border:1px solid gray;
 	}
 	.MyClass input.el-input__inner{

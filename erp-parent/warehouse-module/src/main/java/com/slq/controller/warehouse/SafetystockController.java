@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 package com.slq.controller.warehouse;
 
 import java.util.List;
@@ -142,6 +145,7 @@ public class SafetystockController {
 		
 	}
 }
+<<<<<<< HEAD
 =======
 package com.slq.controller.warehouse;
 
@@ -287,3 +291,5 @@ public class SafetystockController {
 	}
 }
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6

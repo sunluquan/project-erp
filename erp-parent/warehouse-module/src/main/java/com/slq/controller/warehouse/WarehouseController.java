@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 package com.slq.controller.warehouse;
 
 import java.util.List;
@@ -101,6 +104,7 @@ public class WarehouseController {
 		return i>0?DefaultResponseData.successResponseData(DefaultResponseData.DELETE_SUCCESS,i):DefaultResponseData.DELETE_ERROR;
 	}
 }
+<<<<<<< HEAD
 =======
 package com.slq.controller.warehouse;
 
@@ -201,3 +205,5 @@ public class WarehouseController {
 	}
 }
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6

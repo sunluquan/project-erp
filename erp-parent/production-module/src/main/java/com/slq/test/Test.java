@@ -22,4 +22,8 @@ import com.slq.util.IDGenerateUtil;
 public class Test {
 
 private static String templatePath="C:\\Users\\孙陆泉\\Documents\\HBuilderProjects\\webpack-vue-project2\\src\\templates";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 }

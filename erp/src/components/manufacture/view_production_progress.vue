@@ -42,12 +42,17 @@
 		props: {
 			manufacture: {
 <<<<<<< HEAD
+<<<<<<< HEAD
 				type: Object,
 				default: () => ({})
 =======
 				type: Number,
 				default: () => (null)
 >>>>>>> warehouse
+=======
+				type: Object,
+				default: () => ({})
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			},
 		},
 		data() {

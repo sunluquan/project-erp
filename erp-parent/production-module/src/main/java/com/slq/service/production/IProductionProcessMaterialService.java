@@ -5,9 +5,13 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.slq.pojo.production.ProductProfitLossDetail;
 =======
 >>>>>>> warehouse
+=======
+import com.slq.pojo.production.ProductProfitLossDetail;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 import com.slq.pojo.production.ProductionProcess;
 import com.slq.pojo.production.ProductionProcessMaterial;
 
@@ -29,6 +33,7 @@ public interface IProductionProcessMaterialService {
 			Integer production_process_course_id);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	int batchUpdateRenewAmount(Integer production_process_id, List<ProductProfitLossDetail> productProfitLossDetails);
 	//获取生产领取物料的集合
 	List<ProductionProcessMaterial> getProductionProcessMaterialByManufactureId(Integer id);
@@ -36,4 +41,9 @@ public interface IProductionProcessMaterialService {
 	
 
 >>>>>>> warehouse
+=======
+	int batchUpdateRenewAmount(Integer production_process_id, List<ProductProfitLossDetail> productProfitLossDetails);
+	//获取生产领取物料的集合
+	List<ProductionProcessMaterial> getProductionProcessMaterialByManufactureId(Integer id);
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 }

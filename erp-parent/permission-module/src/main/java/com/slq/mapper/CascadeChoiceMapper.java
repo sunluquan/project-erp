@@ -12,10 +12,16 @@ public interface CascadeChoiceMapper {
 
 	List<CascadeChoice> getCascadePermissionChild(Integer parentId);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 
 	List<CascadeChoice> getCascadeProductKind();
 	
 	List<CascadeChoice> getKindChildren(Integer id);
+<<<<<<< HEAD
 =======
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 }

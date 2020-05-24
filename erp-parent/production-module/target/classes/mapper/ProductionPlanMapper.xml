@@ -3,6 +3,9 @@
 <mapper namespace="com.slq.mapper.production.ProductionPlanMapper">
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	
 	<resultMap id="productionPlanResult1" type="ProductionPlan"  autoMapping="true">
 		<id column="id" property="id"/>
@@ -32,8 +35,11 @@
 		on p.use_type=u.id
 		WHERE pp.check_tag=1 and ppd.manufacture_tag=0
 	</select>
+<<<<<<< HEAD
 =======
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	<resultMap id="productionPlanResult" type="ProductionPlan"  autoMapping="true">
 		<id column="id" property="id"/>
 		<collection property="productionPlanDetails" ofType="ProductionPlanDetail" 

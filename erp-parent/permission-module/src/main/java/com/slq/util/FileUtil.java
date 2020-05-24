@@ -9,10 +9,14 @@ import com.slq.common.Template;
 public class FileUtil {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private static String templatePath="C:\\Users\\孙陆泉\\Desktop\\总模块\\erp\\src\\templates";
 =======
 	private static String templatePath="F:\\erp\\总模块\\erp\\src\\templates";
 >>>>>>> warehouse
+=======
+	private static String templatePath="C:\\Users\\孙陆泉\\Desktop\\总模块\\erp\\src\\templates";
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	  
 	public static List<Template> getTemplates() {
 		List<Template> templates=new ArrayList<Template>();

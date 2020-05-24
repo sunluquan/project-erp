@@ -13,10 +13,14 @@
 				>
 				  <template slot-scope="{ node, data }">
 <<<<<<< HEAD
+<<<<<<< HEAD
 				    <span>{{ data.title }}</span>
 =======
 				    <span>{{ data.title }}--{{data.value}}</span>
 >>>>>>> warehouse
+=======
+				    <span>{{ data.title }}</span>
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				    <span v-if="!node.isLeaf"> ({{ data.children.length }}) </span>
 				  </template>
 				</el-cascader>
@@ -50,10 +54,14 @@
 				</el-form-item>
 				<el-form-item label="菜单组件路径:" >
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<el-cascader clearable v-model="permission.componentName" :options="templates" placeholder="请选择"
 =======
 					<el-cascader v-model="permission.componentName" :options="templates" placeholder="请选择"
 >>>>>>> warehouse
+=======
+					<el-cascader clearable v-model="permission.componentName" :options="templates" placeholder="请选择"
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 					:props="templatePropsParams">
 					  <template slot-scope="{ node, data }" >
 							<span >{{ data.name }}</span>

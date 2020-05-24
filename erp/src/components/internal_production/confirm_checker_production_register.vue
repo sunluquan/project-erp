@@ -54,10 +54,14 @@
 				</template>
 			</el-table-column>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<el-table-column label="已领取数量" prop="renew_amount">
 =======
 			<el-table-column label="补充数量" prop="renew_amount">
 >>>>>>> warehouse
+=======
+			<el-table-column label="已领取数量" prop="renew_amount">
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				<template slot-scope="scope">
 					{{scope.row.renew_amount|formNumerical1()}}
 				</template>
@@ -70,6 +74,7 @@
 			<el-table-column label="当前使用数量">
 				<template slot-scope="scope">
 <<<<<<< HEAD
+<<<<<<< HEAD
 					{{scope.row.use_amount}}
 					<!-- <number v-model="scope.row.productionProcessMaterialCourse.use_amount" :min=0 :max='((scope.row.amount+scope.row.renew_amount)-scope.row.real_amount)'></number> -->
 					<!-- <number @change="useAmountChange" :production_process_material="scope.row" v-model="scope.row.use_amount" :min=0 :max="(scope.row.renew_amount-scope.row.real_amount)"
@@ -77,6 +82,11 @@
 =======
 					<number v-model="scope.row.productionProcessMaterialCourse.use_amount" :min=0 :max='((scope.row.amount+scope.row.renew_amount)-scope.row.real_amount)'></number>
 >>>>>>> warehouse
+=======
+					<!-- <number v-model="scope.row.productionProcessMaterialCourse.use_amount" :min=0 :max='((scope.row.amount+scope.row.renew_amount)-scope.row.real_amount)'></number> -->
+					<number @change="useAmountChange" :production_process_material="scope.row" v-model="scope.row.productionProcessMaterialCourse.use_amount" :min=0 :max="(scope.row.renew_amount-scope.row.real_amount)"
+					 :step="scope.row.single_material_design_amount" :step_strictly="true"></number>
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				</template>
 			</el-table-column>
 		</el-table>
@@ -102,10 +112,14 @@
 
 <script>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	import number from '@/components/production_register_number.vue'
 =======
 	import number from '@/components/number.vue'
 >>>>>>> warehouse
+=======
+	import number from '@/components/production_register_number.vue'
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	export default{
 		name:'confirm_checker_production_register',
 		model:{
@@ -127,15 +141,27 @@
 			}
 		},methods:{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			useAmountChange(data){
 				//当某一个物料的使用数量发生改变时  其他的物料也会跟着改变
 				//获取当前物料的使用数量倍数
 				//倍数为 使用数量/一个产品的这道工序需要的使用数量
 				let multiple=0;
+<<<<<<< HEAD
 				if(data.use_amount>0){
 					multiple=data.use_amount/data.single_material_design_amount
 				}
 				this.materials.forEach(item=>{
+=======
+				if(data.productionProcessMaterialCourse.use_amount>0){
+					let newVal=data.productionProcessMaterialCourse.use_amount;
+					multiple=newVal/data.single_material_design_amount
+				}
+				let productionProcessMaterials=this.production_process_course.productionProcessMaterials
+				productionProcessMaterials.forEach(item=>{
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 					if(item.id!=data.id){
 						let use_amount=item.single_material_design_amount*multiple
 						//最大可用数量：库存领取物料数量-已使用的物料数量
@@ -143,12 +169,19 @@
 						if(use_amount>max_amount){
 							use_amount=max_amount
 						}
+<<<<<<< HEAD
 						item.use_amount=use_amount;
 					}
 				})
 			},
 =======
 >>>>>>> warehouse
+=======
+						item.productionProcessMaterialCourse.use_amount=use_amount;
+					}
+				})
+			},
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			renewal(allUpdate){
 				//allUpdate:跟新所有吗  true更新所有 false更新上一个
 				this.$emit('renewal',allUpdate);

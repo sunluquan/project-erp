@@ -1,5 +1,8 @@
 <template>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
  <el-dialog id="inventoryRegistrationSheet" :before-close="close" width="66%" title="入库单" style="text-align: center;" :visible.sync="inventoryRegistrationSheet_gascheduling_dialog_visible">
   
 	<div id="box">					
@@ -83,6 +86,7 @@
 	     <el-button size="mini" round @click="updnum()">确定</el-button>
 		<el-button size="mini" round @click="close()">返回</el-button>
 	</div>
+<<<<<<< HEAD
 =======
 	<el-dialog id="inventoryRegistrationSheet" :before-close="close" width="61%" title="入库单" style="text-align: center;"
 	 :visible.sync="inventoryRegistrationSheet_gascheduling_dialog_visible">
@@ -177,12 +181,17 @@
 			<el-button size="mini" round @click="close()">返回</el-button>
 		</div>
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	</el-dialog>
 </template>
 
 <script>
 	export default {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		name:'inventoryRegistrationSheet',
 		data() {			
 	     	return {
@@ -214,6 +223,7 @@
 			// 		alert(1);
 			// 	})
 			// },
+<<<<<<< HEAD
 =======
 		name: 'inventoryRegistrationSheet',
 		data() {
@@ -254,11 +264,16 @@
 				// this.costprice = s;
 			},
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			close() {
 				this.inventoryRegistrationSheet_gascheduling_dialog_visible = false;
 				this.$router.go(-1)
 			},
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			getAllregistrationById(){						
 				this.$axios.get('api/gather/byIdAll/'+this.gatherId).then(response=>{
 						this.registration=response.data;
@@ -310,6 +325,7 @@
 			}			
 		}
 				
+<<<<<<< HEAD
 =======
 			getAllregistrationById() {
 				this.$axios.get('api/gather/byIdAll/' + this.gatherId).then(response => {
@@ -363,17 +379,23 @@
 		}
 
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	}
 </script>
 
 <style>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	#box{
 		width: 935px;
 		height: 480px;
 		border:1px solid gray;
 	}
 	.MyClass input.el-input__inner{
+<<<<<<< HEAD
 =======
 	#box {
 		width: 855px;
@@ -383,6 +405,8 @@
 
 	.MyClass input.el-input__inner {
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		width: 160px;
 		border-top-width: 0px;
 		border-left-width: 0px;
@@ -391,11 +415,15 @@
 		/*outline: medium;*/
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	.input input.el-input__inner{
 =======
 
 	.input input.el-input__inner {
 >>>>>>> warehouse
+=======
+	.input input.el-input__inner{
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		width: 160px;
 		border-top-width: 0px;
 		border-left-width: 0px;
@@ -403,6 +431,9 @@
 		border-bottom-width: 0px;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
     .MyClasssum input.el-input__inner{
     	width:80px;
     	border-top-width: 0px;
@@ -411,6 +442,7 @@
     	border-bottom-width: 0px;
     	/*outline: medium;*/
     }		
+<<<<<<< HEAD
 =======
 
 	.MyClasssum input.el-input__inner {
@@ -422,4 +454,6 @@
 		/*outline: medium;*/
 	}
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 </style>

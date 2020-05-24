@@ -32,12 +32,18 @@
 			</el-form>
 		</div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<el-table style="text-align: center;width: 100%" 
 		:border="true" :data="materials" 
 		:highlight-current-row="true">
 =======
 		<el-table style="text-align: center;width: 100%" :border="true" :data="materials" :highlight-current-row="true">
 >>>>>>> warehouse
+=======
+		<el-table style="text-align: center;width: 100%" 
+		:border="true" :data="materials" 
+		:highlight-current-row="true">
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			<el-table-column label="物料编号">
 				<template slot-scope="scope" prop="product_id">
 					{{scope.row.product_id}}
@@ -59,10 +65,14 @@
 				</template>
 			</el-table-column>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<el-table-column label="已领取数量" prop="renew_amount">
 =======
 			<el-table-column label="补充数量" prop="renew_amount">
 >>>>>>> warehouse
+=======
+			<el-table-column label="已领取数量" prop="renew_amount">
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				<template slot-scope="scope">
 					{{scope.row.renew_amount|formNumerical1()}}
 				</template>
@@ -75,12 +85,18 @@
 			<el-table-column label="当前使用数量">
 				<template slot-scope="scope">
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<!-- <number v-model="scope.row.use_amount" :min=0 :max='((scope.row.amount+scope.row.renew_amount)-scope.row.real_amount)'></number> -->
 					<number @change="useAmountChange" :production_process_material="scope.row" v-model="scope.row.use_amount" :min=0 :max="(scope.row.renew_amount-scope.row.real_amount)"
 					 :step="scope.row.single_material_design_amount" :step_strictly="true"></number>
 =======
 					<number v-model="scope.row.use_amount" :min=0 :max='((scope.row.amount+scope.row.renew_amount)-scope.row.real_amount)'></number>
 >>>>>>> warehouse
+=======
+					<!-- <number v-model="scope.row.use_amount" :min=0 :max='((scope.row.amount+scope.row.renew_amount)-scope.row.real_amount)'></number> -->
+					<number @change="useAmountChange" :production_process_material="scope.row" v-model="scope.row.use_amount" :min=0 :max="(scope.row.renew_amount-scope.row.real_amount)"
+					 :step="scope.row.single_material_design_amount" :step_strictly="true"></number>
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				</template>
 			</el-table-column>
 		</el-table>
@@ -101,19 +117,27 @@
 			<el-button type="danger" @click="close">关 闭</el-button>
 			<el-button type="success" @click="isfinish">提 交</el-button>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<!-- <el-button type="success" @click="submitRegister">提 交</el-button> -->
 =======
 >>>>>>> warehouse
+=======
+			<!-- <el-button type="success" @click="submitRegister">提 交</el-button> -->
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		</div>
 	</el-dialog>
 </template>
 
 <script>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	import number from '@/components/production_register_number.vue'
 =======
 	import number from '@/components/number.vue'
 >>>>>>> warehouse
+=======
+	import number from '@/components/production_register_number.vue'
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	export default {
 		name: 'production_register', //生产登记
 		model: {
@@ -146,12 +170,21 @@
 		},
 		methods: {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			useAmountChange(data){
 				//当某一个物料的使用数量发生改变时  其他的物料也会跟着改变
 				//获取当前物料的使用数量倍数
 				//倍数为 使用数量/一个产品的这道工序需要的使用数量
 				let multiple=0;
+<<<<<<< HEAD
 				if(data.use_amount>0){
+=======
+				alert(data.use_amount)
+				if(data.use_amount>0){
+					
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 					multiple=data.use_amount/data.single_material_design_amount
 				}
 				this.materials.forEach(item=>{
@@ -183,6 +216,7 @@
 				}else{
 					this.submitRegister(false)
 				}
+<<<<<<< HEAD
 =======
 			isfinish() { //当前工序是否完工
 				this.$confirm('当前工序是否已完工?', '当前工序完工状态', {
@@ -196,6 +230,8 @@
 					this.submitRegister(false)
 				});
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			},
 			refresh() {
 				this.$emit('refresh')
@@ -217,10 +253,14 @@
 					})
 			},
 <<<<<<< HEAD
+<<<<<<< HEAD
 			submitRegister(isFinish) {//
 =======
 			submitRegister(isFinish) {
 >>>>>>> warehouse
+=======
+			submitRegister(isFinish) {//
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				let manufacture = {
 					id: this.manufacture.id,
 					productionProcess1: {},
@@ -229,9 +269,14 @@
 				manufacture.productionProcess1 = JSON.parse(JSON.stringify(this.production_process))
 				manufacture.productionProcess1['productionProcessMaterials'] = this.materials
 <<<<<<< HEAD
+<<<<<<< HEAD
 				//只有当前工序没有物料的情况下 才会进行确认
 =======
 >>>>>>> warehouse
+=======
+				alert(isFinish)
+				//只有当前工序没有物料的情况下 才会进行确认
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				if (isFinish) { //已完工得话  设置生产工序得工序完成状态为3 完成时得工序审核
 					manufacture.productionProcess1['process_finish_tag'] = 3;
 				}

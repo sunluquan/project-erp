@@ -47,11 +47,17 @@ public class ProductionProcessMaterial implements Serializable{
 	private String product_name;//物料名称
 	private Float cost_price;//物料单价
 <<<<<<< HEAD
+<<<<<<< HEAD
 	//当前工序的单个产品的物料设计数量 如1个产品的组装工序需要2个物料  则single_material_design_amount=2
 	//不管这个产品的设计数量有多少
 	private Integer  single_material_design_amount;
 =======
 >>>>>>> warehouse
+=======
+	//当前工序的单个产品的物料设计数量 如1个产品的组装工序需要2个物料  则single_material_design_amount=2
+	//不管这个产品的设计数量有多少
+	private Integer  single_material_design_amount;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	private Integer amount;//设计数量
 	private Integer renew_amount;//已从库存领料数量
 	private Integer real_amount;//实际使用数量

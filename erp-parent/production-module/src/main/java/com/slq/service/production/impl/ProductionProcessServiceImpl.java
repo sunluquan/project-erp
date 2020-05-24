@@ -63,11 +63,19 @@ public class ProductionProcessServiceImpl extends ServiceImpl<ProductionProcessM
 	@Override
 	public int register(ManufactureSum manufacture) {
 		ProductionProcess productionProcess = manufacture.getProductionProcess1();
+<<<<<<< HEAD
 		// 未完成的审核状态
 		Integer process_finish_tag = productionProcess.getProcess_finish_tag();//
 		// 如何审核为完成时的审核的话
 		if (process_finish_tag != null && process_finish_tag == ProductionConstant.FINISH_CHECK_PROCESS_FINISH_TAG) {
 
+=======
+		// 工序的状态
+		Integer process_finish_tag = productionProcess.getProcess_finish_tag();//
+		// 如何审核为完成时的审核的话
+		if (process_finish_tag != null && process_finish_tag == ProductionConstant.FINISH_CHECK_PROCESS_FINISH_TAG) {
+			//process_finish_tag = ProductionConstant.FINISH_PROCESS_FINISH_TAG;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		} else {
 			// 将它设置为未完成的审核状态
 			process_finish_tag = ProductionConstant.UNFINISHED_CHECK_PROCESS_FINISH_TAG;

@@ -10,9 +10,13 @@ import com.github.pagehelper.PageInfo;
 import com.slq.common.Params;
 import com.slq.pojo.production.ManufactureSum;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.slq.util.ManufactureChart;
 =======
 >>>>>>> warehouse
+=======
+import com.slq.util.ManufactureChart;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 import com.slq.util.TimeLine;
 
 @Mapper
@@ -34,9 +38,14 @@ public interface ManufactureMapper extends BaseMapper<ManufactureSum>{
 	List<TimeLine> getProductionProgressByManufactureId(Integer id);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	List<ManufactureChart> getProductProductionFinishChartResult();
 
 =======
 >>>>>>> warehouse
+=======
+	List<ManufactureChart> getProductProductionFinishChartResult();
+
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	
 }

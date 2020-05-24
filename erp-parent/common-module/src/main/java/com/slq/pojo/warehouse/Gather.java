@@ -19,9 +19,13 @@ import lombok.Data;
 public class Gather implements Serializable{
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 =======
 >>>>>>> warehouse
+=======
+	
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	public Gather(String gatherId, String stockid, String storer, String reasonexact, Integer amountSum,
 			double costPriceSum, Integer gatheredAmountSum, String remark, String register, Date registerTime) {
 		super();
@@ -36,6 +40,7 @@ public class Gather implements Serializable{
 		this.register = register;
 		this.registerTime = registerTime;
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	public Gather() {
 		super();
@@ -60,6 +65,11 @@ public class Gather implements Serializable{
 //	this.registerTime = registerTime;
 //}
 >>>>>>> warehouse
+=======
+	public Gather() {
+		super();
+	}
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	@TableId
 	private Integer id;					//序号
 	private String gatherId;        //入库单编号
@@ -77,6 +87,9 @@ public class Gather implements Serializable{
 	private String checkTime;			//审核时间
 	private Integer checkTag;			//审核状态0:等待审核1:审核通过2:审核未通过
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	private String attemper;			//调度人
 	private String attemmperTime;		//调度时间
 	private String storeTag;			//库存标记1:已登记2:已调度
@@ -98,6 +111,7 @@ public class Gather implements Serializable{
 //	private String storeName;
 //	private Integer maxamount;
 //	private String storeAddress;
+<<<<<<< HEAD
 =======
 	private String attemper;           //调度人
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")//登记人
@@ -154,4 +168,6 @@ public class Gather implements Serializable{
 	
 	
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 }

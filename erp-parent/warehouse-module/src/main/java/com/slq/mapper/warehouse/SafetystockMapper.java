@@ -16,10 +16,14 @@ public interface SafetystockMapper {
 	int updatestockId(Safetystock stocks);
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Safetystock getAllsafetyById(String productId);
 =======
 	Safetystock getAllsafetyById(String safetystockId);
 >>>>>>> warehouse
+=======
+	Safetystock getAllsafetyById(String productId);
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
     
 	List<Safetystock> selectByReviewList();
 	

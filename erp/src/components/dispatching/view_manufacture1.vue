@@ -1,10 +1,19 @@
 <template>
 	<el-dialog :before-close="close" title="查看生产制定单" :visible.sync="dialog_visible">
+<<<<<<< HEAD
 		<process-material-view 
 		:id="id"
 		v-model="processMaterialView"
 		@get_cache_material="getCacheMaterial"
 		@set_cache_material="setCacheMaterial"></process-material-view>
+=======
+		<view-production-process-course
+		:production_process="activeProductionProcess"
+		v-model="viewProcessCourseDialogVisible"
+		@set_cache_material="setCacheMaterial"
+		@get_cache_material="getCacheMaterial">
+		</view-production-process-course>
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		<div id="columns">
 			<el-form label-position="left" inline class="demo-table-expand">
 				<el-form-item label="派工单编号: ">
@@ -15,7 +24,10 @@
 				</el-form-item>
 			</el-form>
 		</div>
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		<div id="columns">
 			<el-form label-position="left" inline class="demo-table-expand">
 				<el-form-item label="产品编号: ">
@@ -26,7 +38,10 @@
 				</el-form-item>
 			</el-form>
 		</div>
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		<div id="columns">
 			<el-form label-position="left" inline class="demo-table-expand">
 				<el-form-item label="投产数量: ">
@@ -40,8 +55,24 @@
 		<br />
 		<!-- :summary-method="getSummaries" 
 		-->
+<<<<<<< HEAD
 		<el-table :summary-method="getSummaries" show-summary :border="true" ref="material_design" :highlight-current-row="true"
 		 style="width: 100%" :data="productionProcess" :default-sort="{prop: 'details_number', order: 'ascending'}">
+=======
+		<el-table @row-dblclick="viewProcessCourse" 
+		:summary-method="getSummaries" show-summary 
+		:border="true" ref="material_design" 
+		:highlight-current-row="true"
+		 style="width: 100%" :data="productionProcess"
+		  :default-sort="{prop: 'details_number', order: 'ascending'}">
+			<!-- <el-table-column type="expand">
+			    <template slot-scope="props">
+					<view-production-process-course 
+					:production_process="props.row">
+					</view-production-process-course>
+				</template>
+			</el-table-column> -->
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			<el-table-column label="工序执行顺序" prop="details_number" sortable>
 				<template slot-scope="scope">
 					{{scope.row.details_number}}
@@ -102,7 +133,11 @@
 			</el-table-column>
 			<el-table-column label="操作" prop="total">
 				<template slot-scope="scope">
+<<<<<<< HEAD
 					<el-button type="primary" :disabled="scope.row.material_tag==0" :title="scope.row.material_tag==0?'无工序物料信息':'查看工序物料信息'" @click="processMaterialViewMethod(scope.row.id)" icon="el-icon-view" circle></el-button>
+=======
+					<el-button type="primary" title="查看生产工序过程" @click="viewProcessCourse(scope.row)" icon="el-icon-view" circle></el-button>
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				</template>
 			</el-table-column>
 		</el-table>
@@ -147,7 +182,11 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 	import process_material_view from '@/components/dispatching/view_process_material.vue'
+=======
+	import view_production_process_course from '@/components/manufacture/view_production_process_course.vue'
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	export default{
 		name:'view_manufacture',
 		model:{
@@ -164,11 +203,18 @@
 		},
 		data(){
 			return{
+<<<<<<< HEAD
 				processDetails:[],
 				id:null,
 				processMaterialView:false,
 				cacheMaterial:{},
 				productionProcess:[]
+=======
+				cacheMaterial:{},
+				productionProcess:[],
+				viewProcessCourseDialogVisible:false,
+				activeProductionProcess:{}
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			}
 		},methods:{
 			getCacheMaterial(id,callback){
@@ -179,6 +225,7 @@
 					}
 				}
 				callback([])
+<<<<<<< HEAD
 			},setCacheMaterial(data){
 				if(this.cacheMaterial instanceof Map == false){
 					this.cacheMaterial=new Map()
@@ -188,6 +235,17 @@
 			processMaterialViewMethod(id){
 				this.id=id
 				this.processMaterialView=true
+=======
+			},setCacheMaterial(id,data){
+				if(this.cacheMaterial instanceof Map == false){
+					this.cacheMaterial=new Map()
+				}
+				this.cacheMaterial.set(id,data)
+			},
+			viewProcessCourse(data){
+				this.activeProductionProcess=data;
+				this.viewProcessCourseDialogVisible=true;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			},
 			getProductionProcess(){
 				let manufacture_id = this.manufacture.id
@@ -304,6 +362,7 @@
 			manufacture_id(newVal){
 				this.getProductionProcess()
 			}
+<<<<<<< HEAD
 			// product_id(newVal){
 			// 	if(newVal){
 			// 		this.getProcessDetails()
@@ -315,6 +374,11 @@
 			// }
 		},components:{
 			'process-material-view':process_material_view
+=======
+		},updated() {
+		},components:{
+			'view-production-process-course':view_production_process_course
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		}
 	}
 </script>

@@ -32,9 +32,12 @@
 		on p.use_type=u.id 
 		where check_tag=1 and inventory_allocation_tag=0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         and (select COUNT(1) from safetystock where productId=p.product_id )&lt;(select count(1) from storehouse where use_type=p.use_type)
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	</select>
 	<!-- //获取符合制定派工单的产品 在制定派工单时用到 //按产品划分 -->
 	<!-- ,

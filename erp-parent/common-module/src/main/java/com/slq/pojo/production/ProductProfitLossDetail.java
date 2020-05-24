@@ -16,7 +16,11 @@ import lombok.Data;
 @Data
 @TableName("product_profit_loss_detail")
 public class ProductProfitLossDetail  implements Serializable{
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	@TableId(type = IdType.AUTO)
 	private Integer id;
 	private Integer parent_id;

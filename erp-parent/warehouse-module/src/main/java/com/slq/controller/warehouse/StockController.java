@@ -32,6 +32,9 @@ public class StockController {
 		return DefaultResponseData.successResponseData(stock);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	
 	@RequestMapping("/addStock")
 	public ResponseData addStock(Stock stock) {
@@ -42,6 +45,9 @@ public class StockController {
 			return DefaultResponseData.ADD_ERROR;
 		}
 	}
+<<<<<<< HEAD
 =======
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 }

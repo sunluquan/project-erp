@@ -22,10 +22,14 @@ public class GatherDetailServiceImpl extends ServiceImpl<GatherDetailMapper,Gath
 	@Transactional
 	@Override
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public int batchInsertFinishedGatherDetail(Integer id, List<GatherDetails> gatherDetailsList) {
 =======
 	public int batchInsertFinishedGatherDetail(String id, List<GatherDetails> gatherDetailsList) {
 >>>>>>> warehouse
+=======
+	public int batchInsertFinishedGatherDetail(Integer id, List<GatherDetails> gatherDetailsList) {
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		if(!gatherDetailsList.isEmpty()&&gatherDetailsList.size()==1) {
 			GatherDetails gatherDetails = gatherDetailsList.get(0);
 			gatherDetails.setParentId(id);
@@ -36,9 +40,12 @@ public class GatherDetailServiceImpl extends ServiceImpl<GatherDetailMapper,Gath
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	
 
 }

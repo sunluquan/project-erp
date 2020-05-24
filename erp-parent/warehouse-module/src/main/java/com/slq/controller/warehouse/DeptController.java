@@ -14,10 +14,14 @@ import com.slq.common.Params;
 import com.slq.exception.NotToBeDeletedException;
 import com.slq.pojo.warehouse.Dept;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.slq.service.warehouse.IDeptService;
 =======
 import com.slq.service.IDeptService;
 >>>>>>> warehouse
+=======
+import com.slq.service.warehouse.IDeptService;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 import com.slq.util.DefaultResponseData;
 import com.slq.util.ResponseData;
 

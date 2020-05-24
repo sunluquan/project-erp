@@ -1,5 +1,8 @@
 <template>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
  <el-dialog id="gaschedulingdetails" :before-close="close" width="65%" title="入库调度单" style="text-align: center;" :visible.sync="gaschedulingdetails_gascheduling_dialog_visible">
   
 	<div id="box">					
@@ -58,6 +61,7 @@
 			  </el-form-item>
 			  </el-form>
 			
+<<<<<<< HEAD
 =======
  <el-dialog id="gaschedulingdetails" :before-close="close" width="61%" title="入库调度单" style="text-align: center;" :visible.sync="gaschedulingdetails_gascheduling_dialog_visible">
   
@@ -114,11 +118,16 @@
 			  <br />
 			  			
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			<el-form-item label="登记人:" style="padding-right: 250px;" prop="activeUser">
 			   <span>{{activeUser}}</span>
 			</el-form-item>	
 			<el-form-item label="登记时间:" prop="registertime">		  	     
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				<el-date-picker type="date" placeholder="选择日期" size="small" width="40px">						   
 			    </el-date-picker>
 			</el-form-item>
@@ -133,6 +142,7 @@
 			</el-form-item>							
 			<el-form-item label="已入库总成本:" prop="registertime">		  	     						 
 			      	<el-input  class="input" v-model="scheduling[0].costPriceSum"></el-input>	 
+<<<<<<< HEAD
 =======
 				<el-date-picker type="date" v-model="scheduling.registerTime" placeholder="选择日期" size="small" width="40px">						   
 			    </el-date-picker>
@@ -149,10 +159,13 @@
 			<el-form-item label="已入库总成本:" prop="moneys">		  	     						 
 			      	<span>{{moneys}}</span>	 
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			</el-form-item>			   			  					
 		</el-form>
 	</div>
 	<div slot="footer" class="dialog-footer">		
+<<<<<<< HEAD
 <<<<<<< HEAD
 	     <el-button size="mini" round @click="updnum()">确定</el-button>
 		<el-button size="mini" round @click="close()">返回</el-button>
@@ -160,6 +173,10 @@
 	     <el-button type="danger" size="mini" round @click="updnum()">确定</el-button>
 		<el-button type="primary" size="mini" round @click="close()">返回</el-button>
 >>>>>>> warehouse
+=======
+	     <el-button size="mini" round @click="updnum()">确定</el-button>
+		<el-button size="mini" round @click="close()">返回</el-button>
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	</div>
 	</el-dialog>
 </template>
@@ -174,12 +191,16 @@
 				dataPicke: new Date,
 				custom: 'custom',
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				productId:'',				
 				amount:'',
 				labelPosition: 'right',				       
 				gaschedulingdetails_gascheduling_dialog_visible: false,			   								
 				scheduling:[],
 				schedulings:{},
+<<<<<<< HEAD
 =======
 				productId:'',
 				nums:0,
@@ -191,6 +212,8 @@
 				scheduling:{},
 				
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				gather:{},
 				isadmin: 3,					
 		}
@@ -198,16 +221,22 @@
 		
 		created(){			
 <<<<<<< HEAD
+<<<<<<< HEAD
 			let id=this.$route.params[Object.keys(this.$route.params)[0]];
 			this.id=id;			
 =======
 			let productId=this.$route.params[Object.keys(this.$route.params)[0]];
 			this.productId=productId;			
 >>>>>>> warehouse
+=======
+			let id=this.$route.params[Object.keys(this.$route.params)[0]];
+			this.id=id;			
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			console.log(this.$route);
 			this.gaschedulingdetails_gascheduling_dialog_visible = true;						
 			this.getAllsafetyById();
 			//this.schedulingid.push(schedulingid);
+<<<<<<< HEAD
 <<<<<<< HEAD
 		},
 		methods: {
@@ -220,6 +249,10 @@
 				this.scheduling.gatherDetails[0].storehouse=this.warehousePage[index];
 			},
 >>>>>>> warehouse
+=======
+		},
+		methods: {
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			close() {
 				this.gaschedulingdetails_gascheduling_dialog_visible = false;
 				this.$router.go(-1)
@@ -227,6 +260,9 @@
 			getAllsafetyById(){		
 				//let id=this.id;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				this.$axios.get('api/gather/getByidGather/'+this.id).then(response=>{
 						this.scheduling.push(response.data);
 					})
@@ -236,6 +272,7 @@
 				this.schedulings.id=this.id;
 				this.$axios.post('api/gather/updgatherDetailsNum',this.schedulings).then(response=>{
 					this.schedulings=response.data;
+<<<<<<< HEAD
 =======
 			this.$axios.get('api/gather/getGatherSafetystock/'+this.productId).then(response=>{
 						this.scheduling=response.data;	
@@ -251,6 +288,8 @@
 				this.$axios.post('api/gather/updgathersum',this.scheduling).then(response=>{
 					this.scheduling=response.data;
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 					 if(response.statusCord==200){
 					 	this.$message({
 					 	    showClose: true,
@@ -270,10 +309,14 @@
 				});
 				
 <<<<<<< HEAD
+<<<<<<< HEAD
 				alert(this.scheduling[0].gatherId);
 =======
 				/*alert(this.scheduling[0].gatherId);
 >>>>>>> warehouse
+=======
+				alert(this.scheduling[0].gatherId);
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				this.gather.gatherId=this.scheduling[0].gatherId;
 				this.gather.amountSum=this.schedulings.amount;
 				alert(this.gather.amountSum);				
@@ -297,11 +340,15 @@
 					 	});
 					 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				})
 				this.gaschedulingdetails_gascheduling_dialog_visible = false;
 				this.$router.go(-1);
 		},
 		
+<<<<<<< HEAD
 =======
 				})*/
 				this.gaschedulingdetails_gascheduling_dialog_visible = false;
@@ -318,19 +365,26 @@
 				})
 		},
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		},
 		
 		computed: {
 			activeUser() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 						return this.$store.getters.getActiveUser.user.uid;
 =======
 						return this.$store.getters.getActiveUser.user.uname;
 >>>>>>> warehouse
+=======
+						return this.$store.getters.getActiveUser.user.uid;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				},
 			routerNames() {
 						return this.$store.getters.getRouterNames;
 			}			
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 		},filters:{
@@ -345,6 +399,8 @@
 				return obj[property];
 			},
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		}
 				
 	}
@@ -354,10 +410,14 @@
 	#box{
 		width: 855px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		height: 500px;
 =======
 		height: 400px;
 >>>>>>> warehouse
+=======
+		height: 500px;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		border:1px solid gray;
 	}
 	.MyClass input.el-input__inner{

@@ -58,10 +58,14 @@
 			  <el-table-column prop="date" label="变更" width="100px">
 				  <template slot-scope="scope">
 <<<<<<< HEAD
+<<<<<<< HEAD
 				  <el-link type="primary" @click="change(scope.row.productId)">变更</el-link>
 =======
 				  <el-link type="primary" @click="change(scope.row.safetystockId)">变更</el-link>
 >>>>>>> warehouse
+=======
+				  <el-link type="primary" @click="change(scope.row.productId)">变更</el-link>
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				  </template>
 			  </el-table-column>
 		    </el-table>
@@ -104,12 +108,17 @@
 			          })
 					},
 <<<<<<< HEAD
+<<<<<<< HEAD
 					change(productId){
 				     	this.$router.push({path:'/index/safetystockchange.html/updatestockchange/'+productId})
 =======
 					change(safetystockId){
 				     	this.$router.push({path:'/index/safetystockchange.html/updatestockchange/'+safetystockId})
 >>>>>>> warehouse
+=======
+					change(productId){
+				     	this.$router.push({path:'/index/safetystockchange.html/updatestockchange/'+productId})
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 					},
 				/*	  	 								
 	  	 		//cx(){

@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 server.port: 8011
 
 spring:
@@ -33,6 +36,7 @@ mybatis-plus:
       idType: AUTO #主键策略 
   configuration:
     mapUnderscoreToCamelCase: false #关闭字段名的映射（关闭如userName映射成user_name）
+<<<<<<< HEAD
 =======
 server.port: 8011
 
@@ -69,4 +73,6 @@ mybatis-plus:
   configuration:
     mapUnderscoreToCamelCase: false #关闭字段名的映射（关闭如userName映射成user_name）
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
  

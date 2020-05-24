@@ -30,25 +30,35 @@
 				  	{{scope.row.registerTime}}
 				  </template>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		      </el-table-column>`
 			  <el-table-column prop="amount" label="总件数" :sortable="custom">
 				  <template slot-scope="scope">
 				  	{{scope.row.amount}}
+<<<<<<< HEAD
 =======
 		      </el-table-column>
 			  <el-table-column prop="mustAmount" label="总件数" :sortable="custom">
 				  <template slot-scope="scope">
 				  	{{scope.row.sumnum}}
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				  </template>
 			  </el-table-column>
 			  <el-table-column prop="moneys" label="总金额" :sortable="custom">
 				  <template slot-scope="scope">
 <<<<<<< HEAD
+<<<<<<< HEAD
 				  	{{scope.row.moneys}}
 =======
 				  	{{scope.row.summoneys}}
 >>>>>>> warehouse
+=======
+				  	{{scope.row.moneys}}
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				  </template>
 			  </el-table-column>
 			  <el-table-column label="入库调度" width="120px">

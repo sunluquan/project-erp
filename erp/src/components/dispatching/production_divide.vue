@@ -1,5 +1,8 @@
 <template>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	<div id="production_divide">
 		<div id="columns">
 			<el-form label-position="left" class="demo-table-expand">
@@ -69,25 +72,34 @@
 			</el-table-column>
 		</el-table>
 	</div>
+<<<<<<< HEAD
 =======
 	
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 </template>
 
 <script>
 	export default{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		name:'production_divide',//按生产产品计划编号划分 来制定派工单
 		data(){
 			return{
 				productions:[],
 				activeProductions:[]
+<<<<<<< HEAD
 =======
 		name:'production_divide',//按生产产品计划编号划分
 		data(){
 			return{
 				productions:[]
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			}
 		},methods:{
 			getMeetDispatchingProductions(){//获取满足可以派工生产的生产单
@@ -96,6 +108,9 @@
 						this.productions=response.data
 					})
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			},insertDsipatching(){
 				let activeProductions=this.activeProductions;
 				if(activeProductions.length==0){
@@ -154,9 +169,12 @@
 			this.getMeetDispatchingProductions()
 		},computed:{
 			
+<<<<<<< HEAD
 =======
 			}
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		}
 	}
 </script>

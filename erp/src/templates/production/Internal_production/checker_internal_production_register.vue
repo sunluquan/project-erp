@@ -6,10 +6,14 @@
 		@renewal="renewal"
 		></checker-production-register>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<el-table @row-dblclick="checker" :border="true"
 =======
 		<el-table  :border="true"
 >>>>>>> warehouse
+=======
+		<el-table @row-dblclick="checker" :border="true"
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		 ref="internalProduction_table" :highlight-current-row="true" style="width: 100%"
 		  :data="manufactures"
 		 :default-sort="{prop:'manufacture_id',order:'descending'}">

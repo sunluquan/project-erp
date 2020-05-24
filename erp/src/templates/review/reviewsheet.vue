@@ -1,6 +1,9 @@
 <template>
  <el-dialog id="reviewsheet" :before-close="close" width="61%" title="安全库存配置单" style="text-align: center;" :visible.sync="reviewsheet_safetystock_dialog_visible">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
   
 	<div id="box">
 		<el-form :inline="true" :model="safetystock" class="demo-form-inline" :label-position="labelPosition" label-width="130px">
@@ -8,6 +11,7 @@
 		    <el-input class="input" v-model="safetystock.productId"></el-input>
 		  </el-form-item>
 		  <el-form-item label="产品名称:" prop="productname">
+<<<<<<< HEAD
 =======
    <div style="margin-left: 630px;">
    	<el-button type="primary" size="mini" round  @click="review()">审核通过</el-button>
@@ -20,26 +24,36 @@
 		  </el-form-item>
 		  <el-form-item label="产品名称:" prop="productname" style="margin-top: 22px;">
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		     <el-input  class="MyClass" v-model="safetystock.product_name"></el-input>
 		  </el-form-item>				  		 
 		</el-form>	
 		
 		<el-form :inline="true" :model="safetystock" class="demo-form-inline" :label-position="labelPosition" label-width="130px">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<el-form-item label="库存报警下限数:" style="padding-right: 90px;" prop="minamount">
 =======
 			<el-form-item label="库存报警下限数:" style="padding-right: 180px;" prop="minamount">
 >>>>>>> warehouse
+=======
+			<el-form-item label="库存报警下限数:" style="padding-right: 90px;" prop="minamount">
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			  <el-input class="MyClass" v-model="safetystock.minamount"></el-input>
 			</el-form-item>
 			<el-form-item label="库存报警上限数:" prop="maxamount">
 			   <el-input  class="MyClass" v-model="safetystock.maxamount"></el-input>
 			</el-form-item>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<el-form-item label="设置B/N或S/N:" style="padding-right: 90px;">
 =======
 			<el-form-item label="设置B/N或S/N:" style="padding-right: 180px;">
 >>>>>>> warehouse
+=======
+			<el-form-item label="设置B/N或S/N:" style="padding-right: 90px;">
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			   <el-input  class="MyClass"></el-input>
 			</el-form-item>
 			<el-form-item label="设计人" prop="register"> 
@@ -47,6 +61,9 @@
 			</el-form-item>
 			
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			<el-table :data="datatable" size="small" :header-cell-style="{background:'whitesmoke'}"  border style="width: 93%;margin-left: 40px;">
 			    <el-table-column prop="id" label="序号"  >												
 			    </el-table-column>	
@@ -71,6 +88,7 @@
 				</el-table-column>				
 			  </el-table>	
 			  
+<<<<<<< HEAD
 =======
 			<el-table :data="datatable" size="medium" :header-cell-style="{background:'whitesmoke'}"  border style="width: 93%;margin-left: 40px;">
 			    
@@ -100,6 +118,8 @@
 			  </el-table>	
 			  <br />
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				<el-form-item label="审核人:" style="padding-right: 278px;" prop="register">
 				   <span>{{activeUser}}</span>
 				</el-form-item>
@@ -113,14 +133,20 @@
 		</el-form>	
 	</div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	<div slot="footer" class="dialog-footer">
 		<el-button size="mini" round @click="review()">审核通过</el-button>
 		<el-button size="mini" round @click="noreview()">审核不通过</el-button>	
 		<el-button size="mini" round @click="close()">取消</el-button>
 	</div>
+<<<<<<< HEAD
 =======
 	
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	</el-dialog>
 </template>
 
@@ -140,18 +166,25 @@
 				dataPicke: new Date,
 				custom: 'custom',
 <<<<<<< HEAD
+<<<<<<< HEAD
 				productId:'',
 =======
 				safetystockId:'',
 >>>>>>> warehouse
+=======
+				productId:'',
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				labelPosition: 'right',				       
 				reviewsheet_safetystock_dialog_visible: false,	
 				warehousePage:'',							
 				safetystock:{},
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				safetystocks:{},
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				datatable:[{
 					id:'1',
 					storeAddress:'湖南省岳麓区',										
@@ -162,12 +195,17 @@
 		
 		created(){			
 <<<<<<< HEAD
+<<<<<<< HEAD
 			let productId=this.$route.params[Object.keys(this.$route.params)[0]];
 			this.productId=productId;
 =======
 			let safetystockId=this.$route.params[Object.keys(this.$route.params)[0]];
 			this.safetystockId=safetystockId;
 >>>>>>> warehouse
+=======
+			let productId=this.$route.params[Object.keys(this.$route.params)[0]];
+			this.productId=productId;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			console.log(this.$route);
 			this.reviewsheet_safetystock_dialog_visible = true;						
 			this.getAllsafetyById();
@@ -180,6 +218,9 @@
 			},			
 			getAllsafetyById(){
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				let productId=this.productId;
 				this.$axios.get('api/safetystock/getAllsafetyById/'+this.productId).then(response=>{
 						this.safetystock=response.data;						
@@ -193,6 +234,7 @@
 			},*/
 			review(){
 				alert('进来了');								
+<<<<<<< HEAD
 =======
 				//let safetystockId=this.safetystockId;
 				this.$axios.get('api/safetystock/getAllsafetyById/'+this.safetystockId).then(response=>{
@@ -203,6 +245,8 @@
 			review(){
 							this.safetystock.safetystockId=this.safetystockId;
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 								this.$axios.post('/api/safetystock/updateSefeStatus',this.safetystock).then(response=>{
 									this.check=response.data;
 										if(response.statusCord==200){
@@ -229,10 +273,14 @@
 			},
 			noreview(){
 <<<<<<< HEAD
+<<<<<<< HEAD
 				alert('进来了');
 =======
 				           this.safetystocks.safetystockId=this.safetystockId;	
 >>>>>>> warehouse
+=======
+				alert('进来了');
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 								this.$axios.post('/api/safetystock/Checktag',this.safetystock).then(response=>{
 									
 										if(response.statusCord==200){
@@ -273,10 +321,14 @@
 	#box{
 		width: 855px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		height: 430px;
 =======
 		height: 400px;
 >>>>>>> warehouse
+=======
+		height: 430px;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		border:1px solid gray;
 	}
 	.MyClass input.el-input__inner{

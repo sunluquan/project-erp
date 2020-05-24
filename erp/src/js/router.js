@@ -15,10 +15,14 @@ import unauth from '@/templates/system/unauth.vue'
 import user from '@/templates/user/user.vue'
 import dept from '@/templates/dept/index.vue'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import inventory from '@/templates/inventory/inventory.vue'
 =======
 import reserve from '@/templates/reserve/reserve.vue'
 >>>>>>> warehouse
+=======
+import inventory from '@/templates/inventory/inventory.vue'
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 import safetystockss from '@/templates/safetystockss/safetystockss.vue'
 import review from '@/templates/review/review.vue'
 import insertUser from '@/templates/user/insert_user.vue'
@@ -48,6 +52,7 @@ import gaschedulingdetails from '@/templates/gascheduling/gaschedulingdetails.vu
 import inventoryRegistration from '@/templates/inventoryRegistration/inventoryRegistration.vue'
 import inventoryRegistrationSheet from '@/templates/inventoryRegistration/inventoryRegistrationSheet.vue'
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import invtRegstreview from '@/templates/inventoryRegistration/invtRegstreview.vue'
 import invtRegstreviewSheet from '@/templates/inventoryRegistration/invtRegstreviewSheet.vue'
@@ -71,6 +76,8 @@ import outboudRegistResult from '@/templates/stockOutRegist/outboudRegistResult.
 
 
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 //需要权限验证的
 export const permission_router = [{
 		path: 'personalcenter.html',
@@ -147,6 +154,9 @@ export const permission_router = [{
 	},
 	{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		path: 'safetystockss.html',
 		component: safetystockss,
 		children: [{
@@ -215,6 +225,7 @@ export const permission_router = [{
 			},			
 		]
 	},
+<<<<<<< HEAD
 =======
 			path: 'safetystockss.html',
 			component: safetystockss,
@@ -309,6 +320,8 @@ export const permission_router = [{
 				]
 			}
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	
 ]
 //错误页面
@@ -318,6 +331,9 @@ export const error_router = [{
 }]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 // const router = new VueRouter({
 // 	//mode:'history',
 // 	routes: [{
@@ -338,6 +354,7 @@ export const error_router = [{
 // 		}
 // 	]
 // })
+<<<<<<< HEAD
 =======
 const router = new VueRouter({
 	//mode:'history',
@@ -360,6 +377,8 @@ const router = new VueRouter({
 	]
 })
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 //to表示  要去的路由对象  from 表示正在离开的路由对象 next表示是否跳转路由
 // router.beforeEach((to, from, next) => {
 // 	let arrivePath = to.path; //抵达的路径
@@ -389,6 +408,9 @@ const router = new VueRouter({
 //测试用的  方便
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 /*const router = new VueRouter({
 	//mode:'history',
 	routes: [{
@@ -747,6 +769,7 @@ const router =new VueRouter({
 			]
 		}]
 })
+<<<<<<< HEAD
 =======
 // const router = new VueRouter({
 // 	//mode:'history',
@@ -1143,6 +1166,8 @@ const router =new VueRouter({
 // })
 
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 export default router
 router.beforeEach((to, from, next) => {
 	let arrivePath = to.path; //抵达的路径

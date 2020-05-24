@@ -57,10 +57,14 @@
 			  <el-table-column prop="date" label="审核" width="100px">
 				  <template slot-scope="scope">
 <<<<<<< HEAD
+<<<<<<< HEAD
 				  <el-button type="text" @click="reviewsheet(scope.row.productId)">复核</el-button>
 =======
 				  <el-button type="text" @click="reviewsheet(scope.row.safetystockId)">复核</el-button>
 >>>>>>> warehouse
+=======
+				  <el-button type="text" @click="reviewsheet(scope.row.productId)">复核</el-button>
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				  </template>
 			  </el-table-column>
 		    </el-table>
@@ -103,12 +107,17 @@
 			          })
 					},
 <<<<<<< HEAD
+<<<<<<< HEAD
 					reviewsheet(productId){
 				     	this.$router.push({path:'/index/review.html/reviewsheet/'+productId})
 =======
 					reviewsheet(safetystockId){
 				     	this.$router.push({path:'/index/review.html/reviewsheet/'+safetystockId})
 >>>>>>> warehouse
+=======
+					reviewsheet(productId){
+				     	this.$router.push({path:'/index/review.html/reviewsheet/'+productId})
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 					},
 				/*	  	 								
 	  	 		//cx(){

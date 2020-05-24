@@ -6,9 +6,13 @@ import com.github.pagehelper.PageInfo;
 import com.slq.common.Params;
 import com.slq.pojo.production.ManufactureSum;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.slq.util.ManufactureChart;
 =======
 >>>>>>> warehouse
+=======
+import com.slq.util.ManufactureChart;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 import com.slq.util.TimeLine;
 
 public interface IManufactureService {
@@ -42,10 +46,16 @@ public interface IManufactureService {
 	List<TimeLine> getProductionProgressByManufactureId(Integer id);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	List<ManufactureChart> getProductProductionFinishChartResult();
 
 	List<ManufactureSum> getMeetProfitAndLossManufactures();
 
+<<<<<<< HEAD
 =======
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 }

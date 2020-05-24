@@ -52,7 +52,16 @@
 			focus(event){
 				event.currentTarget.select()
 			},
+<<<<<<< HEAD
 			update(){
+=======
+			update(newVal){
+				let data=this.production_process_material
+				let remainder = newVal%data.single_material_design_amount;
+				if(remainder>0){
+					this.numerical=(newVal+data.single_material_design_amount)-remainder;
+				}
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				this.$emit('update',this.numerical);
 				this.$emit('change',this.production_process_material)
 			},mouseover(){//鼠标移入

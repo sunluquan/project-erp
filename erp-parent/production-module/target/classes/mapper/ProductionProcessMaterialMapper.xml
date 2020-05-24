@@ -9,6 +9,9 @@
 		ppm.`subtotal`,ppm.`real_subtotal`
 	 -->
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	 <!-- 获取生产领取物料的集合 -->
 	 <select id="getProductionProcessMaterialByManufactureId" resultType="ProductionProcessMaterial">
 	 	select parent_id,product_id,product_name,cost_price,amount,single_material_design_amount  from production_process_material
@@ -26,8 +29,11 @@
 			parent_id=#{production_process_id} and product_id=#{productProfitLossDetails.product_id}
 	 	</foreach>
 	 </update>
+<<<<<<< HEAD
 =======
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	<select id="getProductionProcessMaterialAndUseAmount"
 		resultType="ProductionProcessMaterial">
 		select ppm.* ,
@@ -67,17 +73,23 @@
 		</foreach>
 	</update>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	<!-- 有变动 single_material_design_amount-->
 	<insert id="batchInsert">
 		INSERT INTO production_process_material
 		(`id`,`parent_id`,`process_number`,`product_id`,`product_name`,`cost_price`
 		,`amount`,`renew_amount`,`real_amount`,`subtotal`,`real_subtotal`,`single_material_design_amount`)
+<<<<<<< HEAD
 =======
 	<insert id="batchInsert">
 		INSERT INTO production_process_material
 		(`id`,`parent_id`,`process_number`,`product_id`,`product_name`,`cost_price`
 		,`amount`,`renew_amount`,`real_amount`,`subtotal`,`real_subtotal`)
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		values
 		<foreach collection="list" item="productionProcess"
 			separator=",">
@@ -87,10 +99,14 @@
 				(default,#{productionProcess.id},default,#{productionProcessMaterial.product_id},
 				#{productionProcessMaterial.product_name},#{productionProcessMaterial.cost_price},
 <<<<<<< HEAD
+<<<<<<< HEAD
 				#{productionProcessMaterial.amount},#{productionProcessMaterial.renew_amount},default,#{productionProcessMaterial.subtotal},default,#{productionProcessMaterial.single_material_design_amount})
 =======
 				#{productionProcessMaterial.amount},default,default,#{productionProcessMaterial.subtotal},default)
 >>>>>>> warehouse
+=======
+				#{productionProcessMaterial.amount},#{productionProcessMaterial.renew_amount},default,#{productionProcessMaterial.subtotal},default,#{productionProcessMaterial.single_material_design_amount})
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			</foreach>
 		</foreach>
 

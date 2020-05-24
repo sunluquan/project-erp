@@ -16,10 +16,14 @@ spring:
         timeout: 0 
   datasource:
 <<<<<<< HEAD
+<<<<<<< HEAD
     url: jdbc:mysql://127.0.0.1:3306/project?serverTimezone = GMT&allowMultiQueries=true
 =======
     url: jdbc:mysql://127.0.0.1:3306/project1?serverTimezone = GMT&allowMultiQueries=true
 >>>>>>> warehouse
+=======
+    url: jdbc:mysql://127.0.0.1:3306/project?serverTimezone = GMT&allowMultiQueries=true
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
     username: root
     password: 123456
     initialSize: 3

@@ -23,9 +23,14 @@ public interface IProductionPlanService {
 	int update(ProductionPlan productionPlan);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	List<ProductionPlan> getMeetDespatchingProductionPlans();
 
 =======
 >>>>>>> warehouse
+=======
+	List<ProductionPlan> getMeetDespatchingProductionPlans();
+
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 
 }

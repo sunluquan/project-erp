@@ -14,9 +14,14 @@ public interface ProductionPlanMapper extends BaseMapper<ProductionPlan>{
 
 	ProductionPlan getProductionPlanAndDetailById(Integer id);
 <<<<<<< HEAD
+<<<<<<< HEAD
 	//获取满足制定派工单的生产计划
 	List<ProductionPlan> getMeetDespatchingProductionPlans();
 =======
 >>>>>>> warehouse
+=======
+	//获取满足制定派工单的生产计划
+	List<ProductionPlan> getMeetDespatchingProductionPlans();
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 
 }

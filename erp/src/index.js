@@ -3,10 +3,15 @@
 导入基本依赖
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 //import VeLine from 'v-charts/lib/bar.common'
 import VCharts from 'v-charts'
 =======
 >>>>>>> warehouse
+=======
+//import VeLine from 'v-charts/lib/bar.common'
+import VCharts from 'v-charts'
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 import Vue from 'vue'//引入vue
 import VueRouter from 'vue-router'
 import axios,{fetch,post} from '@/js/axios.js'
@@ -27,10 +32,15 @@ import socket from '@/js/common/webSocket.js'
 import qs from 'qs'
 //vue注入全局对象
 <<<<<<< HEAD
+<<<<<<< HEAD
 //引入charts的柱状图组件
 //Vue.component(VeLine.name, VeLine)
 =======
 >>>>>>> warehouse
+=======
+//引入charts的柱状图组件
+//Vue.component(VeLine.name, VeLine)
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 Vue.prototype.$Qs=qs
 Vue.prototype.$axios=axios
 Vue.prototype.$fetch=fetch
@@ -38,9 +48,13 @@ Vue.prototype.$post=post
 Vue.prototype.$common=common
 Vue.prototype.$error_router=error_router
 <<<<<<< HEAD
+<<<<<<< HEAD
 Vue.use(VCharts)
 =======
 >>>>>>> warehouse
+=======
+Vue.use(VCharts)
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 Vue.use(elementUI)
 Vue.use(Vuex)
 Vue.use(VueRouter)

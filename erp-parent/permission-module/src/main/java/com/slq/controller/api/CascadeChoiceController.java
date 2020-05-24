@@ -34,13 +34,19 @@ public class CascadeChoiceController {
 		return DefaultResponseData.successResponseData(cascadechoices);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	@RequestMapping("/productKind")
 	public ResponseData getCascadeProductKind() {
 		List<CascadeChoice> cascadechoices = cascadeChoiceService.getCascadeProductKind();
 		return DefaultResponseData.successResponseData(cascadechoices);
 	}
+<<<<<<< HEAD
 =======
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	/***
 	 * 获取所有的在templates下的文件名
 	 * @return
@@ -51,7 +57,11 @@ public class CascadeChoiceController {
 		return DefaultResponseData.successResponseData(templates);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 =======
 >>>>>>> warehouse
+=======
+	
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 }

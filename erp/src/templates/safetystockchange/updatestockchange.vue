@@ -4,36 +4,50 @@
 	<div id="box">
 		<el-form :inline="true" :model="safetystock" class="demo-form-inline" :label-position="labelPosition" label-width="130px">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		  <el-form-item  label="产品编号:" style="padding-right: 90px;" prop="productid">
 		    <el-input class="input" v-model="safetystock.product_id"></el-input>
 		  </el-form-item>
 		  <el-form-item label="产品名称:" prop="productname">
+<<<<<<< HEAD
 =======
 		  <el-form-item  label="产品编号:" style="padding-right: 160px;margin-top: 22px;" prop="productid">
 		    <el-input class="input" v-model="safetystock.productId"></el-input>
 		  </el-form-item>
 		  <el-form-item label="产品名称:" prop="productname" style="margin-top: 22px;">
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		     <el-input  class="MyClass" v-model="safetystock.product_name"></el-input>
 		  </el-form-item>				  		 
 		</el-form>	
 		
 		<el-form :inline="true" :model="safetystock" class="demo-form-inline" :label-position="labelPosition" label-width="130px">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<el-form-item label="库存报警下限数:" style="padding-right: 90px;" prop="minamount">
 =======
 			<el-form-item label="库存报警下限数:" style="padding-right: 160px;" prop="minamount">
 >>>>>>> warehouse
+=======
+			<el-form-item label="库存报警下限数:" style="padding-right: 90px;" prop="minamount">
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			  <el-input class="MyClass" v-model="safetystock.minamount"></el-input>
 			</el-form-item>
 			<el-form-item label="库存报警上限数:" prop="maxamount">
 			   <el-input  class="MyClass" v-model="safetystock.maxamount"></el-input>
 			</el-form-item>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<el-form-item label="设置B/N或S/N:" style="padding-right: 90px;">
 =======
 			<el-form-item label="设置B/N或S/N:" style="padding-right: 160px;">
 >>>>>>> warehouse
+=======
+			<el-form-item label="设置B/N或S/N:" style="padding-right: 90px;">
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			   <el-input  class="MyClass"></el-input>
 			</el-form-item>
 			<el-form-item label="设计人" prop="register"> 
@@ -67,10 +81,14 @@
 			  </el-table>	
 			  
 <<<<<<< HEAD
+<<<<<<< HEAD
 				<el-form-item label="审核人:" style="padding-right: 90px;" prop="register">
 =======
 				<el-form-item label="审核人:" style="padding-right: 160px;" prop="register">
 >>>>>>> warehouse
+=======
+				<el-form-item label="审核人:" style="padding-right: 90px;" prop="register">
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				   <el-input  class="MyClass" v-model="safetystock.checker"></el-input>
 				</el-form-item>
 				
@@ -104,10 +122,14 @@
 	     	return {
 				id:'',
 <<<<<<< HEAD
+<<<<<<< HEAD
 				productId:'',
 =======
 				safetystockId:'',
 >>>>>>> warehouse
+=======
+				productId:'',
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				dataPicke: new Date,
 				custom: 'custom',
 				productid:'',
@@ -144,12 +166,17 @@
 		
 		created(){			
 <<<<<<< HEAD
+<<<<<<< HEAD
 			let productId=this.$route.params[Object.keys(this.$route.params)[0]];
 			this.productId=productId;
 =======
 			let safetystockId=this.$route.params[Object.keys(this.$route.params)[0]];
 			this.safetystockId=safetystockId;
 >>>>>>> warehouse
+=======
+			let productId=this.$route.params[Object.keys(this.$route.params)[0]];
+			this.productId=productId;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			
 			console.log(this.$route);
 			this.updatestockchange_selectstock_dialog_visible = true;						
@@ -163,12 +190,17 @@
 			},
 			getAllsafetyById(){
 <<<<<<< HEAD
+<<<<<<< HEAD
 				let productId=this.productId;
 				this.$axios.get('api/safetystock/getAllsafetyById/'+this.productId).then(response=>{
 =======
 				//let safetystockId=this.safetystockId;
 				this.$axios.get('api/safetystock/getAllsafetyById/'+this.safetystockId).then(response=>{
 >>>>>>> warehouse
+=======
+				let productId=this.productId;
+				this.$axios.get('api/safetystock/getAllsafetyById/'+this.productId).then(response=>{
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 						this.safetystock=response.data;									
 					})
 			},
@@ -180,9 +212,12 @@
 			},
 			update(){
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				this.safetystock.safetystockId=this.safetystockId;
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				this.$axios.post('/api/safetystock/updateStockChange',this.safetystock).then(response=>{
 						if(response.statusCord==200){
 							this.$message({

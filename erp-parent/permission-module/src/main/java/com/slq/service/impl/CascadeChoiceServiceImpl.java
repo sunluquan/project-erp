@@ -46,13 +46,19 @@ public class CascadeChoiceServiceImpl implements ICascadeChoiceService{
 		return FileUtil.getTemplates();
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	//@Cacheable(keyGenerator = "keyGenerator")
 	@Override
 	public List<CascadeChoice> getCascadeProductKind() {
 		return cascadeChoiceMapper.getCascadeProductKind();
 	}
+<<<<<<< HEAD
 =======
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 
 	
 }

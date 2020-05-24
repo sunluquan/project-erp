@@ -15,6 +15,9 @@
 		where parentId =#{id}
 	</select>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	
 	<select id="searchProductKind" resultType="ProductKind">
 		select pk.*,ppk.kindName as 'parent.kindName' from product_kind pk
@@ -38,6 +41,9 @@
 			</otherwise>
 		</choose>
 	</select>
+<<<<<<< HEAD
 =======
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 </mapper>

@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.slq.mapper.SafetystockMapper">
@@ -107,6 +110,7 @@
 	  update safetystock set minamount=#{minamount},maxamount=#{maxamount},sid=#{sid},maxCapacityAmount=#{maxCapacityAmount},
 	  storeUnit=#{storeUnit},register=#{register},checker=#{checker},checktag='等待审核',configStatus='未完成',changeStatus='已变更'  where id=#{id}
 	</update>	
+<<<<<<< HEAD
 =======
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -216,4 +220,6 @@
 	  storeUnit=#{storeUnit},register=#{register},checker=#{checker},checktag='等待审核',configStatus='未完成',changeStatus='已变更'  where safetystockId=#{safetystockId}
 	</update>	
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 </mapper>

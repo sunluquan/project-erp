@@ -8,10 +8,15 @@
 		 :max="max"
 		 controls-position="right"
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 :step-strictly="step_strictly"
 		 :step="step"
 =======
 >>>>>>> warehouse
+=======
+		 :step-strictly="step_strictly"
+		 :step="step"
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		 @change="update"></el-input-number>
 	</div>
 </template>
@@ -36,14 +41,20 @@
 				type:Number,
 				default:()=>(Infinity)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			},step_strictly:{
 				type:Boolean,
 				default:()=>(false)
 			},step:{
 				type:Number,
 				default:()=>(1)
+<<<<<<< HEAD
 =======
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			}
 		},
 		data(){

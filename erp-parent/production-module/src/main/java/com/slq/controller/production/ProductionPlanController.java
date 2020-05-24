@@ -26,15 +26,21 @@ public class ProductionPlanController {
 	@Autowired
 	private IProductionPlanService productionPlanService;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	//获取满足制定派工单的生产计划
 	@GetMapping("/meetDespatching")
 	public ResponseData getMeetDespatchingProductionPlan() {
 		List<ProductionPlan> productionPlans=productionPlanService.getMeetDespatchingProductionPlans();
 		return DefaultResponseData.successResponseData(productionPlans);
 	}
+<<<<<<< HEAD
 =======
 	
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	@PostMapping("/insert")
 	public ResponseData insert(@RequestBody ProductionPlan productionPlan) {
 		System.out.println(JSON.toJSONString(productionPlan));

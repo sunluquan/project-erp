@@ -13,9 +13,13 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.slq.mapper.production.ProductionProcessMaterialMapper;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.slq.pojo.production.ProductProfitLossDetail;
 =======
 >>>>>>> warehouse
+=======
+import com.slq.pojo.production.ProductProfitLossDetail;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 import com.slq.pojo.production.ProductionProcess;
 import com.slq.pojo.production.ProductionProcessMaterial;
 import com.slq.service.production.IProductionProcessMaterialService;
@@ -71,6 +75,9 @@ public class ProductionProcessMaterialServiceImpl extends ServiceImpl<Production
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	@Transactional
 	@CacheEvict(allEntries = true)
 	@Override
@@ -88,6 +95,9 @@ public class ProductionProcessMaterialServiceImpl extends ServiceImpl<Production
 		return this.baseMapper.getProductionProcessMaterialByManufactureId(id);
 	}
 
+<<<<<<< HEAD
 =======
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 }

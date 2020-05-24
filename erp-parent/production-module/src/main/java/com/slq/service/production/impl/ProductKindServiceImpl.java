@@ -4,20 +4,31 @@ import java.util.List;
 
 import org.springframework.cache.annotation.CacheConfig;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 =======
 >>>>>>> warehouse
+=======
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+<<<<<<< HEAD
 <<<<<<< HEAD
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.slq.common.Params;
 =======
 >>>>>>> warehouse
+=======
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.slq.common.Params;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 import com.slq.mapper.production.ProductKindMapper;
 import com.slq.pojo.production.ProductKind;
 import com.slq.service.production.IProductKindService;
@@ -35,6 +46,9 @@ public class ProductKindServiceImpl extends ServiceImpl<ProductKindMapper, Produ
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	@Cacheable(keyGenerator = "keyGenerator")
 	@Override
 	public PageInfo<ProductKind> searchProductKind(Params params) {
@@ -48,6 +62,9 @@ public class ProductKindServiceImpl extends ServiceImpl<ProductKindMapper, Produ
 		return i;
 	}
 
+<<<<<<< HEAD
 =======
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 }

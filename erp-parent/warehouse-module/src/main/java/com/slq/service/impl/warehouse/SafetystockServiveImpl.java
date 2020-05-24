@@ -8,6 +8,9 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.github.pagehelper.PageInfo;
@@ -17,6 +20,7 @@ import com.slq.mapper.warehouse.SafetystockMapper;
 import com.slq.pojo.production.Product;
 import com.slq.pojo.warehouse.GatherDetails;
 import com.slq.pojo.warehouse.Safetystock;
+<<<<<<< HEAD
 =======
 
 import com.slq.mapper.warehouse.SafetystockMapper;
@@ -26,6 +30,8 @@ import com.slq.pojo.warehouse.GatherDetails;
 import com.slq.pojo.warehouse.Safetystock;
 import com.slq.pojo.warehouse.Stock;
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 import com.slq.service.warehouse.ISafetystockServive;
 import com.slq.pojo.User;
 import com.slq.util.ActiveUser;
@@ -38,12 +44,17 @@ public class SafetystockServiveImpl implements ISafetystockServive {
 	@Autowired
 	SafetystockMapper safetystockMapper;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@Autowired GatherMapper mapper;
 	
 =======
 	@Autowired WarehousingMapper mapper;
 	@Autowired StockMapper stockmapper;
 >>>>>>> warehouse
+=======
+	@Autowired GatherMapper mapper;
+	
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	
 	@Override
 	public List<Safetystock> getAllsafety() {
@@ -65,14 +76,18 @@ public class SafetystockServiveImpl implements ISafetystockServive {
 	public int updateSefeStatus(Safetystock safetystock) {		
 		User user=((ActiveUser)SecurityUtils.getSubject().getPrincipal()).getUser();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		Stock stock=new Stock();
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		safetystock.setChecker(user.getUname());	
 		GatherDetails gatherDetails=new GatherDetails();
 		gatherDetails.setSid(safetystock.getSid());
 		gatherDetails.setProductId(safetystock.getProductId());
 		mapper.updGatherDetailsSid(gatherDetails);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 		stock.setProductId(safetystock.getProductId());
@@ -80,6 +95,8 @@ public class SafetystockServiveImpl implements ISafetystockServive {
 		stock.setRegistMan(user.getUname());
 		stockmapper.addStock(stock);
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		return safetystockMapper.updateSefeStatus(safetystock);
 	}
 

@@ -20,12 +20,16 @@
 		   <el-table :data="selectPage" border style="width: 100%" :border="true" :highlight-current-row="true">
 			   
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			  <el-table-column prop="safetystockId" width="350px" label="配置单编号" :sortable="custom">
 				  <template slot-scope="scope">
 					  <el-link @click="selectdetails(scope.row.productId)"><span>{{ scope.row.safetystockId }}</span></el-link> 	
 				  </template>
 			  </el-table-column>
 		      <el-table-column prop="productid" width="270px" label="产品编号" :sortable="custom">
+<<<<<<< HEAD
 =======
 			  <el-table-column prop="safetystockId" width="270px" label="配置单编号" :sortable="custom">
 				  <template slot-scope="scope">
@@ -34,6 +38,8 @@
 			  </el-table-column>
 		      <el-table-column prop="productid" width="210px" label="产品编号" :sortable="custom">
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				  <template slot-scope="scope">
 				  	<span>{{ scope.row.product_id }}</span>
 					
@@ -46,6 +52,7 @@
 				  </template>
 		      </el-table-column>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		     
 			  <el-table-column prop="configStatus"   label="配置单状态">
 =======
@@ -56,16 +63,24 @@
 		     </el-table-column>
 			  <el-table-column prop="configStatus"   label="配置单状态" :sortable="custom">
 >>>>>>> warehouse
+=======
+		     
+			  <el-table-column prop="configStatus"   label="配置单状态">
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				  <template slot-scope="scope">
 				  	<span style="color: #409EFF;">
 				  		{{ scope.row.configStatus }}</span>
 				  </template>
 			  </el-table-column>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			  <el-table-column prop="checktag"  label="复核状态" >
 =======
 			  <el-table-column prop="checktag"  label="复核状态" :sortable="custom">
 >>>>>>> warehouse
+=======
+			  <el-table-column prop="checktag"  label="复核状态" >
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				  <template slot-scope="scope">
 				  	<span style="color: #409EFF;">
 				  		{{ scope.row.checktag }}</span>
@@ -115,12 +130,17 @@
 			          })
 					},
 <<<<<<< HEAD
+<<<<<<< HEAD
 					selectdetails(productId){
 				           this.$router.push({path:'/index/selectstock.html/selectstockdetails/'+productId})
 =======
 					selectdetails(safetystockId){
 				           this.$router.push({path:'/index/selectstock.html/selectstockdetails/'+safetystockId})
 >>>>>>> warehouse
+=======
+					selectdetails(productId){
+				           this.$router.push({path:'/index/selectstock.html/selectstockdetails/'+productId})
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 					},
 					search(){
 						if(this.productName!=''){

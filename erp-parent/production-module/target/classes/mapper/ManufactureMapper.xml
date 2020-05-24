@@ -3,6 +3,9 @@
 <mapper namespace="com.slq.mapper.production.ManufactureMapper">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	<!-- 生产报表 -->
 	<select id="getProductProductionFinishChartResult"
 		resultType="com.slq.util.ManufactureChart">
@@ -41,6 +44,7 @@
 		resultMap="timeLineResult">
 		SELECT * FROM `production_process_course` where
 		parent_id=#{id}
+<<<<<<< HEAD
 =======
 	<resultMap type="com.slq.util.TimeLine" id="timeLineResult">
 		<id column="id" property="id" />
@@ -54,11 +58,16 @@
 	<select id="getProductionProgressByManufactureId" resultMap="timeLineResult">
 		SELECT * FROM `production_process_course` where parent_id=#{id}
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		order by register_time asc
 	</select>
 	<!-- //获取通过生产总表的id获取该总表下的 //工序集合的实际总物料 和 实际工时总价格 -->
 	<select id="getManufactureReal" resultType="ManufactureSum">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		SELECT m.*,
 		(SELECT
 		SUM(real_subtotal) FROM `production_process` WHERE parent_id=m.id) AS
@@ -67,6 +76,7 @@
 		`production_process` WHERE
 		parent_id=m.id) AS
 		`real_material_cost_price_sum`
+<<<<<<< HEAD
 =======
 		SELECT m.id,m.manufacture_id,m.product_id,m.product_name,m.amount,m.tested_amount,m.production_id_group,
 		m.material_cost_price_sum,m.labour_cost_price_sum,m.designer,m.register,m.register_time,m.checker,
@@ -76,6 +86,8 @@
 		(SELECT SUM(real_module_subtotal) FROM `production_process` WHERE
 		parent_id=m.id) AS `real_material_cost_price_sum`
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		FROM `manufacture_sum` m WHERE id=#{id}
 	</select>
 	<resultMap type="ManufactureSum" id="manufactureResult1"

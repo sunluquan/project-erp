@@ -221,11 +221,16 @@ public  class GatherServiceImpl extends ServiceImpl<GatherMapper, Gather> implem
 		 String register=user.getUid();
 		 Date registerTime=new Date();		//登记时间
 <<<<<<< HEAD
+<<<<<<< HEAD
 		Gather gather=new Gather
 				(gatherId, stockid, storer, reasonexact, amountSum, costPriceSum, gatheredAmountSum, remark, register, registerTime);
 =======
 		 Gather gather=new Gather(gatherId, stockid, storer, reasonexact, amountSum, costPriceSum, gatheredAmountSum, remark, register, registerTime);				
 >>>>>>> warehouse
+=======
+		Gather gather=new Gather
+				(gatherId, stockid, storer, reasonexact, amountSum, costPriceSum, gatheredAmountSum, remark, register, registerTime);
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		this.baseMapper.insert(gather);
 		Integer id=gather.getId();
 		if(id>0) {
@@ -242,10 +247,14 @@ public  class GatherServiceImpl extends ServiceImpl<GatherMapper, Gather> implem
 			 GatherDetails gatherDetails=new GatherDetails(productId, productName, realCostPrice, subtotal, mustAmount, payTag);
 			 gatherDetailsList.add(gatherDetails);
 <<<<<<< HEAD
+<<<<<<< HEAD
 			 gatherDetailService.batchInsertFinishedGatherDetail(id,gatherDetailsList);
 =======
 			 gatherDetailService.batchInsertFinishedGatherDetail(gatherId,gatherDetailsList);
 >>>>>>> warehouse
+=======
+			 gatherDetailService.batchInsertFinishedGatherDetail(id,gatherDetailsList);
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			 return id;
 		}
 		throw new RuntimeException();

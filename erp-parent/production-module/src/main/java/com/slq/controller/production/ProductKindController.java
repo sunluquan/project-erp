@@ -6,19 +6,29 @@ import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 =======
 >>>>>>> warehouse
+=======
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSON;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.github.pagehelper.PageInfo;
 import com.slq.common.Params;
 =======
 >>>>>>> warehouse
+=======
+import com.github.pagehelper.PageInfo;
+import com.slq.common.Params;
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 import com.slq.pojo.User;
 import com.slq.pojo.production.ProductKind;
 import com.slq.service.production.IProductKindService;
@@ -42,6 +52,9 @@ public class ProductKindController {
 		return DefaultResponseData.successResponseData(productKinds);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	@PostMapping("/search")
 	public ResponseData searchProductKind(@RequestBody Params params) {
 		PageInfo<ProductKind> productKindPage = productKindService.searchProductKind(params);
@@ -52,7 +65,10 @@ public class ProductKindController {
 		int id = productKindService.insert(productKind);
 		return DefaultResponseData.successResponseData(id);
 	}
+<<<<<<< HEAD
 =======
 	
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 }

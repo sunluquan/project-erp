@@ -7,6 +7,9 @@
 		permissionStatus=1
 	</sql>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	<resultMap type="com.slq.common.CascadeChoice" id="productKindResult" autoMapping="true">
 		<id column="id" property="value"/>
 		<result column="kindName" property="title"/>
@@ -23,8 +26,11 @@
 		select id,kindName from product_kind
 		where parentId =#{id} and state=1
 	</select>
+<<<<<<< HEAD
 =======
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	<!-- permission -->
 	<resultMap type="com.slq.common.CascadeChoice"  id="permissionResult">
 		<id column="pId" property="value"/>

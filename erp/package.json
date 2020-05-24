@@ -23,9 +23,13 @@
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "v-charts": "^1.19.0",
 =======
 >>>>>>> warehouse
+=======
+    "v-charts": "^1.19.0",
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
     "vue": "^2.6.11",
     "vue-loader": "^15.9.0",
     "vue-router": "^3.1.6",
@@ -37,11 +41,17 @@
   },
   "main": "webpack.config.js",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
   "description": "",
   "dependencies": {
     "echarts": "^4.7.0"
   }
+<<<<<<< HEAD
 =======
   "description": ""
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 }

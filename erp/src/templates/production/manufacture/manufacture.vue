@@ -2,13 +2,19 @@
 	<div id="manufacture">
 		<router-view @update="searchManufacture"></router-view>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		<!-- 查看派工单 生产工序过程和生产工序物料过程 -->
 		<view-manufacture v-model="dialog_visible" :manufacture="activeManufacture"></view-manufacture>
 		<!-- 查看派工单 按时间生产先后顺序 -->
 		<view-production-progress ref="production_progress" :manufacture="activeManufacture"></view-production-progress>
+<<<<<<< HEAD
 =======
 		<view-manufacture v-model="dialog_visible" :manufacture="activeManufacture"></view-manufacture>
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		<!-- {{activeManufacture}}
 			 default-sort  默认的排序 是一个对象
 			 属性:prop:指定的排序列名 order:排序方式
@@ -116,14 +122,20 @@
 			<el-table-column label="操作">
 				<template slot-scope="scope">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 					<el-button type="primary"  title="查看进度" @click="viewProductionProgress(scope.row)" icon="el-icon-view" circle></el-button>
 					<!-- <el-button type="primary" title="编辑" icon="el-icon-edit" circle></el-button>
 					<el-button type="danger" title="删除" icon="el-icon-delete" circle></el-button>
 					 -->
+<<<<<<< HEAD
 =======
 					<el-button type="primary" title="编辑" icon="el-icon-edit" circle></el-button>
 					<el-button type="danger" title="删除" icon="el-icon-delete" circle></el-button>
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				</template>
 			</el-table-column>
 		</el-table>
@@ -139,9 +151,13 @@
 
 <script>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	import view_production_progress from '@/components/manufacture/view_production_progress.vue'
 =======
 >>>>>>> warehouse
+=======
+	import view_production_progress from '@/components/manufacture/view_production_progress.vue'
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 	import view_manufacture from '@/components/dispatching/view_manufacture1.vue'
 	//import view_manufacture from '@/components/dispatching/view_manufacture.vue'
 	import date_time from '@/components/dateTime.vue'
@@ -159,9 +175,12 @@
 						order: 'descending'
 					},
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 				},custom:'custom',
 				dialog_visible:false,
 				activeManufacture:{}
@@ -169,13 +188,19 @@
 		},
 		methods: {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			viewProductionProgress(data){
 				//查看生产工序过程
 				this.activeManufacture=data;
 				this.$refs.production_progress.open()
 			},
+<<<<<<< HEAD
 =======
 >>>>>>> warehouse
+=======
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 			viewActiveManufacture(data){
 				this.dialog_visible=true
 				this.activeManufacture=data
@@ -209,11 +234,16 @@
 		},components:{
 			"date-time":date_time,
 <<<<<<< HEAD
+<<<<<<< HEAD
 			"view-manufacture":view_manufacture,
 			"view-production-progress":view_production_progress
 =======
 			"view-manufacture":view_manufacture
 >>>>>>> warehouse
+=======
+			"view-manufacture":view_manufacture,
+			"view-production-progress":view_production_progress
+>>>>>>> 225d5e24f3d21f7d9440ccec2cddb462756396d6
 		},filters:{
 			whetherShow1(data, message) {
 				if (data) {
